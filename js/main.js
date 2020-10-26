@@ -1,11 +1,14 @@
 // Project list
 
+let data;
+
 fetch("../data/data.json")
   .then((response) => response.json())
-  .then(function projectFunction(data) {
+  .then(function projectFunction(projectArr) {
+    data = projectArr;
     let output = "";
     let i;
-    for (i = 0; i < data.length; i++) {
+    for (i = 0; i < projectArr.length; i++) {
       if (i % 3 == 0) {
         output += '<div class="row">';
       }
@@ -20,28 +23,28 @@ fetch("../data/data.json")
         i +
         ');">' +
         '<img src="' +
-        data[i].projectImage +
+        projectArr[i].projectImage +
         '" alt="' +
-        data[i].projectTitle +
+        projectArr[i].projectTitle +
         '" class="card-img-top w-100">' +
         "</a>" +
         "</div>" +
         '<div class="card-body">' +
         '<h5 class="card-title">' +
-        data[i].projectTitle +
+        projectArr[i].projectTitle +
         "</h5>" +
         '<p class="card-text mb-3">' +
-        data[i].projectDescription +
+        projectArr[i].projectDescription +
         "</p>" +
         '<div class="container mb-3">' +
         '<p class="font-weight-bold mb-3">TECHNOLOGIES USED</p>' +
-        data[i].projectTechnologies +
+        projectArr[i].projectTechnologies +
         "</div>" +
         '<a target="_blank" class="btn btn-primary" href="' +
-        data[i].projectDemoURL +
+        projectArr[i].projectDemoURL +
         '">DEMO</a> ' +
         '<a target="_blank" class="btn btn-secondary" href="' +
-        data[i].projectCodeURL +
+        projectArr[i].projectCodeURL +
         '">CODE</a>' +
         "</div>" +
         "</div>" +
