@@ -1,7 +1,8 @@
 // Project list
 
-fetch("../data/data.json").then((response) =>
-  response.json().then(function projectFunction(data) {
+fetch("../data/data.json")
+  .then((response) => response.json())
+  .then(function projectFunction(data) {
     let output = "";
     let i;
     for (i = 0; i < data.length; i++) {
@@ -50,8 +51,7 @@ fetch("../data/data.json").then((response) =>
       }
     }
     document.getElementById("projectsContent").innerHTML = output;
-  })
-);
+  });
 
 // Navbar hide/unhide
 
