@@ -1,4 +1,4 @@
-let data = import("../data/data.json");
+import * as data from "../data/data.json";
 
 // Navbar hide/unhide
 
