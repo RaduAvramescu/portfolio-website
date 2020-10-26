@@ -39,12 +39,11 @@ function toggleNav() {
 
 // Project list
 
-const getData = async () => {
+async function getData() {
   const response = await fetch("../data/data.json");
   const data = await response.json();
-
-  console.log(data);
-};
+  return data;
+}
 
 getData();
 
@@ -99,9 +98,7 @@ function projectFunction(projectArr) {
   document.getElementById("projectsContent").innerHTML = output;
 }
 
-async () => {
-  projectFunction(data);
-};
+projectFunction(data);
 
 // Modal
 
@@ -134,40 +131,38 @@ function modalClose() {
   }, 100);
 }
 
-async = () => {
-  const header = document.querySelector("header");
-  const faders = document.querySelectorAll(".fade-in");
-  const sliders = document.querySelectorAll(".slide-in");
+const header = document.querySelector("header");
+const faders = document.querySelectorAll(".fade-in");
+const sliders = document.querySelectorAll(".slide-in");
 
-  const appearOptions = {
-    threshold: 0,
-    rootMargin: "0px 0px -200px 0px",
-  };
-
-  const appearOnScroll = new IntersectionObserver(function (
-    entries,
-    appearOnScroll
-  ) {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      } else {
-        entry.target.classList.remove("opacity-0");
-        entry.target.classList.add("opacity-100");
-        if (entry.target.classList.contains("slide-in")) {
-          entry.target.classList.add("appear");
-        }
-        appearOnScroll.unobserve(entry.target);
-      }
-    });
-  },
-  appearOptions);
-
-  faders.forEach((fader) => {
-    appearOnScroll.observe(fader);
-  });
-
-  sliders.forEach((slider) => {
-    appearOnScroll.observe(slider);
-  });
+const appearOptions = {
+  threshold: 0,
+  rootMargin: "0px 0px -200px 0px",
 };
+
+const appearOnScroll = new IntersectionObserver(function (
+  entries,
+  appearOnScroll
+) {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      return;
+    } else {
+      entry.target.classList.remove("opacity-0");
+      entry.target.classList.add("opacity-100");
+      if (entry.target.classList.contains("slide-in")) {
+        entry.target.classList.add("appear");
+      }
+      appearOnScroll.unobserve(entry.target);
+    }
+  });
+},
+appearOptions);
+
+faders.forEach((fader) => {
+  appearOnScroll.observe(fader);
+});
+
+sliders.forEach((slider) => {
+  appearOnScroll.observe(slider);
+});
