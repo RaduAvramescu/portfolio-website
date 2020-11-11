@@ -52,7 +52,7 @@ let data = [
   },
   {
     projectTitle: "WH2 JEOPARDY",
-    projectImage: "https://picsum.photos/400/200",
+    projectImage: "img/wh2-jeopardy.jpg",
     projectGif: "img/wh2-jeopardy.gif",
     projectDescription: "Jeopardy board based on Total War: Warhammer 2.",
     projectTechnologies:
@@ -62,7 +62,7 @@ let data = [
   },
   {
     projectTitle: "COVID-19 TRACKER",
-    projectImage: "https://picsum.photos/400/200",
+    projectImage: "img/covid-19-tracker.jpg",
     projectGif: "img/covid-19-tracker.gif",
     projectDescription:
       "COVID-19 tracker using ChartJS and public APIs, with country options.",
