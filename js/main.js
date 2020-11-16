@@ -84,7 +84,7 @@ let data = [
   },
   {
     projectTitle: "WEATHER APP",
-    projectImage: "https://picsum.photos/400/200",
+    projectImage: "img/weather-app.jpg",
     projectGif: "img/weather-app.gif",
     projectDescription:
       "Weather app showing data based on location, using a public weather API.",
