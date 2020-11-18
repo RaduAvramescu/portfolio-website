@@ -107,7 +107,9 @@ function projectFunction(projectArr) {
     <div class="card mb-5" id="${i}">
     <div class="overflow-hidden">
     <a data-toggle="modal" data-target="#myModal" onclick="modalOpen(${i});">
+    <div class="card-header">
     <img src="${projectArr[i].projectImage}" alt="${projectArr[i].projectTitle}" class="card-img-top w-100">
+    </div>
     </a>
     </div>
     <div class="card-body">
@@ -117,8 +119,10 @@ function projectFunction(projectArr) {
     <p class="font-weight-bold mb-3">TECHNOLOGIES USED</p>
     ${projectArr[i].projectTechnologies}
     </div>
+    <div class="card-footer">
     <a target="_blank" class="btn btn btn-outline-dark font-weight-bold card-btn" href="${projectArr[i].projectDemoURL}">DEMO</a> 
     <a target="_blank" class="btn btn-outline-dark font-weight-bold card-btn" href="${projectArr[i].projectCodeURL}">CODE</a>
+    </div>
     </div></div></div>`;
   }
 

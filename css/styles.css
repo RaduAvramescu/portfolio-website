@@ -127,8 +127,7 @@ header {
 /* Cards */
 
 .card {
-  border: 4px solid #6c757d;
-  border-bottom: 8px solid #6c757d;
+  border-width: 2px;
   transition: border-color 0.3s ease-out, transform 0.3s ease-out;
 }
 
@@ -137,8 +136,17 @@ header {
   transform: scale(1.05);
 }
 
+.card-header {
+  border: none;
+}
+
+.card-footer {
+  background-color: white;
+  border: none;
+}
+
 .card-btn {
-  letter-spacing: 4px;
+  letter-spacing: 4px !important;
 }
 
 /* Contact form */
