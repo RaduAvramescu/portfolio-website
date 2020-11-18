@@ -141,6 +141,10 @@ header {
   transform: scale(1.05);
 }
 
+.card-header {
+  padding: 0;
+}
+
 .card-header,
 .card-footer {
   background-color: whitesmoke;
