@@ -125,6 +125,7 @@ header {
 /* Cards */
 
 .card {
+  background-color: whitesmoke;
   border-width: 2px;
   transition: border-color 0.3s ease-out, transform 0.3s ease-out;
 }
@@ -134,12 +135,9 @@ header {
   transform: scale(1.05);
 }
 
-.card-header {
-  border: none;
-}
-
+.card-header,
 .card-footer {
-  background-color: white;
+  background-color: whitesmoke;
   border: none;
 }
 
