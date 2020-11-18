@@ -137,6 +137,10 @@ header {
   transform: scale(1.05);
 }
 
+.card-btn {
+  letter-spacing: 4px;
+}
+
 /* Contact form */
 
 .label {

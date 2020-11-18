@@ -117,8 +117,8 @@ function projectFunction(projectArr) {
     <p class="font-weight-bold mb-3">TECHNOLOGIES USED</p>
     ${projectArr[i].projectTechnologies}
     </div>
-    <a target="_blank" class="btn btn-primary" href="${projectArr[i].projectDemoURL}">DEMO</a> 
-    <a target="_blank" class="btn btn-secondary" href="${projectArr[i].projectCodeURL}">CODE</a>
+    <a target="_blank" class="btn btn btn-outline-dark font-weight-bold card-btn" href="${projectArr[i].projectDemoURL}">DEMO</a> 
+    <a target="_blank" class="btn btn-outline-dark font-weight-bold card-btn" href="${projectArr[i].projectCodeURL}">CODE</a>
     </div></div></div>`;
   }
 
