@@ -151,8 +151,12 @@ header {
   border: none;
 }
 
+.card-title {
+  letter-spacing: 2px;
+}
+
 .card-btn {
-  letter-spacing: 4px !important;
+  letter-spacing: 4px;
 }
 
 /* Contact form */
