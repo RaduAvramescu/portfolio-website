@@ -120,7 +120,7 @@ function projectFunction(projectArr) {
     ${projectArr[i].projectTechnologies}
     </div>
     <div class="card-footer">
-    <a target="_blank" class="btn btn btn-outline-dark font-weight-bold card-btn" href="${projectArr[i].projectDemoURL}">DEMO</a> 
+    <a target="_blank" class="btn btn btn-outline-dark font-weight-bold mr-5 card-btn" href="${projectArr[i].projectDemoURL}">DEMO</a> 
     <a target="_blank" class="btn btn-outline-dark font-weight-bold card-btn" href="${projectArr[i].projectCodeURL}">CODE</a>
     </div>
     </div></div></div>`;
