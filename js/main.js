@@ -115,14 +115,14 @@ function projectFunction(projectArr) {
     <div class="card-body">
     <h5 class="card-title">${projectArr[i].projectTitle}</h5>
     <p class="card-text mb-3">${projectArr[i].projectDescription}</p>
-    <div class="container mb-3">
+    <div class="container">
     <p class="font-weight-bold mb-3">TECHNOLOGIES USED</p>
     ${projectArr[i].projectTechnologies}
     </div>
     </div>
     <div class="card-footer">
-    <div class="row justify-content-around">
-    <a target="_blank" class="btn btn btn-outline-dark font-weight-bold mr-5 card-btn" href="${projectArr[i].projectDemoURL}">DEMO</a> 
+    <div class="row justify-content-around mb-2">
+    <a target="_blank" class="btn btn-outline-dark font-weight-bold card-btn" href="${projectArr[i].projectDemoURL}">DEMO</a> 
     <a target="_blank" class="btn btn-outline-dark font-weight-bold card-btn" href="${projectArr[i].projectCodeURL}">CODE</a>
     </div>
     </div>
