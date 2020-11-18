@@ -119,11 +119,14 @@ function projectFunction(projectArr) {
     <p class="font-weight-bold mb-3">TECHNOLOGIES USED</p>
     ${projectArr[i].projectTechnologies}
     </div>
+    </div>
     <div class="card-footer">
+    <div class="row justify-content-around">
     <a target="_blank" class="btn btn btn-outline-dark font-weight-bold mr-5 card-btn" href="${projectArr[i].projectDemoURL}">DEMO</a> 
     <a target="_blank" class="btn btn-outline-dark font-weight-bold card-btn" href="${projectArr[i].projectCodeURL}">CODE</a>
     </div>
-    </div></div></div>`;
+    </div>
+    </div></div>`;
   }
 
   document.getElementById("projectsContent").innerHTML = output;
