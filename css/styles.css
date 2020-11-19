@@ -43,6 +43,15 @@ svg:hover {
   transform: scale(1.2);
 }
 
+.card-footer a svg {
+  fill: #181616;
+}
+
+.card-footer a:hover svg {
+  transform: none;
+  fill: #fff;
+}
+
 .img-social:hover {
   opacity: 0.5;
 }
