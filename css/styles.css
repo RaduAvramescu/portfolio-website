@@ -43,6 +43,11 @@ svg:hover {
   transform: scale(1.2);
 }
 
+.btn-icon {
+  width: 1em;
+  height: 1em;
+}
+
 .card-footer a svg {
   fill: #181616;
 }
