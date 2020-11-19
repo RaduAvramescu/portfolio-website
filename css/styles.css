@@ -48,6 +48,10 @@ svg:hover {
   height: 1em;
 }
 
+a:hover .arrow-right {
+  transform: rotate(90deg);
+}
+
 .card-footer a svg {
   fill: #181616;
 }
