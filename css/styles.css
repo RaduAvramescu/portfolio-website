@@ -120,6 +120,7 @@ header {
 }
 
 .jumbotron .btn {
+  letter-spacing: 2px;
   animation: text-slide-up 1.3s ease;
 }
 
