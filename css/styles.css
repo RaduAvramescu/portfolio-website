@@ -2,7 +2,8 @@
 
 @font-face {
   font-family: "Open Sans";
-  src: url("../font/OpenSans-Regular.ttf") format("truetype");
+  src: url("../font/open-sans-v18-latin-regular.woff2") format("woff2"),
+    url("../font/open-sans-v18-latin-regular.woff") format("woff");
   font-display: swap;
 }
 
