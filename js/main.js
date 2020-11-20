@@ -108,7 +108,7 @@ function projectFunction(projectArr) {
     <div class="overflow-hidden">
     <a data-toggle="modal" data-target="#myModal" onclick="modalOpen(${i});">
     <div class="card-header">
-    <img src="${projectArr[i].projectImage}" alt="${projectArr[i].projectTitle}" class="card-img-top w-100">
+    <img src="${projectArr[i].projectImage}" alt="${projectArr[i].projectTitle}" class="card-img-top w-100 h-auto" width="400" height="200">
     </div>
     </a>
     </div>

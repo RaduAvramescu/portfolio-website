@@ -53,15 +53,6 @@ a:hover .arrow-right {
   transform: rotate(90deg);
 }
 
-.card-footer a svg {
-  fill: #181616;
-}
-
-.card-footer a:hover svg {
-  transform: none;
-  fill: #fff;
-}
-
 .img-social:hover {
   opacity: 0.5;
 }
@@ -177,6 +168,15 @@ header {
 
 .card-btn {
   letter-spacing: 4px;
+}
+
+.card-footer a svg {
+  fill: #181616;
+}
+
+.card-footer a:hover svg {
+  transform: none;
+  fill: #fff;
 }
 
 /* Contact form */
