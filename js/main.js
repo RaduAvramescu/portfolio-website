@@ -106,15 +106,16 @@ function projectFunction(projectArr) {
     output += `<div class="col-lg-4 slide-in from-left opacity-0">
     <div class="card mb-5" id="${i}">
     <div class="overflow-hidden">
-    <a data-toggle="modal" data-target="#myModal" onclick="modalOpen(${i});">
     <div class="card-header">
     <picture>
     <source type="image/webp" srcset="${projectArr[i].projectImage}.webp">
     <source type="image/jpeg" srcset="${projectArr[i].projectImage}.jpg">
+    <source type="image/gif" srcset="${projectArr[i].projectGif}">
+    <a target="_blank" href="weather-app" rel="noreferrer">
     <img src="${projectArr[i].projectImage}.jpg" alt="${projectArr[i].projectTitle}" class="card-img-top w-100 h-auto" width="400" height="200">
+    </a>
     </picture>
     </div>
-    </a>
     </div>
     <div class="card-body">
     <h3 class="card-title font-weight-bold">${projectArr[i].projectTitle}</h3>
@@ -147,37 +148,6 @@ function projectFunction(projectArr) {
 }
 
 projectFunction(data);
-
-// Modal
-
-let modal = document.getElementById("myModal");
-let modalHeading = document.getElementsByClassName("modal-title")[0];
-let modalBody = document.getElementsByClassName("modal-body")[0];
-
-function modalOpen(cardid) {
-  let modalBodyReplacement = document.getElementById(cardid).innerHTML;
-  modalBody.innerHTML = modalBodyReplacement;
-  let projectGif = data.map((a) => a.projectGif);
-  document
-    .getElementById("myModal")
-    .getElementsByClassName("card-img-top")[0]
-    .setAttribute("src", projectGif[cardid]);
-  document
-    .getElementById("myModal")
-    .getElementsByClassName("card-img-top")[0]
-    .setAttribute("style", "transition: none; filter: none; transform: none;");
-  modal.classList.add("d-block");
-  setTimeout(() => {
-    modal.classList.add("show");
-  }, 100);
-}
-
-function modalClose() {
-  modal.classList.remove("show");
-  setTimeout(() => {
-    modal.classList.remove("d-block");
-  }, 100);
-}
 
 // IntersectionObserver
 
