@@ -111,7 +111,6 @@ function projectFunction(projectArr) {
     <picture>
     <source type="image/webp" srcset="${projectArr[i].projectImage}.webp">
     <source type="image/jpeg" srcset="${projectArr[i].projectImage}.jpg">
-    <source type="image/gif" srcset="${projectArr[i].projectGif}">
     <img src="${projectArr[i].projectImage}.jpg" alt="${projectArr[i].projectTitle}" class="card-img-top w-100 h-auto" width="400" height="200">
     </picture>
     </a>
