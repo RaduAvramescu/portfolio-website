@@ -42,7 +42,7 @@ function toggleNav() {
 let data = [
   {
     projectTitle: "PERSONAL WEBSITE",
-    projectImage: "img/personal-website.jpg",
+    projectImage: "img/personal-website",
     projectGif: "img/personal-website.gif",
     projectDescription: "Personal website, built to showcase my portfolio.",
     projectTechnologies:
@@ -52,7 +52,7 @@ let data = [
   },
   {
     projectTitle: "WH2 JEOPARDY",
-    projectImage: "img/wh2-jeopardy.jpg",
+    projectImage: "img/wh2-jeopardy",
     projectGif: "img/wh2-jeopardy.gif",
     projectDescription: "Jeopardy board based on Total War: Warhammer 2.",
     projectTechnologies:
@@ -62,7 +62,7 @@ let data = [
   },
   {
     projectTitle: "COVID-19 TRACKER",
-    projectImage: "img/covid-19-tracker.jpg",
+    projectImage: "img/covid-19-tracker",
     projectGif: "img/covid-19-tracker.gif",
     projectDescription:
       "COVID-19 tracker using ChartJS and public APIs, with country options.",
@@ -73,7 +73,7 @@ let data = [
   },
   {
     projectTitle: "NPS SURVEY",
-    projectImage: "img/nps-survey.jpg",
+    projectImage: "img/nps-survey",
     projectGif: "img/nps-survey.gif",
     projectDescription:
       "Simple NPS Survey using SurveyJS and default template.",
@@ -84,7 +84,7 @@ let data = [
   },
   {
     projectTitle: "WEATHER APP",
-    projectImage: "img/weather-app.jpg",
+    projectImage: "img/weather-app",
     projectGif: "img/weather-app.gif",
     projectDescription:
       "Weather app showing data based on location, using a public weather API.",
@@ -108,7 +108,11 @@ function projectFunction(projectArr) {
     <div class="overflow-hidden">
     <a data-toggle="modal" data-target="#myModal" onclick="modalOpen(${i});">
     <div class="card-header">
-    <img src="${projectArr[i].projectImage}" alt="${projectArr[i].projectTitle}" class="card-img-top w-100 h-auto" width="400" height="200">
+    <picture>
+    <source type="image/webp" srcset="${projectArr[i].projectImage}.webp">
+    <source type="image/jpeg" srcset="${projectArr[i].projectImage}.jpg">
+    <img src="${projectArr[i].projectImage}.jpg" alt="${projectArr[i].projectTitle}" class="card-img-top w-100 h-auto" width="400" height="200">
+    </picture>
     </div>
     </a>
     </div>
