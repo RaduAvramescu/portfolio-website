@@ -99,7 +99,11 @@ header {
 
 /* Jumbotron */
 
-.jumbotron {
+.webp .jumbotron {
+  background: url("../img/jumbotron.webp") center/cover;
+}
+
+.no-webp .jumbotron {
   background: url("../img/jumbotron.jpg") center/cover;
 }
 
