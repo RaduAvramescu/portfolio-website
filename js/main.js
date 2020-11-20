@@ -113,7 +113,7 @@ function projectFunction(projectArr) {
     </a>
     </div>
     <div class="card-body">
-    <h5 class="card-title font-weight-bold">${projectArr[i].projectTitle}</h5>
+    <h3 class="card-title font-weight-bold">${projectArr[i].projectTitle}</h3>
     <p class="card-text mb-3">${projectArr[i].projectDescription}</p>
     <div class="container">
     <p class="font-weight-bold mb-3">TECHNOLOGIES USED</p>
