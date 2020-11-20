@@ -107,14 +107,14 @@ function projectFunction(projectArr) {
     <div class="card mb-5" id="${i}">
     <div class="overflow-hidden">
     <div class="card-header">
+    <a target="_blank" href="${projectArr[i].projectDemoURL}" rel="noreferrer">
     <picture>
     <source type="image/webp" srcset="${projectArr[i].projectImage}.webp">
     <source type="image/jpeg" srcset="${projectArr[i].projectImage}.jpg">
     <source type="image/gif" srcset="${projectArr[i].projectGif}">
-    <a target="_blank" href="${projectArr[i].projectDemoURL}" rel="noreferrer">
     <img src="${projectArr[i].projectImage}.jpg" alt="${projectArr[i].projectTitle}" class="card-img-top w-100 h-auto" width="400" height="200">
-    </a>
     </picture>
+    </a>
     </div>
     </div>
     <div class="card-body">
