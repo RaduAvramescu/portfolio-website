@@ -16,7 +16,6 @@ This is the repository for my personal website.
 - CSS3
 - Bootstrap
 - JavaScript
-- Modernizr
 - React
 
 ## Link
