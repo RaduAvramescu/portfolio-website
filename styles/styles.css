@@ -2,8 +2,8 @@
 
 @font-face {
   font-family: "Open Sans";
-  src: url("../font/open-sans-v18-latin-regular.woff2") format("woff2"),
-    url("../font/open-sans-v18-latin-regular.woff") format("woff");
+  src: url("../fonts/open-sans-v18-latin-regular.woff2") format("woff2"),
+    url("../fonts/open-sans-v18-latin-regular.woff") format("woff");
   font-display: swap;
 }
 
@@ -100,11 +100,11 @@ header {
 /* Jumbotron */
 
 .webp .jumbotron {
-  background: url("../img/jumbotron.webp") center/cover;
+  background: url("../images/jumbotron.webp") center/cover;
 }
 
 .no-webp .jumbotron {
-  background: url("../img/jumbotron.jpg") center/cover;
+  background: url("../images/jumbotron.jpg") center/cover;
 }
 
 .jumbotron h1 {
