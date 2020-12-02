@@ -4,9 +4,6 @@
     url("fonts/open-sans-v18-latin-regular.woff") format("woff");
   font-display: swap;
 }
-body {
-  font-family: "Open Sans", sans-serif;
-}
 .preloader {
   background-color: #ffffff;
   z-index: 9999;

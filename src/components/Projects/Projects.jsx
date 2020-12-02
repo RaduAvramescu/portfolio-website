@@ -3,7 +3,6 @@ import ProjectsItem from "../ProjectsItem/ProjectsItem";
 import data from "../../data/data.json";
 
 export default function Projects() {
-  const output = "test";
   return (
     <section id="projects">
       <div className="py-5 text-center">
