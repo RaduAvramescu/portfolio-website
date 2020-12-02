@@ -1,4 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
+
+import WOW from "wowjs";
 
 import {
   NavBar,
@@ -10,19 +12,27 @@ import {
 } from "./components";
 import "./App.css";
 
-function App() {
-  return (
-    <React.Fragment>
-      <NavBar />
-      <main>
-        <Jumbotron />
-        <Projects />
-        <About />
-        <Contact />
-      </main>
-      <Footer />
-    </React.Fragment>
-  );
+class App extends Component {
+  componentDidMount() {
+    new WOW.WOW({
+      live: false,
+    }).init();
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <NavBar />
+        <main>
+          <Jumbotron />
+          <Projects />
+          <About />
+          <Contact />
+        </main>
+        <Footer />
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;

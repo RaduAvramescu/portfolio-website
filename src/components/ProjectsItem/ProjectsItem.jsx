@@ -1,8 +1,10 @@
 import React from "react";
 
-export default function ProjectsItem({ data }) {
+export default function ProjectsItem({ data, delay }) {
   return (
-    <div className="col-lg-4 slide-in from-left opacity-0">
+    <div
+      className={`col-lg-4 wow animate__animated animate__fadeInUp ${delay}`}
+    >
       <div className="card mb-5" id="${i}">
         <div className="overflow-hidden">
           <div className="card-header">

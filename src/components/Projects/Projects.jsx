@@ -12,7 +12,11 @@ export default function Projects() {
         <div className="container mt-5" id="projectsContent">
           <div class="row">
             {data.map((item, i) => (
-              <ProjectsItem key={i} data={data[i]} />
+              <ProjectsItem
+                key={i}
+                data={data[i]}
+                delay={`animate__delay-${i}s`}
+              />
             ))}
           </div>
         </div>

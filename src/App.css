@@ -11,13 +11,7 @@
 a:hover {
   text-decoration: none;
 }
-/* .opacity-0 {
-  opacity: 0;
-} */
 
-.opacity-100 {
-  opacity: 1;
-}
 svg {
   transition: all 0.3s ease-out;
   margin: 0 0.5%;
