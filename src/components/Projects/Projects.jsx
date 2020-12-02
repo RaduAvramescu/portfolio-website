@@ -10,7 +10,7 @@ export default function Projects() {
           PROJECTS
         </h2>
         <div className="container mt-5" id="projectsContent">
-          <div class="row">
+          <div className="row">
             {data.map((item, i) => (
               <ProjectsItem
                 key={i}
