@@ -6,25 +6,20 @@ export default function ProjectsItem({ data, delay }) {
       className={`col-lg-4 wow animate__animated animate__fadeInUp ${delay}`}
     >
       <div className="card mb-5" id="${i}">
-        <div className="overflow-hidden">
-          <div className="card-header">
-            <a target="_blank" href={`${data.projectDemoURL}`} rel="noreferrer">
-              <picture>
-                <source
-                  type="image/webp"
-                  srcSet={`${data.projectImage}.webp`}
-                />
-                <source type="image/jpeg" srcSet={`${data.projectImage}.jpg`} />
-                <img
-                  src={`${data.projectImage}`}
-                  alt={`${data.projectTitle}`}
-                  className="card-img-top w-100 h-auto"
-                  width="400"
-                  height="200"
-                />
-              </picture>
-            </a>
-          </div>
+        <div className="card-header overflow-hidden">
+          <a target="_blank" href={`${data.projectDemoURL}`} rel="noreferrer">
+            <picture>
+              <source type="image/webp" srcSet={`${data.projectImage}.webp`} />
+              <source type="image/jpeg" srcSet={`${data.projectImage}.jpg`} />
+              <img
+                src={`${data.projectImage}`}
+                alt={`${data.projectTitle}`}
+                className="card-img-top w-100 h-auto"
+                width="400"
+                height="200"
+              />
+            </picture>
+          </a>
         </div>
         <div className="card-body">
           <h3 className="card-title font-weight-bold">{data.projectTitle}</h3>
