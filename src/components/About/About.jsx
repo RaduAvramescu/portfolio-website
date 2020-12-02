@@ -4,16 +4,16 @@ export default function NavBar() {
   return (
     <section id="about">
       <div className="section-alt-row py-5 text-center">
-        <h2 className="section-title font-weight-bold fade-in opacity-0">
+        <h2 className="section-title font-weight-bold wow animate__animated animate__fadeIn">
           ABOUT
         </h2>
-        <h3 className="section-description my-5 fade-in opacity-0">
+        <h3 className="section-description my-5 wow animate__animated animate__fadeIn">
           I'm a frontend developer interested in staying up to date with
           technologies and constantly learning. Below is a collection of the
           technologies I use.
         </h3>
         <div className="col-md-12">
-          <div className="fade-in opacity-0">
+          <div className="wow animate__animated animate__fadeIn">
             <div className="container d-flex justify-content-center align-items-center">
               <div className="slider d-flex overflow-hidden">
                 <div className="slide d-flex align-items-center">

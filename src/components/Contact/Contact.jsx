@@ -4,10 +4,10 @@ export default function Contact() {
   return (
     <section id="contact">
       <div className="py-5">
-        <h2 className="section-title font-weight-bold text-center fade-in opacity-0">
+        <h2 className="section-title font-weight-bold text-center wow animate__animated animate__fadeIn">
           CONTACT
         </h2>
-        <div className="container mt-5 fade-in opacity-0">
+        <div className="container mt-5 wow animate__animated animate__fadeIn">
           <form action="https://formspree.io/xwkrdeyq" method="POST">
             <div className="form-row justify-content-between">
               <div className="form-group col-md-5">
