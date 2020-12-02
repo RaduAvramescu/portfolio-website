@@ -27,6 +27,8 @@ export default class NavBar extends Component {
       prevScrollPos: curScrollPos,
       isVisible,
     });
+
+    if (!isVisible && !this.state.isCollapsed) this.handleCollapse();
   };
 
   handleCollapse = () =>
