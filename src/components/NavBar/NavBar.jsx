@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function NavBar() {
+const NavBar = (props) => {
+  const [isCollapsed, setIsCollapsed] = useState(true);
+
+  const handleCollapse = () => setIsCollapsed(!isCollapsed);
+
   return (
     <header id="header" className="fixed-top">
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -10,23 +14,26 @@ export default function NavBar() {
         <button
           className="navbar-toggler"
           type="button"
-          data-toggle=""
+          data-toggle="collapse"
           data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
-          aria-expanded="false"
+          aria-expanded={!isCollapsed ? true : false}
           aria-label="Toggle navigation"
-          // onClick="toggleNav();"
+          onClick={handleCollapse}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div
+          className={`${isCollapsed ? "collapse" : ""} navbar-collapse`}
+          id="navbarSupportedContent"
+        >
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
               <a
                 className="nav-link px-0 mx-3"
                 href="/#"
-                // onClick="toggleNav();"
+                onClick={handleCollapse}
               >
                 HOME
               </a>
@@ -35,7 +42,7 @@ export default function NavBar() {
               <a
                 className="nav-link px-0 mx-3"
                 href="#projects"
-                // onClick="toggleNav();"
+                onClick={handleCollapse}
               >
                 PROJECTS
               </a>
@@ -44,7 +51,7 @@ export default function NavBar() {
               <a
                 className="nav-link px-0 mx-3"
                 href="#about"
-                // onClick="toggleNav();"
+                onClick={handleCollapse}
               >
                 ABOUT
               </a>
@@ -53,7 +60,7 @@ export default function NavBar() {
               <a
                 className="nav-link px-0 mx-3"
                 href="#contact"
-                // onClick="toggleNav();"
+                onClick={handleCollapse}
               >
                 CONTACT
               </a>
@@ -63,4 +70,6 @@ export default function NavBar() {
       </nav>
     </header>
   );
-}
+};
+
+export default NavBar;
