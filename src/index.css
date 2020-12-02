@@ -2,3 +2,7 @@ body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
 }
+
+div[class="row"] > div {
+  --animate-delay: 0.2s;
+}
