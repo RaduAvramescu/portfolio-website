@@ -1,0 +1,37 @@
+.card {
+  background-color: whitesmoke;
+  border-width: 2px;
+  transition: border-color 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.card:hover {
+  border-color: black;
+  transform: scale(1.05);
+}
+
+.card-header {
+  padding: 0;
+}
+
+.card-header,
+.card-footer {
+  background-color: whitesmoke;
+  border: none;
+}
+
+.card-title {
+  letter-spacing: 2px;
+}
+
+.card-btn {
+  letter-spacing: 4px;
+}
+
+.card-footer a svg {
+  fill: #181616;
+}
+
+.card-footer a:hover svg {
+  transform: none;
+  fill: #fff;
+}

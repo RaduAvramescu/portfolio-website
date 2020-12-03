@@ -1,12 +1,14 @@
 import React from "react";
 
+import styles from "./ProjectsItem.module.css";
+
 export default function ProjectsItem({ data, delay }) {
   return (
     <div
       className={`col-lg-4 wow animate__animated animate__fadeInUp ${delay}`}
     >
-      <div className="card mb-5">
-        <div className="card-header overflow-hidden">
+      <div className={`card ${styles.card} mb-5`}>
+        <div className={`card-header ${styles["card-header"]} overflow-hidden`}>
           <a target="_blank" href={`${data.projectDemoURL}`} rel="noreferrer">
             <picture>
               <source type="image/webp" srcSet={`${data.projectImage}.webp`} />
@@ -22,7 +24,9 @@ export default function ProjectsItem({ data, delay }) {
           </a>
         </div>
         <div className="card-body">
-          <h3 className="card-title font-weight-bold">{data.projectTitle}</h3>
+          <h3 className={`card-title ${styles["card-title"]} font-weight-bold`}>
+            {data.projectTitle}
+          </h3>
           <p className="card-text mb-3">{data.projectDescription}</p>
           <div className="container">
             <p className="font-weight-bold mb-3">TECHNOLOGIES USED</p>
@@ -31,11 +35,11 @@ export default function ProjectsItem({ data, delay }) {
             />
           </div>
         </div>
-        <div className="card-footer">
+        <div className={`card-footer ${styles["card-footer"]}`}>
           <div className="row justify-content-around mb-2">
             <a
               target="_blank"
-              className="d-flex align-items-center btn btn-outline-dark font-weight-bold card-btn"
+              className={`d-flex align-items-center btn btn-outline-dark font-weight-bold card-btn ${styles["card-btn"]}`}
               href={`${data.projectDemoURL}`}
               rel="noreferrer"
             >
@@ -57,7 +61,7 @@ export default function ProjectsItem({ data, delay }) {
             </a>
             <a
               target="_blank"
-              className="d-flex align-items-center btn btn-outline-dark font-weight-bold card-btn"
+              className={`d-flex align-items-center btn btn-outline-dark font-weight-bold card-btn ${styles["card-btn"]}`}
               href={`${data.projectCodeURL}`}
               rel="noreferrer"
             >
