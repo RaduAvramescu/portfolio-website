@@ -5,7 +5,7 @@ import styles from "./ProjectsItem.module.css";
 export default function ProjectsItem({ data, delay }) {
   return (
     <div
-      className={`col-lg-4 wow animate__animated animate__fadeInUp ${delay}`}
+      className={`col-sm-6 col-md-6 col-lg-4 justify-content-center align-items-stretch d-flex wow animate__animated animate__fadeInUp ${delay}`}
     >
       <div className={`card ${styles.card} mb-5`}>
         <div
