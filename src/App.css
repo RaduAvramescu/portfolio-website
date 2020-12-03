@@ -16,9 +16,6 @@ svg:hover {
   width: 1em;
   height: 1em;
 }
-a:hover .arrow-right {
-  transform: rotate(90deg);
-}
 .img-social:hover {
   opacity: 0.5;
 }
