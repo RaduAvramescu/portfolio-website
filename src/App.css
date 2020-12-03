@@ -21,16 +21,6 @@ svg:hover {
   height: 1em;
 }
 
-.overflow-hidden img {
-  border-radius: 0;
-  transition: transform 0.5s ease, filter 1s ease;
-}
-
-.overflow-hidden img:hover {
-  cursor: pointer;
-  transform: scale(1.3);
-}
-
 .section-alt-row {
   background-color: #212527;
   color: whitesmoke;

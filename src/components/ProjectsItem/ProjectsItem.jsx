@@ -8,7 +8,9 @@ export default function ProjectsItem({ data, delay }) {
       className={`col-lg-4 wow animate__animated animate__fadeInUp ${delay}`}
     >
       <div className={`card ${styles.card} mb-5`}>
-        <div className={`card-header ${styles["card-header"]} overflow-hidden`}>
+        <div
+          className={`card-header ${styles["card-header"]} overflow-hidden ${styles["overflow-hidden"]}`}
+        >
           <a target="_blank" href={`${data.projectDemoURL}`} rel="noreferrer">
             <picture>
               <source type="image/webp" srcSet={`${data.projectImage}.webp`} />
