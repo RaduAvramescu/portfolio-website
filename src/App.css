@@ -16,9 +16,6 @@ svg:hover {
   width: 1em;
   height: 1em;
 }
-.img-social:hover {
-  opacity: 0.5;
-}
 .overflow-hidden img {
   border-radius: 0;
   transition: transform 0.5s ease, filter 1s ease;

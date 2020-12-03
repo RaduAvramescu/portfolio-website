@@ -1,5 +1,7 @@
 import React from "react";
 
+import styles from "./Footer.module.css";
+
 export default function Footer() {
   return (
     <footer className="section-alt-row" id="footer">
@@ -11,7 +13,11 @@ export default function Footer() {
           aria-label="GitHub"
           rel="noreferrer"
         >
-          <svg viewBox="0 0 128 128" className="img-social" width="40">
+          <svg
+            viewBox="0 0 128 128"
+            className={styles["img-social"]}
+            width="40"
+          >
             <path
               fill="white"
               fillRule="evenodd"
