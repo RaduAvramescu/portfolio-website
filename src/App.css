@@ -38,20 +38,6 @@ header {
 .header-hide {
   transform: translateY(-100%);
 }
-.navbar-dark .navbar-brand {
-  color: rgba(255, 255, 255, 0.8);
-}
-.navbar-dark .navbar-brand:hover {
-  color: rgba(255, 255, 255, 1);
-}
-.navbar-brand,
-.nav-link {
-  transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
-}
-.nav-link:hover {
-  border-bottom: 1px solid #ffffff;
-  margin-bottom: -1px;
-}
 @supports not (background: url("images/jumbotron.webp") center/cover) {
   .jumbotron {
     background: url("images/jumbotron.jpg") center/cover;
@@ -185,20 +171,6 @@ textarea.form-control {
   }
 }
 @media only screen and (max-width: 990px) {
-  .navbar-collapse {
-    overflow: hidden;
-    max-height: 200px;
-    transition: max-height 0.5s ease-in;
-  }
-  .collapse:not(.show) {
-    display: block;
-    max-height: 0;
-    transition: max-height 0.5s ease-out;
-  }
-  .nav-link:hover {
-    border-bottom: none;
-    margin-bottom: 0px;
-  }
   .jumbotron h1 {
     font-size: 50px;
   }

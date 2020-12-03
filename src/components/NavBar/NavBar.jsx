@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import styles from "./NavBar.module.css";
+
 export default class NavBar extends Component {
   constructor(props) {
     super(props);
@@ -40,8 +42,13 @@ export default class NavBar extends Component {
         id="header"
         className={`fixed-top ${!this.state.isVisible ? `header-hide` : ``}`}
       >
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a className="navbar-brand font-weight-bold" href="/#">
+        <nav
+          className={`navbar navbar-expand-lg navbar-dark ${styles["navbar-dark"]} bg-dark`}
+        >
+          <a
+            className={`navbar-brand ${styles["navbar-brand"]} font-weight-bold`}
+            href="/#"
+          >
             RADU AVRAMESCU
           </a>
           <button
@@ -59,14 +66,14 @@ export default class NavBar extends Component {
 
           <div
             className={`${
-              this.state.isCollapsed ? "collapse" : ""
-            } navbar-collapse`}
+              this.state.isCollapsed ? `collapse ${styles["collapse"]}` : ""
+            } navbar-collapse ${styles["navbar-collapse"]}`}
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <a
-                  className="nav-link px-0 mx-3"
+                  className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
                   href="/#"
                   onClick={this.handleCollapse}
                 >
@@ -75,7 +82,7 @@ export default class NavBar extends Component {
               </li>
               <li className="nav-item">
                 <a
-                  className="nav-link px-0 mx-3"
+                  className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
                   href="#projects"
                   onClick={this.handleCollapse}
                 >
@@ -84,7 +91,7 @@ export default class NavBar extends Component {
               </li>
               <li className="nav-item">
                 <a
-                  className="nav-link px-0 mx-3"
+                  className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
                   href="#about"
                   onClick={this.handleCollapse}
                 >
@@ -93,7 +100,7 @@ export default class NavBar extends Component {
               </li>
               <li className="nav-item">
                 <a
-                  className="nav-link px-0 mx-3"
+                  className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
                   href="#contact"
                   onClick={this.handleCollapse}
                 >
