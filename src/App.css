@@ -160,21 +160,6 @@ textarea.form-control {
 .btn-submit {
   letter-spacing: 1px;
 }
-.fade-in {
-  transition: opacity 0.25s ease-in;
-}
-.slide-in {
-  transition: opacity 0.25s ease-in, transform 0.4s ease-in;
-}
-.from-left {
-  transform: translateX(-50%);
-}
-.from-right {
-  transform: translateX(50%);
-}
-.appear {
-  transform: translateX(0);
-}
 .slider {
   width: 980px;
   height: 100px;
