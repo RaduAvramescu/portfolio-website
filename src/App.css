@@ -160,19 +160,6 @@ textarea.form-control {
 .btn-submit {
   letter-spacing: 1px;
 }
-.slider {
-  width: 980px;
-  height: 100px;
-}
-.slider:hover .slide {
-  animation-play-state: paused;
-}
-.slide {
-  animation: scroll-left 10s linear infinite;
-}
-.slide svg {
-  padding: 0 2rem;
-}
 footer {
   background-color: #212527;
   color: whitesmoke;
@@ -199,14 +186,6 @@ footer {
   }
   to {
     border-right-color: transparent;
-  }
-}
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
   }
 }
 @media only screen and (max-width: 990px) {

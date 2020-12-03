@@ -1,0 +1,22 @@
+.slider {
+  width: 980px;
+  height: 100px;
+}
+.slider:hover .slide {
+  animation-play-state: paused;
+}
+.slide {
+  animation: scroll-left 10s linear infinite;
+}
+.slide svg {
+  padding: 0 2rem;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

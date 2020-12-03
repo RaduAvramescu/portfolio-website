@@ -1,5 +1,7 @@
 import React from "react";
 
+import styles from "./About.module.css";
+
 export default function NavBar() {
   return (
     <section id="about">
@@ -15,8 +17,8 @@ export default function NavBar() {
         <div className="col-md-12">
           <div className="wow animate__animated animate__fadeIn">
             <div className="container d-flex justify-content-center align-items-center">
-              <div className="slider d-flex overflow-hidden">
-                <div className="slide d-flex align-items-center">
+              <div className={`${styles.slider} d-flex overflow-hidden`}>
+                <div className={`${styles.slide} d-flex align-items-center`}>
                   <svg viewBox="0 0 128 128" height="70">
                     <path
                       fill="#E44D26"
@@ -115,7 +117,7 @@ export default function NavBar() {
                   </svg>
                 </div>
 
-                <div className="slide d-flex align-items-center">
+                <div className={`${styles.slide} d-flex align-items-center`}>
                   <svg viewBox="0 0 128 128" height="70">
                     <path
                       fill="#E44D26"
