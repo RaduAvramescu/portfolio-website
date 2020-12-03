@@ -5,7 +5,7 @@ export default function ProjectsItem({ data, delay }) {
     <div
       className={`col-lg-4 wow animate__animated animate__fadeInUp ${delay}`}
     >
-      <div className="card mb-5" id="${i}">
+      <div className="card mb-5">
         <div className="card-header overflow-hidden">
           <a target="_blank" href={`${data.projectDemoURL}`} rel="noreferrer">
             <picture>
