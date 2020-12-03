@@ -40,7 +40,9 @@ export default class NavBar extends Component {
     return (
       <header
         id="header"
-        className={`fixed-top ${!this.state.isVisible ? `header-hide` : ``}`}
+        className={`fixed-top ${
+          !this.state.isVisible ? `${styles["header-hide"]}` : ``
+        }`}
       >
         <nav
           className={`navbar navbar-expand-lg navbar-dark ${styles["navbar-dark"]} bg-dark`}

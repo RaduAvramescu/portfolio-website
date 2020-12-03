@@ -3,16 +3,20 @@
     background: url("../../images/jumbotron.jpg") center/cover;
   }
 }
+
 .jumbotron {
   background: url("../../images/jumbotron.webp") center/cover;
 }
+
 .jumbotron h1 {
   font-size: 100px;
 }
+
 .jumbotron h2 {
   font-size: 60px;
   animation: text-slide-up 1s ease;
 }
+
 .jumbotron .btn {
   letter-spacing: 2px;
   animation: text-slide-up 1.3s ease;
@@ -22,10 +26,12 @@
   .jumbotron h1 {
     font-size: 50px;
   }
+
   .jumbotron h2 {
     font-size: 30px;
   }
 }
+
 @media only screen and (min-width: 1200px) {
   .jumbotron h1 {
     margin: 0 auto;
@@ -48,6 +54,7 @@
     transform: translateY(0);
   }
 }
+
 @keyframes text-animation {
   from {
     width: 0;
@@ -56,6 +63,7 @@
     width: 100%;
   }
 }
+
 @keyframes cursor-animation {
   from {
     border-right-color: red;

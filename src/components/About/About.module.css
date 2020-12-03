@@ -2,12 +2,15 @@
   width: 980px;
   height: 100px;
 }
+
 .slider:hover .slide {
   animation-play-state: paused;
 }
+
 .slide {
   animation: scroll-left 10s linear infinite;
 }
+
 .slide svg {
   padding: 0 2rem;
 }

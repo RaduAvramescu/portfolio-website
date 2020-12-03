@@ -30,13 +30,6 @@ a:hover .arrow-right {
   cursor: pointer;
   transform: scale(1.3);
 }
-header {
-  transform: translateY(0);
-  transition: all 0.3s ease-in-out;
-}
-.header-hide {
-  transform: translateY(-100%);
-}
 .section-alt-row {
   background-color: #212527;
   color: whitesmoke;
