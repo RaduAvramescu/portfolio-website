@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer id="footer">
+    <footer className="section-alt-row" id="footer">
       <div className="container py-5 text-center">
         <p>&copy; 2020 Radu Avramescu. All rights reserved.</p>
         <a

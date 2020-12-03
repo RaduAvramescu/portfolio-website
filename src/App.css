@@ -160,10 +160,6 @@ textarea.form-control {
 .btn-submit {
   letter-spacing: 1px;
 }
-footer {
-  background-color: #212527;
-  color: whitesmoke;
-}
 @keyframes text-slide-up {
   0% {
     transform: translateY(300px);
