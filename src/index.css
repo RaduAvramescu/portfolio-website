@@ -3,6 +3,13 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/open-sans-v18-latin-regular.woff2") format("woff2"),
+    url("fonts/open-sans-v18-latin-regular.woff") format("woff");
+  font-display: swap;
+}
+
 div[class="row"] > div {
   --animate-delay: 0.2s;
 }
