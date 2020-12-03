@@ -1,16 +1,20 @@
 import React from "react";
 
+import styles from "./Jumbotron.module.css";
+
 export default function Jumbotron() {
   return (
     <section id="jumbotron">
-      <div className="jumbotron jumbotron-fluid d-flex justify-content-center vh-100 mb-0">
+      <div
+        className={`jumbotron ${styles.jumbotron} jumbotron-fluid d-flex justify-content-center vh-100 mb-0`}
+      >
         <div className="container my-auto text-center">
           <div className="intro overflow-hidden">
             <h1 className="font-weight-bold">RADU AVRAMESCU</h1>
             <h2>Frontend Developer</h2>
             <div className="d-flex justify-content-center">
               <a
-                className="d-flex align-items-center text-nowrap btn btn-dark btn-lg mt-3 px-4 py-3 font-weight-bold"
+                className={`d-flex align-items-center text-nowrap btn ${styles.btn} btn-dark btn-lg mt-3 px-4 py-3 font-weight-bold`}
                 href="#projects"
               >
                 VIEW MY PROJECTS

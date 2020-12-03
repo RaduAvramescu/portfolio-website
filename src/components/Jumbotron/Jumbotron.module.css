@@ -1,0 +1,66 @@
+@supports not (background: url("images/jumbotron.webp") center/cover) {
+  .jumbotron {
+    background: url("../../images/jumbotron.jpg") center/cover;
+  }
+}
+.jumbotron {
+  background: url("../../images/jumbotron.webp") center/cover;
+}
+.jumbotron h1 {
+  font-size: 100px;
+}
+.jumbotron h2 {
+  font-size: 60px;
+  animation: text-slide-up 1s ease;
+}
+.jumbotron .btn {
+  letter-spacing: 2px;
+  animation: text-slide-up 1.3s ease;
+}
+
+@media only screen and (max-width: 990px) {
+  .jumbotron h1 {
+    font-size: 50px;
+  }
+  .jumbotron h2 {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .jumbotron h1 {
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    border-right: solid 0.1em red;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: "Source Code Pro", monospace;
+    letter-spacing: 0.15em;
+    animation: text-animation 2s steps(29, end) 1s 1 normal both,
+      cursor-animation 600ms steps(29, end) infinite;
+  }
+}
+
+@keyframes text-slide-up {
+  0% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes text-animation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes cursor-animation {
+  from {
+    border-right-color: red;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
