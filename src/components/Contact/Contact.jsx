@@ -5,11 +5,11 @@ import styles from "./Contact.module.css";
 export default function Contact() {
   return (
     <section id="contact">
-      <div className="py-5">
+      <div className="section-padding">
         <h2 className="section-title font-weight-bold text-center wow animate__animated animate__fadeIn">
           CONTACT
         </h2>
-        <div className="container mt-5 wow animate__animated animate__fadeIn">
+        <div className="container wow animate__animated animate__fadeIn">
           <form action="https://formspree.io/xwkrdeyq" method="POST">
             <div className="form-row justify-content-between">
               <div className={`col-md-5 form-group ${styles["form-group"]}`}>

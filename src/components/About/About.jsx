@@ -5,11 +5,11 @@ import styles from "./About.module.css";
 export default function NavBar() {
   return (
     <section id="about">
-      <div className="section-alt-row py-5 text-center">
+      <div className="section-alt-row section-padding text-center">
         <h2 className="section-title font-weight-bold wow animate__animated animate__fadeIn">
           ABOUT
         </h2>
-        <h3 className="section-description my-5 wow animate__animated animate__fadeIn">
+        <h3 className="section-description mb-5 wow animate__animated animate__fadeIn">
           I'm a frontend developer interested in staying up to date with
           technologies and constantly learning. Below is a collection of the
           technologies I use.
