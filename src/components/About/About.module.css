@@ -1,6 +1,5 @@
 .slider {
-  width: 980px;
-  height: 100px;
+  max-width: 980px;
 }
 
 .slider:hover .slide {
