@@ -1,0 +1,56 @@
+.label {
+  font-size: 20px;
+  color: #1e2529;
+}
+
+.label:hover {
+  cursor: pointer;
+  color: #1e252999;
+}
+
+.form-group {
+  margin-bottom: 3rem;
+}
+
+.form-group .label {
+  position: absolute;
+  top: 0px;
+  transition: all 0.3s ease;
+}
+
+.form-control {
+  border: none;
+  height: 40px;
+  padding: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #212527;
+}
+
+.form-control:focus + .label,
+.form-control:valid + .label,
+input[type="email"]:not(:placeholder-shown) + .label {
+  transform: translateY(-30px);
+}
+
+input:invalid,
+textarea:invalid {
+  box-shadow: none;
+}
+
+.form-control:focus,
+.form-control:valid,
+input[type="email"]:not(:placeholder-shown) {
+  box-shadow: none;
+  border-bottom: 2px solid green;
+  transition: border-bottom 0.3s ease;
+}
+
+textarea.form-control {
+  padding-top: 8px;
+  height: 40px;
+  resize: none;
+}
+
+.btn-submit {
+  letter-spacing: 1px;
+}

@@ -1,5 +1,7 @@
 import React from "react";
 
+import styles from "./Contact.module.css";
+
 export default function Contact() {
   return (
     <section id="contact">
@@ -10,41 +12,41 @@ export default function Contact() {
         <div className="container mt-5 wow animate__animated animate__fadeIn">
           <form action="https://formspree.io/xwkrdeyq" method="POST">
             <div className="form-row justify-content-between">
-              <div className="form-group col-md-5">
+              <div className={`col-md-5 form-group ${styles["form-group"]}`}>
                 <input
-                  className="form-control"
+                  className={`form-control ${styles["form-control"]}`}
                   type="text"
                   name="name"
                   id="name"
                   required
                 />
-                <label htmlFor="name" className="label">
+                <label htmlFor="name" className={`${styles.label}`}>
                   NAME
                 </label>
               </div>
 
-              <div className="form-group col-md-5">
+              <div className={`col-md-5 form-group ${styles["form-group"]}`}>
                 <input
-                  className="form-control"
+                  className={`form-control ${styles["form-control"]}`}
                   type="email"
                   name="_replyto"
                   id="email"
                   required
                   placeholder=" "
                 />
-                <label htmlFor="email" className="label">
+                <label htmlFor="email" className={`${styles.label}`}>
                   EMAIL
                 </label>
               </div>
 
-              <div className="form-group col-md-12">
+              <div className={`col-md-12 form-group ${styles["form-group"]}`}>
                 <textarea
-                  className="form-control"
+                  className={`form-control ${styles["form-control"]}`}
                   name="message"
                   id="message"
                   required
                 ></textarea>
-                <label htmlFor="message" className="label">
+                <label htmlFor="message" className={`${styles.label}`}>
                   MESSAGE
                 </label>
               </div>
@@ -52,7 +54,7 @@ export default function Contact() {
               <div className="col-md-12 text-center">
                 <button
                   type="submit"
-                  className="btn btn-dark btn-lg btn-submit"
+                  className={`btn btn-dark btn-lg ${styles["btn-submit"]}`}
                 >
                   SUBMIT
                 </button>
