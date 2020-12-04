@@ -30,7 +30,7 @@ export default function ProjectsItem({ data, delay }) {
             {data.projectTitle}
           </h3>
           <p className="card-text">{data.projectDescription}</p>
-          <p className="font-weight-bold">TECHNOLOGIES USED</p>
+          <p className="card-text font-weight-bold">TECHNOLOGIES USED</p>
           <div dangerouslySetInnerHTML={{ __html: data.projectTechnologies }} />
         </div>
         <div className={`card-footer ${styles["card-footer"]}`}>
