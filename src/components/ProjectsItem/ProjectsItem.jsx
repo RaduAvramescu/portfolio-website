@@ -29,9 +29,9 @@ export default function ProjectsItem({ data, delay }) {
           <h3 className={`card-title ${styles["card-title"]} font-weight-bold`}>
             {data.projectTitle}
           </h3>
-          <p className="card-text mb-3">{data.projectDescription}</p>
+          <p className="card-text">{data.projectDescription}</p>
           <div className="container">
-            <p className="font-weight-bold mb-3">TECHNOLOGIES USED</p>
+            <p className="font-weight-bold">TECHNOLOGIES USED</p>
             <div
               dangerouslySetInnerHTML={{ __html: data.projectTechnologies }}
             />
