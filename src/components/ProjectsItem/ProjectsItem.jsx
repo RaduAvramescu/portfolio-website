@@ -18,7 +18,7 @@ export default function ProjectsItem({ data, delay }) {
               <img
                 src={`${data.projectImage}`}
                 alt={`${data.projectTitle}`}
-                className="card-img-top w-100 h-auto"
+                className="card-img-top"
                 width="400"
                 height="200"
               />
