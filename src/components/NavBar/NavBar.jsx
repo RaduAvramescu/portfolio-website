@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 import styles from "./NavBar.module.css";
 
@@ -12,6 +13,10 @@ export default class NavBar extends Component {
       isCollapsed: true,
     };
   }
+
+  handleScrollToTop = () => {
+    scroll.scrollToTop();
+  };
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
@@ -50,6 +55,7 @@ export default class NavBar extends Component {
           <a
             className={`navbar-brand ${styles["navbar-brand"]} font-weight-bold`}
             href="/#"
+            onClick={this.handleScrollToTop}
           >
             RADU AVRAMESCU
           </a>
