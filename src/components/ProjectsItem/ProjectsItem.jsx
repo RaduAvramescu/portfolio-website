@@ -21,6 +21,7 @@ export default function ProjectsItem({ data, delay }) {
                 className="card-img-top h-auto"
                 width="400"
                 height="200"
+                loading="lazy"
               />
             </picture>
           </a>
