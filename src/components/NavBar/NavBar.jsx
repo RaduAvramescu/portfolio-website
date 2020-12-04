@@ -52,13 +52,13 @@ export default class NavBar extends Component {
         <nav
           className={`navbar navbar-expand-lg navbar-dark ${styles["navbar-dark"]} bg-dark`}
         >
-          <a
+          <Link
             className={`navbar-brand ${styles["navbar-brand"]} font-weight-bold`}
             href="/#"
             onClick={this.handleScrollToTop}
           >
             RADU AVRAMESCU
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -80,40 +80,42 @@ export default class NavBar extends Component {
           >
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <a
+                <Link
                   className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
-                  href="/#"
-                  onClick={this.handleCollapse}
+                  onClick={this.handleScrollToTop}
                 >
                   HOME
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a
+                <Link
                   className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
-                  href="#projects"
+                  to="projects"
+                  smooth
                   onClick={this.handleCollapse}
                 >
                   PROJECTS
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a
+                <Link
                   className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
-                  href="#about"
+                  to="about"
+                  smooth
                   onClick={this.handleCollapse}
                 >
                   ABOUT
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a
+                <Link
                   className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
-                  href="#contact"
+                  to="contact"
+                  smooth
                   onClick={this.handleCollapse}
                 >
                   CONTACT
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
