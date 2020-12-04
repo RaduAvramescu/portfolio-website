@@ -30,12 +30,8 @@ export default function ProjectsItem({ data, delay }) {
             {data.projectTitle}
           </h3>
           <p className="card-text">{data.projectDescription}</p>
-          <div className="container">
-            <p className="font-weight-bold">TECHNOLOGIES USED</p>
-            <div
-              dangerouslySetInnerHTML={{ __html: data.projectTechnologies }}
-            />
-          </div>
+          <p className="font-weight-bold">TECHNOLOGIES USED</p>
+          <div dangerouslySetInnerHTML={{ __html: data.projectTechnologies }} />
         </div>
         <div className={`card-footer ${styles["card-footer"]}`}>
           <div className="row justify-content-around mb-2">
