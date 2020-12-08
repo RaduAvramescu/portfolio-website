@@ -13,3 +13,7 @@ body {
 div[class="row"] > div {
   --animate-delay: 0.1s;
 }
+
+.animate__animated.animate__fadeIn {
+  --animate-duration: 1.3s;
+}
