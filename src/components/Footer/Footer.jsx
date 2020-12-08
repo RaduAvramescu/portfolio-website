@@ -29,7 +29,7 @@ export default function Footer() {
         </a>
         <a
           target="_blank"
-          href="https://www.linkedin.com/in/radu-avramescu-4863a486/"
+          href="https://www.linkedin.com/in/radu-a-4863a486/"
           aria-label="LinkedIn"
           rel="noreferrer"
         >
