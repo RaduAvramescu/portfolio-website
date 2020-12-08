@@ -26,10 +26,6 @@ a:hover .arrow-right {
   transform: rotate(90deg);
 }
 
-.img-social:hover {
-  opacity: 0.5;
-}
-
 @media only screen and (max-width: 990px) {
   .jumbotron h1 {
     font-size: 50px;

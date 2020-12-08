@@ -38,11 +38,7 @@ export default function Jumbotron() {
               aria-label="GitHub"
               rel="noreferrer"
             >
-              <svg
-                viewBox="0 0 128 128"
-                className={styles["img-social"]}
-                width="40"
-              >
+              <svg viewBox="0 0 128 128" className="img-social" width="40">
                 <path
                   fill="black"
                   fillRule="evenodd"
@@ -58,11 +54,7 @@ export default function Jumbotron() {
               aria-label="LinkedIn"
               rel="noreferrer"
             >
-              <svg
-                viewBox="0 0 128 128"
-                className={styles["img-social"]}
-                width="40"
-              >
+              <svg viewBox="0 0 128 128" className="img-social" width="40">
                 <path
                   fill="black"
                   id="plain"

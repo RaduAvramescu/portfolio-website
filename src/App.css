@@ -16,6 +16,10 @@ svg:hover {
   transform: scale(1.2);
 }
 
+.img-social:hover {
+  opacity: 0.5;
+}
+
 .btn-icon {
   width: 1em;
   height: 1em;
