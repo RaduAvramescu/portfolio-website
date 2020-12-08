@@ -33,7 +33,11 @@ export default function Footer() {
           aria-label="LinkedIn"
           rel="noreferrer"
         >
-          <svg viewBox="0 0 128 128" className="img-social" width="40">
+          <svg
+            viewBox="0 0 128 128"
+            className={styles["img-social"]}
+            width="40"
+          >
             <path
               fill="white"
               id="plain"
