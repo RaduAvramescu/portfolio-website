@@ -52,13 +52,13 @@ export default class NavBar extends Component {
         <nav
           className={`navbar navbar-expand-lg navbar-dark ${styles["navbar-dark"]} bg-dark`}
         >
-          <Link
+          <a
             className={`navbar-brand ${styles["navbar-brand"]} font-weight-bold`}
-            href="/#"
+            href="#top"
             onClick={this.handleScrollToTop}
           >
             RADU AVRAMESCU
-          </Link>
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -80,12 +80,13 @@ export default class NavBar extends Component {
           >
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link
+                <a
                   className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
+                  href="#top"
                   onClick={this.handleScrollToTop}
                 >
                   HOME
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
                 <Link
