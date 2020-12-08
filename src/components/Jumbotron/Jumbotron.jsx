@@ -31,7 +31,7 @@ export default function Jumbotron() {
               </a>
             </div>
           </div>
-          <div className="container py-3 text-center icon-container wow animate__animated animate__fadeIn">
+          <div className="container py-3 text-center wow animate__animated animate__fadeIn">
             <a
               target="_blank"
               href="https://github.com/RaduAvramescu"
