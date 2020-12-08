@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-scroll";
 
 import styles from "./Jumbotron.module.css";
 
@@ -13,9 +14,10 @@ export default function Jumbotron() {
             <h1 className="font-weight-bold">RADU AVRAMESCU</h1>
             <h2>Frontend Developer</h2>
             <div className="d-flex justify-content-center">
-              <a
+              <Link
                 className={`d-flex align-items-center text-nowrap btn ${styles.btn} btn-dark btn-lg mt-3 px-4 py-3 font-weight-bold`}
-                href="#projects"
+                to="projects"
+                smooth
               >
                 VIEW MY PROJECTS
                 <svg
@@ -28,7 +30,7 @@ export default function Jumbotron() {
                     fill="#fff"
                   ></path>
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="container py-3 text-center wow animate__animated animate__fadeIn">
