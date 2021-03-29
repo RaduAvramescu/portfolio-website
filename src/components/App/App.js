@@ -2,14 +2,7 @@ import React, { Component } from "react";
 
 import WOW from "wowjs";
 
-import {
-  NavBar,
-  Jumbotron,
-  Projects,
-  About,
-  Contact,
-  Footer,
-} from "./components";
+import { NavBar, Jumbotron, Projects, About, Contact, Footer } from "../";
 import "./App.css";
 
 class App extends Component {
