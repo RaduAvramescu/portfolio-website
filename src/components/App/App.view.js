@@ -1,10 +1,10 @@
 import { Fragment } from "react";
-import NavBar from "../NavBar/NavBar";
-import Jumbotron from "../Jumbotron/Jumbotron";
-import Projects from "../Projects/Projects";
+import NavBar from "../NavBar";
+import Jumbotron from "../Jumbotron";
+import Projects from "../Projects";
 import About from "../About/About";
-import Contact from "../Contact/Contact";
-import Footer from "../Footer/Footer";
+import Contact from "../Contact";
+import Footer from "../Footer";
 
 const AppView = () => (
   <Fragment>

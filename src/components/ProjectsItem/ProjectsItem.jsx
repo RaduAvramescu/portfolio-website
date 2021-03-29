@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HTML, CSS, JS, BS, MUI, REACTJS } from "../Technologies/Technologies";
+import { HTML, CSS, JS, BS, MUI, REACTJS } from "../Technologies";
 import styles from "./ProjectsItem.module.css";
 
 const ProjectsItem = ({ data, delay }) => (
