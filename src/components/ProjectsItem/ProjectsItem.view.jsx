@@ -18,9 +18,9 @@ const ProjectsItem = ({ data, delay }) => (
             <img
               src={`${data.projectImage}`}
               alt={`${data.projectTitle}`}
-              className="card-img-top h-auto"
-              width="400"
-              height="200"
+              className="card-img-top img-fluid"
+              width="450"
+              height="250"
               loading="lazy"
             />
           </picture>
