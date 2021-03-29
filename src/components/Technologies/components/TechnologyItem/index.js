@@ -1,1 +1,1 @@
-export { default } from "./TechnologyItem";
+export { default } from "./TechnologyItem.view";

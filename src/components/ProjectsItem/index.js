@@ -1,1 +1,1 @@
-export { default } from "./ProjectsItem";
+export { default } from "./ProjectsItem.view";
