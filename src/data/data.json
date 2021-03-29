@@ -1,7 +1,7 @@
 [
   {
     "projectTitle": "PORTFOLIO",
-    "projectImage": "images/personal-website",
+    "projectImage": "images/portfolio",
     "projectDescription": "Personal website built to showcase my portfolio.",
     "projectTechnologies": "HTML CSS JavaScript Bootstrap React",
     "projectDemoURL": "https://raduavramescu.github.io",
@@ -9,7 +9,7 @@
   },
   {
     "projectTitle": "ARMY BUILDER",
-    "projectImage": "images/personal-website",
+    "projectImage": "images/army-builder",
     "projectDescription": "Total War: Warhammer 2 army builder/validator.",
     "projectTechnologies": "HTML CSS JavaScript Material-UI React",
     "projectDemoURL": "https://banner-army-builder.netlify.app",
