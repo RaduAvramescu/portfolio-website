@@ -1,6 +1,6 @@
 import React from "react";
 
-import TechnologyItem from "../Technologies";
+import Technologies from "../Technologies";
 import styles from "./ProjectsItem.module.css";
 
 const ProjectsItem = ({ data, delay }) => (
@@ -33,24 +33,7 @@ const ProjectsItem = ({ data, delay }) => (
         <p className="card-text">{data.projectDescription}</p>
         <p className="card-text font-weight-bold">TECHNOLOGIES USED</p>
         <div>
-          {data.projectTechnologies.includes("HTML") && (
-            <TechnologyItem techName="HTML5"></TechnologyItem>
-          )}
-          {data.projectTechnologies.includes("CSS") && (
-            <TechnologyItem techName="CSS3"></TechnologyItem>
-          )}
-          {data.projectTechnologies.includes("JavaScript") && (
-            <TechnologyItem techName="JavaScript"></TechnologyItem>
-          )}
-          {data.projectTechnologies.includes("Bootstrap") && (
-            <TechnologyItem techName="Bootstrap"></TechnologyItem>
-          )}
-          {data.projectTechnologies.includes("Material-UI") && (
-            <TechnologyItem techName="Material-UI"></TechnologyItem>
-          )}
-          {data.projectTechnologies.includes("React") && (
-            <TechnologyItem techName="React"></TechnologyItem>
-          )}
+          <Technologies technologies={data.projectTechnologies} />
         </div>
       </div>
       <div className={`card-footer ${styles["card-footer"]}`}>
