@@ -30,13 +30,5 @@
     "projectTechnologies": "HTML CSS JavaScript Material-UI React",
     "projectDemoURL": "weather-app",
     "projectCodeURL": "https://github.com/RaduAvramescu/weather-app"
-  },
-  {
-    "projectTitle": "NPS SURVEY",
-    "projectImage": "images/nps-survey",
-    "projectDescription": "Simple NPS Survey using SurveyJS and default template.",
-    "projectTechnologies": "HTML CSS JavaScript Material-UI React",
-    "projectDemoURL": "nps-survey",
-    "projectCodeURL": "https://github.com/RaduAvramescu/nps-survey"
   }
 ]
