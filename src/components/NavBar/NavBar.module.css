@@ -17,13 +17,38 @@ header {
 
 .navbar-brand,
 .nav-link {
-  transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link::before,
+.nav-link::after {
+  position: absolute;
+  bottom: 5px;
+  content: "";
+  width: 0px;
+  height: 2px;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link::before {
+  left: 50%;
+}
+
+.nav-link::after {
+  right: 50%;
 }
 
 .nav-link:hover {
-  border-bottom: 1px solid #ffffff;
-  margin-bottom: -1px;
   cursor: pointer;
+}
+
+.nav-link:hover::before,
+.nav-link:hover::after {
+  width: 50%;
+  opacity: 1;
 }
 
 @media only screen and (max-width: 990px) {
@@ -39,8 +64,8 @@ header {
     transition: max-height 0.5s ease-out;
   }
 
-  .nav-link:hover {
-    border-bottom: none;
-    margin-bottom: 0px;
+  .nav-link:hover::before,
+  .nav-link:hover::after {
+    width: 0px;
   }
 }
