@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-scroll";
-import { FaArrowUp } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 import styles from "./Jumbotron.module.css";
 
 const Jumbotron = () => (
@@ -19,7 +19,7 @@ const Jumbotron = () => (
               smooth
             >
               VIEW MY PROJECTS
-              <FaArrowUp className={`ml-3 ${styles["arrow-right"]}`} />
+              <FaArrowRight className={`ml-3 ${styles["arrow-right"]}`} />
             </Link>
           </div>
         </div>
