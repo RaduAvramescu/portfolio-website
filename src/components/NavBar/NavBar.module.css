@@ -19,6 +19,7 @@ header {
 .nav-link {
   position: relative;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .nav-link::before,
@@ -41,14 +42,27 @@ header {
   right: 50%;
 }
 
-.nav-link:hover {
-  cursor: pointer;
-}
-
 .nav-link:hover::before,
 .nav-link:hover::after {
   width: 50%;
   opacity: 1;
+}
+
+.btnTopScroller {
+  position: fixed;
+  font-size: 3rem;
+  right: 20px;
+  bottom: 60px;
+  height: 20px;
+  color: darkgrey;
+  cursor: pointer;
+  z-index: 9999;
+  transform: translateX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.btnTopScroller-hide {
+  transform: translateX(200%);
 }
 
 @media only screen and (max-width: 990px) {

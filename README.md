@@ -20,6 +20,7 @@ This is the repository for my personal website.
 - Animate.css
 - wow.js
 - React Scroll
+- React Icons
 
 ## Link
 
