@@ -33,7 +33,7 @@ const ProjectsItem = ({ data, delay }) => (
         <p className="card-text">{data.projectDescription}</p>
         <p className="card-text font-weight-bold">TECHNOLOGIES USED</p>
         <div>
-          <Technologies technologies={data.projectTechnologies} />
+          <Technologies technologies={data.projectTechnologies} width={40} />
         </div>
       </div>
       <div className={`card-footer ${styles["card-footer"]}`}>
