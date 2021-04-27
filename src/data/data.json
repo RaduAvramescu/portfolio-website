@@ -11,7 +11,7 @@
     "projectTitle": "ARMY BUILDER",
     "projectImage": "images/army-builder",
     "projectDescription": "Total War: Warhammer 2 army builder/validator.",
-    "projectTechnologies": "HTML CSS JavaScript Material-UI React",
+    "projectTechnologies": "HTML CSS JavaScript Material-UI React GraphQL",
     "projectDemoURL": "https://banner-army-builder.netlify.app",
     "projectCodeURL": "https://github.com/RaduAvramescu/banner-army-builder"
   },

@@ -1,7 +1,3 @@
-.slider {
-  max-width: 1050px;
-}
-
 .slider:hover .slide {
   animation-play-state: paused;
 }

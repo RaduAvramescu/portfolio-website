@@ -22,6 +22,9 @@ const Technologies = ({ technologies }) => (
     {technologies.includes("React") && (
       <TechnologyItem techName="React"></TechnologyItem>
     )}
+    {technologies.includes("GraphQL") && (
+      <TechnologyItem techName="GraphQL"></TechnologyItem>
+    )}
   </Fragment>
 );
 
