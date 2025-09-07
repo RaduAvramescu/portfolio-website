@@ -1,10 +1,9 @@
 import React from "react";
-import styles from "./TechnologyItem.module.css";
 
 const TechnologyItem = ({ techName, width }) => (
   <svg
     viewBox="0 0 128 128"
-    className={styles["img-projects-tech"]}
+    className="mx-1 my-1"
     width={width}
   >
     <title>{techName}</title>

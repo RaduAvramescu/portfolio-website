@@ -16,7 +16,7 @@ const ProjectsItem = ({ data, delay }) => {
     >
       <div className={`card ${styles.card} mb-5`}>
         <div
-          className={`card-header ${styles["card-header"]} overflow-hidden`}
+          className={`card-header ${styles["card-header"]} overflow-hidden p-0`}
         >
           <a target="_blank" href={`${data.projectDemoURL}`} rel="noreferrer">
             <picture>
@@ -35,7 +35,7 @@ const ProjectsItem = ({ data, delay }) => {
           </a>
         </div>
         <div className="card-body">
-          <h3 className={`card-title ${styles["card-title"]} fw-bold`}>
+          <h3 className={`card-title ${styles["card-title"]} fw-bold fs-4`}>
             {data.projectTitle}
           </h3>
           <p className="card-text">{data.projectDescription}</p>

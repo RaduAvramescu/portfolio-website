@@ -1,5 +1,4 @@
 .label {
-  font-size: 20px;
   color: #1e2529;
 }
 
@@ -17,8 +16,6 @@
 .form-control {
   border: none;
   height: 40px;
-  padding: 0;
-  border-radius: 0;
   border-bottom: 2px solid #212527;
 }
 
@@ -42,7 +39,6 @@ input[type="email"]:not(:placeholder-shown) {
 }
 
 textarea.form-control {
-  padding-top: 8px;
   height: 40px;
   resize: none;
 }
