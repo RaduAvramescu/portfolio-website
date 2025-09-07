@@ -9,11 +9,3 @@ body {
     url("fonts/open-sans-v18-latin-regular.woff") format("woff");
   font-display: swap;
 }
-
-div[class="row"] > div {
-  --animate-delay: 0.1s;
-}
-
-.animate__animated.animate__fadeIn {
-  --animate-duration: 1.3s;
-}

@@ -26,7 +26,7 @@ const Contact = () => {
           <form action="https://formspree.io/xwkrdeyq" method="POST">
             <div className="row justify-content-between">
               <div
-                className={`col-md-5 position-relative ${styles["form-group"]}`}
+                className="col-md-5 position-relative mb-5"
               >
                 <input
                   className={`form-control ${styles["form-control"]}`}
@@ -45,7 +45,7 @@ const Contact = () => {
               </div>
 
               <div
-                className={`col-md-5 position-relative ${styles["form-group"]}`}
+                className="col-md-5 position-relative mb-5"
               >
                 <input
                   className={`form-control ${styles["form-control"]}`}
@@ -64,7 +64,7 @@ const Contact = () => {
               </div>
 
               <div
-                className={`col-md-12 position-relative ${styles["form-group"]}`}
+                className="col-md-12 position-relative mb-5"
               >
                 <textarea
                   className={`form-control ${styles["form-control"]}`}
