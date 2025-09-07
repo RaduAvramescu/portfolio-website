@@ -16,7 +16,7 @@ const ProjectsItem = ({ data, delay }) => {
     >
       <div className={`card ${styles.card} mb-5`}>
         <div
-          className={`card-header ${styles["card-header"]} ${styles["overflow-hidden"]}`}
+          className={`card-header ${styles["card-header"]} overflow-hidden`}
         >
           <a target="_blank" href={`${data.projectDemoURL}`} rel="noreferrer">
             <picture>

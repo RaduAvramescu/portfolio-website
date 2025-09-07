@@ -36,12 +36,12 @@
   fill: #fff;
 }
 
-.overflow-hidden img {
+.card-header img {
   border-radius: 0;
   transition: transform 0.6s ease;
 }
 
-.overflow-hidden img:hover {
+.card-header img:hover {
   cursor: pointer;
   transform: scale(1.3);
 }
