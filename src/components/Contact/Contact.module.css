@@ -1,5 +1,6 @@
 .label {
   color: #1e2529;
+  transition: all 0.3s ease;
 }
 
 .label:hover {
@@ -7,14 +8,7 @@
   color: #1e252999;
 }
 
-.label {
-  position: absolute;
-  top: 0px;
-  transition: all 0.3s ease;
-}
-
 .form-control {
-  border: none;
   height: 40px;
   border-bottom: 2px solid #212527;
 }
@@ -25,15 +19,10 @@ input[type="email"]:not(:placeholder-shown) + .label {
   transform: translateY(-30px);
 }
 
-input:invalid,
-textarea:invalid {
-  box-shadow: none;
-}
 
 .form-control:focus,
 .form-control:valid,
 input[type="email"]:not(:placeholder-shown) {
-  box-shadow: none;
   border-bottom: 2px solid green;
   transition: border-bottom 0.3s ease;
 }

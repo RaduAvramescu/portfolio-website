@@ -3,7 +3,7 @@ import React from "react";
 const TechnologyItem = ({ techName, width }) => (
   <svg
     viewBox="0 0 128 128"
-    className="mx-1 my-1"
+    className={width > 50 ? "mx-4 my-2" : "m-1"}
     width={width}
   >
     <title>{techName}</title>

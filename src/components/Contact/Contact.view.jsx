@@ -29,7 +29,7 @@ const Contact = () => {
                 className="col-md-5 position-relative mb-5"
               >
                 <input
-                  className={`form-control ${styles["form-control"]} p-0 rounded-0`}
+                  className={`form-control ${styles["form-control"]} p-0 rounded-0 shadow-none border-top-0 border-start-0 border-end-0`}
                   type="text"
                   name="name"
                   id="name"
@@ -38,7 +38,7 @@ const Contact = () => {
                 />
                 <label
                   htmlFor="name"
-                  className={`${styles.label} text-uppercase fs-5`}
+                  className={`${styles.label} text-uppercase fs-5 position-absolute top-0`}
                 >
                   Name
                 </label>
@@ -48,7 +48,7 @@ const Contact = () => {
                 className="col-md-5 position-relative mb-5"
               >
                 <input
-                  className={`form-control ${styles["form-control"]} p-0 rounded-0`}
+                  className={`form-control ${styles["form-control"]} p-0 rounded-0 shadow-none border-top-0 border-start-0 border-end-0`}
                   type="email"
                   name="_replyto"
                   id="email"
@@ -57,7 +57,7 @@ const Contact = () => {
                 />
                 <label
                   htmlFor="email"
-                  className={`${styles.label} text-uppercase fs-5`}
+                  className={`${styles.label} text-uppercase fs-5 position-absolute top-0`}
                 >
                   Email
                 </label>
@@ -67,7 +67,7 @@ const Contact = () => {
                 className="col-md-12 position-relative mb-5"
               >
                 <textarea
-                  className={`form-control ${styles["form-control"]} pt-2 p-0 rounded-0`}
+                  className={`form-control ${styles["form-control"]} pt-2 p-0 rounded-0 shadow-none border-top-0 border-start-0 border-end-0`}
                   name="message"
                   id="message"
                   required
@@ -75,7 +75,7 @@ const Contact = () => {
                 ></textarea>
                 <label
                   htmlFor="message"
-                  className={`${styles.label} text-uppercase fs-5`}
+                  className={`${styles.label} text-uppercase fs-5 position-absolute top-0`}
                 >
                   Message
                 </label>

@@ -10,9 +10,6 @@
   animation: scroll-left 10s linear infinite;
 }
 
-.slide svg {
-  margin: 14px 2rem;
-}
 
 @keyframes scroll-left {
   0% {

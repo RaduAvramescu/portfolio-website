@@ -17,14 +17,11 @@ header {
 
 .navbar-brand,
 .nav-link {
-  position: relative;
   transition: all 0.3s ease-in-out;
-  cursor: pointer;
 }
 
 .nav-link::before,
 .nav-link::after {
-  position: absolute;
   bottom: 5px;
   content: "";
   width: 0px;
@@ -49,8 +46,6 @@ header {
 }
 
 .btnTopScroller {
-  position: fixed;
-  font-size: 3rem;
   right: 20px;
   bottom: 60px;
   height: 20px;
@@ -67,13 +62,11 @@ header {
 
 @media only screen and (max-width: 990px) {
   .navbar-collapse {
-    overflow: hidden;
     max-height: 200px;
     transition: max-height 0.5s ease-in;
   }
 
   .collapse:not(.show) {
-    display: block;
     max-height: 0;
     transition: max-height 0.5s ease-out;
   }

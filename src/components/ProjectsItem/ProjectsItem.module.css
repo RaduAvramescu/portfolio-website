@@ -13,7 +13,6 @@
 .card-header,
 .card-footer {
   background-color: whitesmoke;
-  border: none;
 }
 
 .card-title {
@@ -34,7 +33,6 @@
 }
 
 .card-header img {
-  border-radius: 0;
   transition: transform 0.6s ease;
 }
 

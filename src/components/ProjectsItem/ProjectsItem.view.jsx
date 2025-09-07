@@ -25,7 +25,7 @@ const ProjectsItem = ({ data, delay }) => {
               <img
                 src={`${data.projectImage}`}
                 alt={`${data.projectTitle}`}
-                className="card-img-top img-fluid"
+                className="card-img-top img-fluid rounded-0"
                 width="450"
                 height="250"
                 loading="lazy"
@@ -44,7 +44,7 @@ const ProjectsItem = ({ data, delay }) => {
             <Technologies technologies={data.projectTechnologies} width={40} />
           </div>
         </div>
-        <div className={`card-footer ${styles["card-footer"]}`}>
+        <div className={`card-footer ${styles["card-footer"]} border-0`}>
           <div className="d-flex justify-content-around mb-2">
             <a
               target="_blank"

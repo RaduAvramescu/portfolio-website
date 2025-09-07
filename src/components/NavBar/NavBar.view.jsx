@@ -34,14 +34,14 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
 
         <div
           className={`${
-            isCollapsed ? `collapse ${styles["collapse"]}` : ""
-          } navbar-collapse ${styles["navbar-collapse"]}`}
+            isCollapsed ? `collapse ${styles["collapse"]} d-block` : ""
+          } navbar-collapse ${styles["navbar-collapse"]} overflow-hidden`}
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <a
-                className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
+                className={`nav-link ${styles["nav-link"]} position-relative px-0 mx-3`}
                 href="#top"
                 onClick={onScrollToTop}
               >
@@ -50,7 +50,7 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
             </li>
             <li className="nav-item">
               <Link
-                className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
+                className={`nav-link ${styles["nav-link"]} position-relative px-0 mx-3`}
                 to="projects"
                 href="#projects"
                 smooth
@@ -61,7 +61,7 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
             </li>
             <li className="nav-item">
               <Link
-                className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
+                className={`nav-link ${styles["nav-link"]} position-relative px-0 mx-3`}
                 to="about"
                 href="#about"
                 smooth
@@ -72,7 +72,7 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
             </li>
             <li className="nav-item">
               <Link
-                className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
+                className={`nav-link ${styles["nav-link"]} position-relative px-0 mx-3`}
                 to="contact"
                 href="#contact"
                 smooth
@@ -88,7 +88,7 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
     <div
       className={`${isVisible ? `${styles["btnTopScroller-hide"]}` : ``} ${
         styles.btnTopScroller
-      }`}
+      } position-fixed fs-1`}
     >
       <FaArrowCircleUp href="#top" onClick={onScrollToTop} />
     </div>
