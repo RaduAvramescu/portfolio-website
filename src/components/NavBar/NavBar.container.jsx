@@ -13,13 +13,13 @@ const NavBar = () => {
   };
 
   const handleCollapse = useCallback(() => {
-    setIsCollapsed(prev => !prev);
+    setIsCollapsed((prev) => !prev);
   }, []);
 
   const handleScroll = useCallback(() => {
     const curScrollPos = window.scrollY;
     const visible = prevScrollPos > curScrollPos;
-    
+
     setPrevScrollPos(curScrollPos);
     setIsVisible(visible);
 

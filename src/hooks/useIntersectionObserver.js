@@ -1,9 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 
 /**
  * Custom hook that uses Intersection Observer API to detect when an element is visible
- * Replaces WOW.js functionality with modern native browser API
- * 
+ *
  * @param {Object} options - Intersection Observer options
  * @param {number} options.threshold - Percentage of element that must be visible (0-1)
  * @param {string} options.rootMargin - Margin around root element
@@ -13,7 +12,7 @@ import { useState, useEffect, useRef } from 'react';
 const useIntersectionObserver = (options = {}) => {
   const {
     threshold = 0.1,
-    rootMargin = '0px 0px -100px 0px', // Trigger when element is 100px into viewport
+    rootMargin = "0px 0px -100px 0px", // Trigger when element is 100px into viewport
     triggerOnce = true,
   } = options;
 
@@ -28,7 +27,7 @@ const useIntersectionObserver = (options = {}) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         const isIntersecting = entry.isIntersecting;
-        
+
         if (isIntersecting && (!triggerOnce || !hasTriggered)) {
           setIsVisible(true);
           if (triggerOnce) {

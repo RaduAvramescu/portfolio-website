@@ -11,24 +11,30 @@ export default function About() {
   return (
     <section id="about">
       <div className="section-alt-row section-padding text-center">
-        <h2 
+        <h2
           ref={titleRef}
-          className={`section-title fw-bold text-uppercase animated fadeIn ${titleVisible ? 'animate-in' : ''}`}
+          className={`section-title fw-bold text-uppercase animated fadeIn ${
+            titleVisible ? "animate-in" : ""
+          }`}
         >
           About
         </h2>
-        <h3 
+        <h3
           ref={descriptionRef}
-          className={`container section-description mb-5 ${styles["text-balance"]} animated fadeIn ${descriptionVisible ? 'animate-in' : ''}`}
+          className={`container section-description mb-5 ${
+            styles["text-balance"]
+          } animated fadeIn ${descriptionVisible ? "animate-in" : ""}`}
         >
           I'm a frontend developer interested in staying up to date with
           technologies and constantly learning. Below is a collection of the
           technologies I use.
         </h3>
         <div className="col-md-12">
-          <div 
+          <div
             ref={technologiesRef}
-            className={`animated fadeIn ${technologiesVisible ? 'animate-in' : ''}`}
+            className={`animated fadeIn ${
+              technologiesVisible ? "animate-in" : ""
+            }`}
           >
             <div className="container d-flex justify-content-center align-items-center">
               <div className={`${styles.slider} d-flex overflow-hidden`}>

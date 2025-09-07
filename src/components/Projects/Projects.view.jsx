@@ -9,9 +9,11 @@ const Projects = () => {
   return (
     <section id="projects">
       <div className="section-padding text-center">
-        <h2 
+        <h2
           ref={titleRef}
-          className={`section-title fw-bold text-uppercase animated fadeIn ${titleVisible ? 'animate-in' : ''}`}
+          className={`section-title fw-bold text-uppercase animated fadeIn ${
+            titleVisible ? "animate-in" : ""
+          }`}
         >
           Projects
         </h2>
