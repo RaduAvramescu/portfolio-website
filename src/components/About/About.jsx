@@ -10,7 +10,7 @@ export default function NavBar() {
         <h2 className="section-title fw-bold text-uppercase wow animate__animated animate__fadeIn">
           About
         </h2>
-        <h3 className="container section-description mb-5 wow animate__animated animate__fadeIn">
+        <h3 className={`container section-description mb-5 ${styles["text-balance"]} wow animate__animated animate__fadeIn`}>
           I'm a frontend developer interested in staying up to date with
           technologies and constantly learning. Below is a collection of the
           technologies I use.

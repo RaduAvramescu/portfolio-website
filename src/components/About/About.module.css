@@ -1,3 +1,7 @@
+.text-balance {
+  text-wrap: balance;
+}
+
 .slider:hover .slide {
   animation-play-state: paused;
 }
