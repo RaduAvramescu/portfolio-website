@@ -9,12 +9,12 @@ const ProjectsItem = ({ data, delay }) => {
   return (
     <div
       ref={itemRef}
-      className={`col-sm-6 col-md-6 col-lg-4 animated fadeInUp ${
+      className={`mb-5 col-sm-6 col-md-6 col-lg-4 animated fadeInUp ${
         itemVisible ? "animate-in" : ""
       }`}
       style={{ animationDelay: `${delay}s` }}
     >
-      <div className={`card ${styles.card} mb-5`}>
+      <div className={`card ${styles.card}`}>
         <div
           className={`card-header ${styles["card-header"]} overflow-hidden p-0`}
         >
@@ -34,12 +34,14 @@ const ProjectsItem = ({ data, delay }) => {
             </picture>
           </a>
         </div>
-        <div className="card-body">
+        <div className="card-body d-flex flex-column">
           <h3 className={`card-title ${styles["card-title"]} fw-bold fs-4`}>
             {data.projectTitle}
           </h3>
-          <p className="card-text">{data.projectDescription}</p>
-          <p className="card-text fw-bold text-uppercase">Technologies Used</p>
+          <p className="card-text flex-grow-1">{data.projectDescription}</p>
+          <p className="card-text fw-bold text-uppercase mt-auto">
+            Technologies Used
+          </p>
           <div>
             <Technologies technologies={data.projectTechnologies} width={40} />
           </div>
