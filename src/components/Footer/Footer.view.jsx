@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => (
   <footer className="section-alt-row" id="footer">
     <div className="container py-5 text-center">
-      <p>&copy; 2020 Radu Avramescu. All rights reserved.</p>
+      <p>&copy; 2025 Radu Avramescu. All rights reserved.</p>
       <a
         target="_blank"
         href="https://github.com/RaduAvramescu"
