@@ -1,37 +1,22 @@
+/* Label animations that can't be done with Bootstrap */
 .label {
-  color: #1e2529;
   transition: all 0.3s ease;
 }
 
 .label:hover {
   cursor: pointer;
-  color: #1e252999;
+  opacity: 0.6;
 }
 
-.form-control {
-  height: 40px;
-  border-bottom: 2px solid #212527;
-}
-
-.form-control:focus + .label,
-.form-control:valid + .label,
+.formControl:focus + .label,
+.formControl:valid + .label,
 input[type="email"]:not(:placeholder-shown) + .label {
   transform: translateY(-30px);
 }
 
-
-.form-control:focus,
-.form-control:valid,
+.formControl:focus,
+.formControl:valid,
 input[type="email"]:not(:placeholder-shown) {
-  border-bottom: 2px solid green;
+  border-bottom: 2px solid green !important;
   transition: border-bottom 0.3s ease;
-}
-
-textarea.form-control {
-  height: 40px;
-  resize: none;
-}
-
-.btn-submit {
-  letter-spacing: 1px;
 }

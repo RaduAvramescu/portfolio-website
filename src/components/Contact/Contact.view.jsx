@@ -25,11 +25,10 @@ const Contact = () => {
         >
           <form action="https://formspree.io/xwkrdeyq" method="POST">
             <div className="row justify-content-between">
-              <div
-                className="col-md-5 position-relative mb-5"
-              >
+              <div className="col-md-5 position-relative mb-5">
                 <input
-                  className={`form-control ${styles["form-control"]} p-0 rounded-0 shadow-none border-top-0 border-start-0 border-end-0`}
+                  className={`form-control ${styles.formControl} p-0 rounded-0 shadow-none border-top-0 border-start-0 border-end-0 border-2 border-dark`}
+                  style={{ height: "40px" }}
                   type="text"
                   name="name"
                   id="name"
@@ -38,17 +37,16 @@ const Contact = () => {
                 />
                 <label
                   htmlFor="name"
-                  className={`${styles.label} text-uppercase fs-5 position-absolute top-0`}
+                  className={`${styles.label} text-uppercase fs-5 position-absolute top-0 text-dark`}
                 >
                   Name
                 </label>
               </div>
 
-              <div
-                className="col-md-5 position-relative mb-5"
-              >
+              <div className="col-md-5 position-relative mb-5">
                 <input
-                  className={`form-control ${styles["form-control"]} p-0 rounded-0 shadow-none border-top-0 border-start-0 border-end-0`}
+                  className={`form-control ${styles.formControl} p-0 rounded-0 shadow-none border-top-0 border-start-0 border-end-0 border-2 border-dark`}
+                  style={{ height: "40px" }}
                   type="email"
                   name="_replyto"
                   id="email"
@@ -57,17 +55,16 @@ const Contact = () => {
                 />
                 <label
                   htmlFor="email"
-                  className={`${styles.label} text-uppercase fs-5 position-absolute top-0`}
+                  className={`${styles.label} text-uppercase fs-5 position-absolute top-0 text-dark`}
                 >
                   Email
                 </label>
               </div>
 
-              <div
-                className="col-md-12 position-relative mb-5"
-              >
+              <div className="col-md-12 position-relative mb-5">
                 <textarea
-                  className={`form-control ${styles["form-control"]} pt-2 p-0 rounded-0 shadow-none border-top-0 border-start-0 border-end-0`}
+                  className={`form-control ${styles.formControl} pt-2 p-0 rounded-0 shadow-none border-top-0 border-start-0 border-end-0 border-2 border-dark`}
+                  style={{ height: "40px", resize: "none" }}
                   name="message"
                   id="message"
                   required
@@ -75,7 +72,7 @@ const Contact = () => {
                 ></textarea>
                 <label
                   htmlFor="message"
-                  className={`${styles.label} text-uppercase fs-5 position-absolute top-0`}
+                  className={`${styles.label} text-uppercase fs-5 position-absolute top-0 text-dark`}
                 >
                   Message
                 </label>
@@ -84,7 +81,8 @@ const Contact = () => {
               <div className="col-md-12 text-center">
                 <button
                   type="submit"
-                  className={`btn btn-dark btn-lg ${styles["btn-submit"]}`}
+                  className="btn btn-dark btn-lg"
+                  style={{ letterSpacing: "1px" }}
                 >
                   <span className="text-uppercase">Submit</span>
                 </button>
