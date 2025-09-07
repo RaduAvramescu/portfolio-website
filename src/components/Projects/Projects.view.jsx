@@ -22,7 +22,7 @@ const Projects = () => {
             {data.map((item, i) => (
               <ProjectsItem
                 key={i}
-                data={data[i]}
+                data={item}
                 delay={i * 0.1} // Convert to seconds for CSS animation-delay
               />
             ))}

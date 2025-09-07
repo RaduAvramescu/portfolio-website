@@ -1,9 +1,8 @@
-import { Fragment } from "react";
-
+import React from "react";
 import TechnologyItem from "./components/TechnologyItem";
 
 const Technologies = ({ technologies, width }) => (
-  <Fragment>
+  <>
     {technologies.includes("HTML") && (
       <TechnologyItem techName="HTML5" width={width}></TechnologyItem>
     )}
@@ -31,7 +30,7 @@ const Technologies = ({ technologies, width }) => (
     {technologies.includes("npm") && (
       <TechnologyItem techName="npm" width={width}></TechnologyItem>
     )}
-  </Fragment>
+  </>
 );
 
 export default Technologies;
