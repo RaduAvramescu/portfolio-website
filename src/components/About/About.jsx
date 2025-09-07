@@ -50,6 +50,12 @@ export default function About() {
                     width={70}
                   />
                 </div>
+                <div className={`${styles.slide} d-flex align-items-center`}>
+                  <Technologies
+                    technologies="HTML5 CSS3 Bootstrap Material-UI JavaScript React GraphQL Git npm"
+                    width={70}
+                  />
+                </div>
               </div>
             </div>
           </div>
