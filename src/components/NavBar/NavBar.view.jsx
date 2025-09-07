@@ -52,6 +52,7 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
               <Link
                 className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
                 to="projects"
+                href="#projects"
                 smooth
                 onClick={onCollapse}
               >
@@ -62,6 +63,7 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
               <Link
                 className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
                 to="about"
+                href="#about"
                 smooth
                 onClick={onCollapse}
               >
@@ -72,6 +74,7 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
               <Link
                 className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
                 to="contact"
+                href="#contact"
                 smooth
                 onClick={onCollapse}
               >

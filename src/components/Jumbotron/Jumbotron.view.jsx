@@ -16,6 +16,7 @@ const Jumbotron = () => (
             <Link
               className={`d-flex align-items-center text-nowrap btn ${styles.btn} btn-dark btn-lg mt-3 px-4 py-3 fw-bold`}
               to="projects"
+              href="#projects"
               smooth
             >
               <span className="text-uppercase">View My Projects</span>
