@@ -14,17 +14,18 @@ const Jumbotron = () => {
       >
         <div className="container my-auto text-center">
           <div className="intro overflow-hidden">
-            <h1 className="fw-bold text-uppercase">Radu Avramescu</h1>
-            <h2>Frontend Developer</h2>
+            <h1 className={`fw-bold text-uppercase ${styles.typewriterEffect}`} style={{ fontSize: 'clamp(50px, 10vw, 100px)' }}>Radu Avramescu</h1>
+            <h2 className={styles.textSlideUp} style={{ fontSize: 'clamp(30px, 6vw, 60px)' }}>Frontend Developer</h2>
             <div className="d-flex justify-content-center">
               <Link
-                className={`d-flex align-items-center text-nowrap btn ${styles.btn} btn-dark btn-lg mt-3 px-4 py-3 fw-bold`}
+                className={`d-flex align-items-center text-nowrap btn btn-dark btn-lg mt-3 px-4 py-3 fw-bold ${styles.btnSlideUp}`}
+                style={{ letterSpacing: '2px' }}
                 to="projects"
                 href="#projects"
                 smooth
               >
                 <span className="text-uppercase">View My Projects</span>
-                <FaArrowRight className={`ms-3 ${styles["arrow-right"]}`} />
+                <FaArrowRight className={`ms-3 ${styles.arrowRight}`} />
               </Link>
             </div>
           </div>

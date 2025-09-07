@@ -1,3 +1,4 @@
+/* Background image and complex animations that can't be done with Bootstrap */
 @supports not (background: url("images/jumbotron.webp") center/cover) {
   .jumbotron {
     background: url("../../images/jumbotron.jpg") center/cover;
@@ -8,36 +9,24 @@
   background: url("../../images/jumbotron.webp") center/cover;
 }
 
-.jumbotron h1 {
-  font-size: 100px;
-}
-
-.jumbotron h2 {
-  font-size: 60px;
+.textSlideUp {
   animation: text-slide-up 1s ease;
 }
 
-.jumbotron .btn {
-  letter-spacing: 2px;
+.btnSlideUp {
   animation: text-slide-up 1.3s ease;
 }
 
-a:hover .arrow-right {
+.arrowRight {
+  transition: transform 0.3s ease;
+}
+
+a:hover .arrowRight {
   transform: rotate(90deg);
 }
 
-@media only screen and (max-width: 990px) {
-  .jumbotron h1 {
-    font-size: 50px;
-  }
-
-  .jumbotron h2 {
-    font-size: 30px;
-  }
-}
-
 @media only screen and (min-width: 1200px) {
-  .jumbotron h1 {
+  .typewriterEffect {
     margin: 0 auto;
     margin-bottom: 0.5rem;
     border-right: solid 0.1em red;
