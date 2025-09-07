@@ -7,11 +7,7 @@ const Technologies = ({ technologies, width }) => {
   return (
     <>
       {techArray.map((tech) => (
-        <TechnologyItem
-          key={tech}
-          techName={TECHNOLOGY_MAP[tech]}
-          width={width}
-        />
+        <TechnologyItem key={tech} techName={tech} width={width} />
       ))}
     </>
   );
