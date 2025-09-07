@@ -6,9 +6,7 @@
 
 .card:hover {
   border-color: black;
-  transform: scale(1.05);
 }
-
 
 .card-header,
 .card-footer {
@@ -33,11 +31,10 @@
 }
 
 .card-header img {
+  cursor: pointer;
   transition: transform 0.6s ease;
 }
 
 .card-header img:hover {
-  cursor: pointer;
   transform: scale(1.3);
 }
-
