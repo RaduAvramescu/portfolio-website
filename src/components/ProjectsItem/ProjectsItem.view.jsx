@@ -27,25 +27,25 @@ const ProjectsItem = ({ data, delay }) => (
         </a>
       </div>
       <div className="card-body">
-        <h3 className={`card-title ${styles["card-title"]} font-weight-bold`}>
+        <h3 className={`card-title ${styles["card-title"]} fw-bold`}>
           {data.projectTitle}
         </h3>
         <p className="card-text">{data.projectDescription}</p>
-        <p className="card-text font-weight-bold">TECHNOLOGIES USED</p>
+        <p className="card-text fw-bold">TECHNOLOGIES USED</p>
         <div>
           <Technologies technologies={data.projectTechnologies} width={40} />
         </div>
       </div>
       <div className={`card-footer ${styles["card-footer"]}`}>
-        <div className="row justify-content-around mb-2">
+        <div className="d-flex justify-content-around mb-2">
           <a
             target="_blank"
-            className={`d-flex align-items-center btn btn-outline-dark font-weight-bold card-btn ${styles["card-btn"]}`}
+            className={`d-flex align-items-center btn btn-outline-dark fw-bold card-btn ${styles["card-btn"]}`}
             href={`${data.projectDemoURL}`}
             rel="noreferrer"
           >
             DEMO
-            <svg viewBox="0 0 64 64" className="ml-2 btn-icon">
+            <svg viewBox="0 0 64 64" className="ms-2 btn-icon">
               <path
                 data-name="layer2"
                 d="M8.3 44.4l11.3 11.4 4.5-4-11.8-11.9z"
@@ -62,12 +62,12 @@ const ProjectsItem = ({ data, delay }) => (
           </a>
           <a
             target="_blank"
-            className={`d-flex align-items-center btn btn-outline-dark font-weight-bold card-btn ${styles["card-btn"]}`}
+            className={`d-flex align-items-center btn btn-outline-dark fw-bold card-btn ${styles["card-btn"]}`}
             href={`${data.projectCodeURL}`}
             rel="noreferrer"
           >
             CODE
-            <svg viewBox="0 0 128 128" className="ml-2 btn-icon">
+            <svg viewBox="0 0 128 128" className="ms-2 btn-icon">
               <g>
                 <path
                   fillRule="evenodd"

@@ -10,10 +10,10 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
       className={`fixed-top ${!isVisible ? `${styles["header-hide"]}` : ``}`}
     >
       <nav
-        className={`navbar navbar-expand-lg navbar-dark ${styles["navbar-dark"]} bg-dark`}
+        className={`navbar navbar-expand-lg navbar-dark ${styles["navbar-dark"]} bg-dark px-3`}
       >
         <a
-          className={`navbar-brand ${styles["navbar-brand"]} font-weight-bold`}
+          className={`navbar-brand ${styles["navbar-brand"]} fw-bold`}
           href="#top"
           onClick={onScrollToTop}
         >
@@ -22,8 +22,8 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
         <button
           className="navbar-toggler"
           type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded={!isCollapsed ? true : false}
           aria-label="Toggle navigation"
@@ -38,7 +38,7 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
           } navbar-collapse ${styles["navbar-collapse"]}`}
           id="navbarSupportedContent"
         >
-          <ul className="navbar-nav ml-auto">
+          <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <a
                 className={`nav-link ${styles["nav-link"]} px-0 mx-3`}

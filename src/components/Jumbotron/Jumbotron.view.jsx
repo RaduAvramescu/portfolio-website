@@ -6,20 +6,20 @@ import styles from "./Jumbotron.module.css";
 const Jumbotron = () => (
   <section id="jumbotron">
     <div
-      className={`jumbotron ${styles.jumbotron} jumbotron-fluid d-flex justify-content-center vh-100 mb-0`}
+      className={`${styles.jumbotron} d-flex justify-content-center vh-100 mb-0`}
     >
       <div className="container my-auto text-center">
         <div className="intro overflow-hidden">
-          <h1 className="font-weight-bold">RADU AVRAMESCU</h1>
+          <h1 className="fw-bold">RADU AVRAMESCU</h1>
           <h2>Frontend Developer</h2>
           <div className="d-flex justify-content-center">
             <Link
-              className={`d-flex align-items-center text-nowrap btn ${styles.btn} btn-dark btn-lg mt-3 px-4 py-3 font-weight-bold`}
+              className={`d-flex align-items-center text-nowrap btn ${styles.btn} btn-dark btn-lg mt-3 px-4 py-3 fw-bold`}
               to="projects"
               smooth
             >
               VIEW MY PROJECTS
-              <FaArrowRight className={`ml-3 ${styles["arrow-right"]}`} />
+              <FaArrowRight className={`ms-3 ${styles["arrow-right"]}`} />
             </Link>
           </div>
         </div>

@@ -7,7 +7,7 @@ export default function NavBar() {
   return (
     <section id="about">
       <div className="section-alt-row section-padding text-center">
-        <h2 className="section-title font-weight-bold wow animate__animated animate__fadeIn">
+        <h2 className="section-title fw-bold wow animate__animated animate__fadeIn">
           ABOUT
         </h2>
         <h3 className="container section-description mb-5 wow animate__animated animate__fadeIn">
