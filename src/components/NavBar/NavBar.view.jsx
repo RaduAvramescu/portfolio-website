@@ -7,13 +7,13 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
   <>
     <header
       id="header"
-      className={`fixed-top ${!isVisible ? `${styles["header-hide"]}` : ``}`}
+      className={`fixed-top ${!isVisible ? styles.headerHide : ``}`}
     >
       <nav
-        className={`navbar navbar-expand-lg navbar-dark ${styles["navbar-dark"]} bg-dark px-3`}
+        className="navbar navbar-expand-lg navbar-dark bg-dark px-3"
       >
         <a
-          className={`navbar-brand ${styles["navbar-brand"]} fw-bold text-uppercase`}
+          className={`navbar-brand ${styles.navbarBrand} fw-bold text-uppercase`}
           href="#top"
           onClick={onScrollToTop}
         >
@@ -34,14 +34,14 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
 
         <div
           className={`${
-            isCollapsed ? `collapse ${styles["collapse"]} d-block` : ""
-          } navbar-collapse ${styles["navbar-collapse"]} overflow-hidden`}
+            isCollapsed ? `collapse ${styles.collapseHide} d-block` : ""
+          } navbar-collapse ${styles.navbarCollapse} overflow-hidden`}
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <a
-                className={`nav-link ${styles["nav-link"]} position-relative px-0 mx-3`}
+                className={`nav-link ${styles.navLink} position-relative px-0 mx-3`}
                 href="#top"
                 onClick={onScrollToTop}
               >
@@ -50,7 +50,7 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
             </li>
             <li className="nav-item">
               <Link
-                className={`nav-link ${styles["nav-link"]} position-relative px-0 mx-3`}
+                className={`nav-link ${styles.navLink} position-relative px-0 mx-3`}
                 to="projects"
                 href="#projects"
                 smooth
@@ -61,7 +61,7 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
             </li>
             <li className="nav-item">
               <Link
-                className={`nav-link ${styles["nav-link"]} position-relative px-0 mx-3`}
+                className={`nav-link ${styles.navLink} position-relative px-0 mx-3`}
                 to="about"
                 href="#about"
                 smooth
@@ -72,7 +72,7 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
             </li>
             <li className="nav-item">
               <Link
-                className={`nav-link ${styles["nav-link"]} position-relative px-0 mx-3`}
+                className={`nav-link ${styles.navLink} position-relative px-0 mx-3`}
                 to="contact"
                 href="#contact"
                 smooth
@@ -86,9 +86,9 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
       </nav>
     </header>
     <div
-      className={`${isVisible ? `${styles["btnTopScroller-hide"]}` : ``} ${
+      className={`${isVisible ? styles.btnTopScrollerHide : ``} ${
         styles.btnTopScroller
-      } position-fixed fs-1`}
+      } position-fixed fs-1 text-secondary`}
     >
       <FaArrowCircleUp href="#top" onClick={onScrollToTop} />
     </div>

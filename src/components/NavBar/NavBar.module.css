@@ -1,27 +1,29 @@
-header {
+/* Header animations and nav effects that can't be done with Bootstrap */
+:global(header) {
   transform: translateY(0);
   transition: all 0.3s ease-in-out;
 }
 
-.header-hide {
+.headerHide {
   transform: translateY(-100%);
 }
 
-.navbar-dark .navbar-brand {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.navbar-dark .navbar-brand:hover {
-  color: rgba(255, 255, 255, 1);
-}
-
-.navbar-brand,
-.nav-link {
+.navbarBrand {
+  color: rgba(255, 255, 255, 0.8) !important;
   transition: all 0.3s ease-in-out;
 }
 
-.nav-link::before,
-.nav-link::after {
+.navbarBrand:hover {
+  color: white !important;
+}
+
+.navLink {
+  transition: all 0.3s ease-in-out;
+}
+
+.navLink::before,
+.navLink::after {
+  position: absolute;
   bottom: 5px;
   content: "";
   width: 0px;
@@ -31,16 +33,16 @@ header {
   transition: all 0.3s ease-in-out;
 }
 
-.nav-link::before {
+.navLink::before {
   left: 50%;
 }
 
-.nav-link::after {
+.navLink::after {
   right: 50%;
 }
 
-.nav-link:hover::before,
-.nav-link:hover::after {
+.navLink:hover::before,
+.navLink:hover::after {
   width: 50%;
   opacity: 1;
 }
@@ -49,30 +51,29 @@ header {
   right: 20px;
   bottom: 60px;
   height: 20px;
-  color: darkgrey;
   cursor: pointer;
   z-index: 9999;
   transform: translateX(0);
   transition: all 0.3s ease-in-out;
 }
 
-.btnTopScroller-hide {
+.btnTopScrollerHide {
   transform: translateX(200%);
 }
 
 @media only screen and (max-width: 990px) {
-  .navbar-collapse {
+  .navbarCollapse {
     max-height: 200px;
     transition: max-height 0.5s ease-in;
   }
 
-  .collapse:not(.show) {
+  .collapseHide:not(.show) {
     max-height: 0;
     transition: max-height 0.5s ease-out;
   }
 
-  .nav-link:hover::before,
-  .nav-link:hover::after {
+  .navLink:hover::before,
+  .navLink:hover::after {
     width: 0px;
   }
 }
