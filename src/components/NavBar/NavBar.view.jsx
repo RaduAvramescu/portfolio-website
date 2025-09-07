@@ -1,10 +1,10 @@
-import { Fragment } from "react";
+import React from "react";
 import { Link } from "react-scroll";
 import { FaArrowCircleUp } from "react-icons/fa";
 import styles from "./NavBar.module.css";
 
 const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
-  <Fragment>
+  <>
     <header
       id="header"
       className={`fixed-top ${!isVisible ? `${styles["header-hide"]}` : ``}`}
@@ -92,7 +92,7 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
     >
       <FaArrowCircleUp href="#top" onClick={onScrollToTop} />
     </div>
-  </Fragment>
+  </>
 );
 
 export default NavBarView;

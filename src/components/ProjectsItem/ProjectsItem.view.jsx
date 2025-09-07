@@ -22,6 +22,7 @@ const ProjectsItem = ({ data, delay }) => (
               width="450"
               height="250"
               loading="lazy"
+              decoding="async"
             />
           </picture>
         </a>

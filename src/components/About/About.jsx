@@ -3,7 +3,7 @@ import React from "react";
 import Technologies from "../Technologies";
 import styles from "./About.module.css";
 
-export default function NavBar() {
+export default function About() {
   return (
     <section id="about">
       <div className="section-alt-row section-padding text-center">
