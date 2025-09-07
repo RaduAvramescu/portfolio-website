@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import React from "react";
 import NavBar from "../NavBar";
 import Jumbotron from "../Jumbotron";
 import Projects from "../Projects";
@@ -7,7 +7,7 @@ import Contact from "../Contact";
 import Footer from "../Footer";
 
 const AppView = () => (
-  <Fragment>
+  <>
     <NavBar />
     <main>
       <Jumbotron />
@@ -16,7 +16,7 @@ const AppView = () => (
       <Contact />
     </main>
     <Footer />
-  </Fragment>
+  </>
 );
 
 export default AppView;

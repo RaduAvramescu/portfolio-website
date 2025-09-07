@@ -1,54 +1,46 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { animateScroll as scroll } from "react-scroll";
 
 import NavBarView from "./NavBar.view";
 
-export default class NavBar extends Component {
-  constructor(props) {
-    super(props);
+const NavBar = () => {
+  const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
+  const [isVisible, setIsVisible] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
-    this.state = {
-      prevScrollPos: window.pageYOffset,
-      isVisible: true,
-      isCollapsed: true,
-    };
-  }
-
-  handleScrollToTop = () => {
+  const handleScrollToTop = () => {
     scroll.scrollToTop();
   };
 
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
-  }
+  const handleCollapse = useCallback(() => {
+    setIsCollapsed((prev) => !prev);
+  }, []);
 
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-  }
+  const handleScroll = useCallback(() => {
+    const curScrollPos = window.scrollY;
+    const visible = prevScrollPos > curScrollPos;
 
-  handleScroll = () => {
-    const { prevScrollPos } = this.state;
-    const curScrollPos = window.pageYOffset;
-    const isVisible = prevScrollPos > curScrollPos;
-    this.setState({
-      prevScrollPos: curScrollPos,
-      isVisible,
-    });
+    setPrevScrollPos(curScrollPos);
+    setIsVisible(visible);
 
-    if (!isVisible && !this.state.isCollapsed) this.handleCollapse();
-  };
+    if (!visible && !isCollapsed) {
+      handleCollapse();
+    }
+  }, [prevScrollPos, isCollapsed, handleCollapse]);
 
-  handleCollapse = () =>
-    this.setState({ isCollapsed: !this.state.isCollapsed });
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
 
-  render() {
-    return (
-      <NavBarView
-        isVisible={this.state.isVisible}
-        onScrollToTop={this.handleScrollToTop}
-        onCollapse={this.handleCollapse}
-        isCollapsed={this.state.isCollapsed}
-      />
-    );
-  }
-}
+  return (
+    <NavBarView
+      isVisible={isVisible}
+      onScrollToTop={handleScrollToTop}
+      onCollapse={handleCollapse}
+      isCollapsed={isCollapsed}
+    />
+  );
+};
+
+export default NavBar;

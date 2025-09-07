@@ -1,26 +1,36 @@
 import React from "react";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import ProjectsItem from "../ProjectsItem";
 import data from "../../data/data.json";
 
-const Projects = () => (
-  <section id="projects">
-    <div className="section-padding text-center">
-      <h2 className="section-title font-weight-bold wow animate__animated animate__fadeIn">
-        PROJECTS
-      </h2>
-      <div className="container" id="projectsContent">
-        <div className="row">
-          {data.map((item, i) => (
-            <ProjectsItem
-              key={i}
-              data={data[i]}
-              delay={`animate__delay-${i}s`}
-            />
-          ))}
+const Projects = () => {
+  const [titleRef, titleVisible] = useIntersectionObserver();
+
+  return (
+    <section id="projects">
+      <div className="section-padding text-center">
+        <h2
+          ref={titleRef}
+          className={`section-title fw-bold text-uppercase animated fadeIn ${
+            titleVisible ? "animate-in" : ""
+          }`}
+        >
+          Projects
+        </h2>
+        <div className="container" id="projectsContent">
+          <div className="row">
+            {data.map((item, i) => (
+              <ProjectsItem
+                key={i}
+                data={item}
+                delay={i * 0.1} // Convert to seconds for CSS animation-delay
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Projects;

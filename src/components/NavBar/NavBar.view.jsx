@@ -1,29 +1,29 @@
-import { Fragment } from "react";
+import React from "react";
 import { Link } from "react-scroll";
 import { FaArrowCircleUp } from "react-icons/fa";
 import styles from "./NavBar.module.css";
 
 const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
-  <Fragment>
+  <>
     <header
       id="header"
       className={`fixed-top ${!isVisible ? `${styles["header-hide"]}` : ``}`}
     >
       <nav
-        className={`navbar navbar-expand-lg navbar-dark ${styles["navbar-dark"]} bg-dark`}
+        className={`navbar navbar-expand-lg navbar-dark ${styles["navbar-dark"]} bg-dark px-3`}
       >
         <a
-          className={`navbar-brand ${styles["navbar-brand"]} font-weight-bold`}
+          className={`navbar-brand ${styles["navbar-brand"]} fw-bold text-uppercase`}
           href="#top"
           onClick={onScrollToTop}
         >
-          RADU AVRAMESCU
+          Radu Avramescu
         </a>
         <button
           className="navbar-toggler"
           type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded={!isCollapsed ? true : false}
           aria-label="Toggle navigation"
@@ -34,48 +34,51 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
 
         <div
           className={`${
-            isCollapsed ? `collapse ${styles["collapse"]}` : ""
-          } navbar-collapse ${styles["navbar-collapse"]}`}
+            isCollapsed ? `collapse ${styles["collapse"]} d-block` : ""
+          } navbar-collapse ${styles["navbar-collapse"]} overflow-hidden`}
           id="navbarSupportedContent"
         >
-          <ul className="navbar-nav ml-auto">
+          <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <a
-                className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
+                className={`nav-link ${styles["nav-link"]} position-relative px-0 mx-3`}
                 href="#top"
                 onClick={onScrollToTop}
               >
-                HOME
+                <span className="text-uppercase">Home</span>
               </a>
             </li>
             <li className="nav-item">
               <Link
-                className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
+                className={`nav-link ${styles["nav-link"]} position-relative px-0 mx-3`}
                 to="projects"
+                href="#projects"
                 smooth
                 onClick={onCollapse}
               >
-                PROJECTS
+                <span className="text-uppercase">Projects</span>
               </Link>
             </li>
             <li className="nav-item">
               <Link
-                className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
+                className={`nav-link ${styles["nav-link"]} position-relative px-0 mx-3`}
                 to="about"
+                href="#about"
                 smooth
                 onClick={onCollapse}
               >
-                ABOUT
+                <span className="text-uppercase">About</span>
               </Link>
             </li>
             <li className="nav-item">
               <Link
-                className={`nav-link ${styles["nav-link"]} px-0 mx-3`}
+                className={`nav-link ${styles["nav-link"]} position-relative px-0 mx-3`}
                 to="contact"
+                href="#contact"
                 smooth
                 onClick={onCollapse}
               >
-                CONTACT
+                <span className="text-uppercase">Contact</span>
               </Link>
             </li>
           </ul>
@@ -85,11 +88,11 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
     <div
       className={`${isVisible ? `${styles["btnTopScroller-hide"]}` : ``} ${
         styles.btnTopScroller
-      }`}
+      } position-fixed fs-1`}
     >
       <FaArrowCircleUp href="#top" onClick={onScrollToTop} />
     </div>
-  </Fragment>
+  </>
 );
 
 export default NavBarView;
