@@ -14,10 +14,8 @@ const ProjectsItem = ({ data, delay }) => {
       }`}
       style={{ animationDelay: `${delay}s` }}
     >
-      <div className={`card ${styles.card}`}>
-        <div
-          className={`card-header ${styles["card-header"]} overflow-hidden p-0`}
-        >
+      <div className="card h-100 d-flex flex-column bg-light border-2">
+        <div className="card-header overflow-hidden p-0 bg-light">
           <a target="_blank" href={`${data.projectDemoURL}`} rel="noreferrer">
             <picture>
               <source type="image/webp" srcSet={`${data.projectImage}.webp`} />
@@ -25,7 +23,7 @@ const ProjectsItem = ({ data, delay }) => {
               <img
                 src={`${data.projectImage}`}
                 alt={`${data.projectTitle}`}
-                className="card-img-top img-fluid rounded-0"
+                className={`card-img-top img-fluid rounded-0 ${styles.cardHeaderImg}`}
                 width="450"
                 height="250"
                 loading="lazy"
@@ -34,8 +32,8 @@ const ProjectsItem = ({ data, delay }) => {
             </picture>
           </a>
         </div>
-        <div className="card-body d-flex flex-column">
-          <h3 className={`card-title ${styles["card-title"]} fw-bold fs-4`}>
+        <div className="card-body d-flex flex-column bg-light">
+          <h3 className="card-title fw-bold fs-4" style={{ letterSpacing: '1px' }}>
             {data.projectTitle}
           </h3>
           <p className="card-text flex-grow-1">{data.projectDescription}</p>
@@ -46,16 +44,16 @@ const ProjectsItem = ({ data, delay }) => {
             <Technologies technologies={data.projectTechnologies} width={40} />
           </div>
         </div>
-        <div className={`card-footer ${styles["card-footer"]} border-0`}>
+        <div className="card-footer border-0 bg-light">
           <div className="d-flex justify-content-around mb-2">
             <a
               target="_blank"
-              className={`d-flex align-items-center btn btn-outline-dark fw-bold card-btn ${styles["card-btn"]}`}
+              className={`d-flex align-items-center btn btn-outline-dark fw-bold card-btn ${styles.cardBtn}`}
               href={`${data.projectDemoURL}`}
               rel="noreferrer"
             >
-              <span className="text-uppercase">Demo</span>
-              <svg viewBox="0 0 64 64" className="ms-2 btn-icon">
+              <span className="text-uppercase" style={{ letterSpacing: '2px' }}>Demo</span>
+              <svg viewBox="0 0 64 64" className={`ms-2 btn-icon ${styles.cardFooterSvg}`}>
                 <path
                   data-name="layer2"
                   d="M8.3 44.4l11.3 11.4 4.5-4-11.8-11.9z"
@@ -72,12 +70,12 @@ const ProjectsItem = ({ data, delay }) => {
             </a>
             <a
               target="_blank"
-              className={`d-flex align-items-center btn btn-outline-dark fw-bold card-btn ${styles["card-btn"]}`}
+              className={`d-flex align-items-center btn btn-outline-dark fw-bold card-btn ${styles.cardBtn}`}
               href={`${data.projectCodeURL}`}
               rel="noreferrer"
             >
-              <span className="text-uppercase">Code</span>
-              <svg viewBox="0 0 128 128" className="ms-2 btn-icon">
+              <span className="text-uppercase" style={{ letterSpacing: '2px' }}>Code</span>
+              <svg viewBox="0 0 128 128" className={`ms-2 btn-icon ${styles.cardFooterSvg}`}>
                 <g>
                   <path
                     fillRule="evenodd"
