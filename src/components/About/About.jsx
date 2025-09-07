@@ -7,8 +7,8 @@ export default function NavBar() {
   return (
     <section id="about">
       <div className="section-alt-row section-padding text-center">
-        <h2 className="section-title fw-bold wow animate__animated animate__fadeIn">
-          ABOUT
+        <h2 className="section-title fw-bold text-uppercase wow animate__animated animate__fadeIn">
+          About
         </h2>
         <h3 className="container section-description mb-5 wow animate__animated animate__fadeIn">
           I'm a frontend developer interested in staying up to date with

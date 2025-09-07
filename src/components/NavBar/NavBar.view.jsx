@@ -13,11 +13,11 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
         className={`navbar navbar-expand-lg navbar-dark ${styles["navbar-dark"]} bg-dark px-3`}
       >
         <a
-          className={`navbar-brand ${styles["navbar-brand"]} fw-bold`}
+          className={`navbar-brand ${styles["navbar-brand"]} fw-bold text-uppercase`}
           href="#top"
           onClick={onScrollToTop}
         >
-          RADU AVRAMESCU
+          Radu Avramescu
         </a>
         <button
           className="navbar-toggler"
@@ -45,7 +45,7 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
                 href="#top"
                 onClick={onScrollToTop}
               >
-                HOME
+                <span className="text-uppercase">Home</span>
               </a>
             </li>
             <li className="nav-item">
@@ -55,7 +55,7 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
                 smooth
                 onClick={onCollapse}
               >
-                PROJECTS
+                <span className="text-uppercase">Projects</span>
               </Link>
             </li>
             <li className="nav-item">
@@ -65,7 +65,7 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
                 smooth
                 onClick={onCollapse}
               >
-                ABOUT
+                <span className="text-uppercase">About</span>
               </Link>
             </li>
             <li className="nav-item">
@@ -75,7 +75,7 @@ const NavBarView = ({ isVisible, onScrollToTop, onCollapse, isCollapsed }) => (
                 smooth
                 onClick={onCollapse}
               >
-                CONTACT
+                <span className="text-uppercase">Contact</span>
               </Link>
             </li>
           </ul>

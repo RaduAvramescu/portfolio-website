@@ -31,7 +31,7 @@ const ProjectsItem = ({ data, delay }) => (
           {data.projectTitle}
         </h3>
         <p className="card-text">{data.projectDescription}</p>
-        <p className="card-text fw-bold">TECHNOLOGIES USED</p>
+        <p className="card-text fw-bold text-uppercase">Technologies Used</p>
         <div>
           <Technologies technologies={data.projectTechnologies} width={40} />
         </div>
@@ -44,7 +44,7 @@ const ProjectsItem = ({ data, delay }) => (
             href={`${data.projectDemoURL}`}
             rel="noreferrer"
           >
-            DEMO
+            <span className="text-uppercase">Demo</span>
             <svg viewBox="0 0 64 64" className="ms-2 btn-icon">
               <path
                 data-name="layer2"
@@ -66,7 +66,7 @@ const ProjectsItem = ({ data, delay }) => (
             href={`${data.projectCodeURL}`}
             rel="noreferrer"
           >
-            CODE
+            <span className="text-uppercase">Code</span>
             <svg viewBox="0 0 128 128" className="ms-2 btn-icon">
               <g>
                 <path

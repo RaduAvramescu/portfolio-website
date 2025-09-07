@@ -10,7 +10,7 @@ const Jumbotron = () => (
     >
       <div className="container my-auto text-center">
         <div className="intro overflow-hidden">
-          <h1 className="fw-bold">RADU AVRAMESCU</h1>
+          <h1 className="fw-bold text-uppercase">Radu Avramescu</h1>
           <h2>Frontend Developer</h2>
           <div className="d-flex justify-content-center">
             <Link
@@ -18,7 +18,7 @@ const Jumbotron = () => (
               to="projects"
               smooth
             >
-              VIEW MY PROJECTS
+              <span className="text-uppercase">View My Projects</span>
               <FaArrowRight className={`ms-3 ${styles["arrow-right"]}`} />
             </Link>
           </div>

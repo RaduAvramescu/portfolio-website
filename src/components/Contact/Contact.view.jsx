@@ -5,8 +5,8 @@ import styles from "./Contact.module.css";
 const Contact = () => (
   <section id="contact">
     <div className="section-padding">
-      <h2 className="section-title fw-bold text-center wow animate__animated animate__fadeIn">
-        CONTACT
+      <h2 className="section-title fw-bold text-center text-uppercase wow animate__animated animate__fadeIn">
+        Contact
       </h2>
       <div className="container wow animate__animated animate__fadeIn">
         <form action="https://formspree.io/xwkrdeyq" method="POST">
@@ -20,8 +20,8 @@ const Contact = () => (
                 required
                 placeholder=" "
               />
-              <label htmlFor="name" className={`${styles.label}`}>
-                NAME
+              <label htmlFor="name" className={`${styles.label} text-uppercase`}>
+                Name
               </label>
             </div>
 
@@ -34,8 +34,8 @@ const Contact = () => (
                 required
                 placeholder=" "
               />
-              <label htmlFor="email" className={`${styles.label}`}>
-                EMAIL
+              <label htmlFor="email" className={`${styles.label} text-uppercase`}>
+                Email
               </label>
             </div>
 
@@ -47,8 +47,8 @@ const Contact = () => (
                 required
                 placeholder=" "
               ></textarea>
-              <label htmlFor="message" className={`${styles.label}`}>
-                MESSAGE
+              <label htmlFor="message" className={`${styles.label} text-uppercase`}>
+                Message
               </label>
             </div>
 
@@ -57,7 +57,7 @@ const Contact = () => (
                 type="submit"
                 className={`btn btn-dark btn-lg ${styles["btn-submit"]}`}
               >
-                SUBMIT
+                <span className="text-uppercase">Submit</span>
               </button>
             </div>
           </div>
