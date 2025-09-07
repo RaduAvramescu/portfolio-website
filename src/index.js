@@ -1,8 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "animate.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import "./animations.css";
 import App from "./components/App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

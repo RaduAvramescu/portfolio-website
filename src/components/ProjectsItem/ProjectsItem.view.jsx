@@ -1,12 +1,17 @@
 import React from "react";
-
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import Technologies from "../Technologies";
 import styles from "./ProjectsItem.module.css";
 
-const ProjectsItem = ({ data, delay }) => (
-  <div
-    className={`col-sm-6 col-md-6 col-lg-4 wow animate__animated animate__fadeInUp ${delay}`}
-  >
+const ProjectsItem = ({ data, delay }) => {
+  const [itemRef, itemVisible] = useIntersectionObserver();
+
+  return (
+    <div
+      ref={itemRef}
+      className={`col-sm-6 col-md-6 col-lg-4 animated fadeInUp ${itemVisible ? 'animate-in' : ''}`}
+      style={{ animationDelay: `${delay}s` }}
+    >
     <div className={`card ${styles.card} mb-5`}>
       <div
         className={`card-header ${styles["card-header"]} overflow-hidden ${styles["overflow-hidden"]}`}
@@ -82,7 +87,8 @@ const ProjectsItem = ({ data, delay }) => (
         </div>
       </div>
     </div>
-  </div>
-);
+    </div>
+  );
+};
 
 export default ProjectsItem;

@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-scroll";
 import { FaArrowRight } from "react-icons/fa";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import styles from "./Jumbotron.module.css";
 
-const Jumbotron = () => (
+const Jumbotron = () => {
+  const [socialRef, socialVisible] = useIntersectionObserver();
+
+  return (
   <section id="jumbotron">
     <div
       className={`${styles.jumbotron} d-flex justify-content-center vh-100 mb-0`}
@@ -24,7 +28,10 @@ const Jumbotron = () => (
             </Link>
           </div>
         </div>
-        <div className="container py-3 text-center wow animate__animated animate__fadeIn">
+        <div 
+          ref={socialRef}
+          className={`container py-3 text-center animated fadeIn ${socialVisible ? 'animate-in' : ''}`}
+        >
           <a
             target="_blank"
             href="https://github.com/RaduAvramescu"
@@ -59,6 +66,7 @@ const Jumbotron = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default Jumbotron;

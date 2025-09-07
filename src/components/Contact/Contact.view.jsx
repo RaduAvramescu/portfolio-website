@@ -1,14 +1,24 @@
 import React from "react";
-
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import styles from "./Contact.module.css";
 
-const Contact = () => (
-  <section id="contact">
-    <div className="section-padding">
-      <h2 className="section-title fw-bold text-center text-uppercase wow animate__animated animate__fadeIn">
-        Contact
-      </h2>
-      <div className="container wow animate__animated animate__fadeIn">
+const Contact = () => {
+  const [titleRef, titleVisible] = useIntersectionObserver();
+  const [containerRef, containerVisible] = useIntersectionObserver();
+
+  return (
+    <section id="contact">
+      <div className="section-padding">
+        <h2 
+          ref={titleRef}
+          className={`section-title fw-bold text-center text-uppercase animated fadeIn ${titleVisible ? 'animate-in' : ''}`}
+        >
+          Contact
+        </h2>
+        <div 
+          ref={containerRef}
+          className={`container animated fadeIn ${containerVisible ? 'animate-in' : ''}`}
+        >
         <form action="https://formspree.io/xwkrdeyq" method="POST">
           <div className="row justify-content-between">
             <div className={`col-md-5 position-relative ${styles["form-group"]}`}>
@@ -62,9 +72,10 @@ const Contact = () => (
             </div>
           </div>
         </form>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Contact;

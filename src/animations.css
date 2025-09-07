@@ -1,0 +1,48 @@
+/* Modern CSS animations to replace animate.css */
+/* Only includes the animations actually used in the project */
+
+/* FadeIn animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* FadeInUp animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Base styles - elements start hidden */
+.animated {
+  opacity: 0;
+  animation-duration: 1.3s;
+  animation-fill-mode: both;
+}
+
+/* Animation triggers - only applied when visible */
+.animated.animate-in.fadeIn {
+  animation-name: fadeIn;
+}
+
+.animated.animate-in.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+/* Accessibility: Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animated {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}
