@@ -17,8 +17,6 @@ This is the repository for my personal website.
 - Bootstrap
 - JavaScript
 - React
-- Animate.css
-- wow.js
 - React Scroll
 - React Icons
 
