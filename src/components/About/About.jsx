@@ -21,9 +21,8 @@ export default function About() {
         </h2>
         <h3
           ref={descriptionRef}
-          className={`container section-description mb-5 ${
-            styles["text-balance"]
-          } animated fadeIn ${descriptionVisible ? "animate-in" : ""}`}
+          className={`container section-description mb-5 animated fadeIn ${descriptionVisible ? "animate-in" : ""}`}
+          style={{ textWrap: 'balance' }}
         >
           I'm a frontend developer interested in staying up to date with
           technologies and constantly learning. Below is a collection of the

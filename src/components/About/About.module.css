@@ -1,7 +1,4 @@
-.text-balance {
-  text-wrap: balance;
-}
-
+/* Slider animations that can't be done with Bootstrap */
 .slider:hover .slide {
   animation-play-state: paused;
 }
@@ -9,7 +6,6 @@
 .slide {
   animation: scroll-left 10s linear infinite;
 }
-
 
 @keyframes scroll-left {
   0% {
