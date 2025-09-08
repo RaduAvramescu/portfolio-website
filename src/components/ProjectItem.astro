@@ -3,12 +3,12 @@ import Technologies from './Technologies.astro';
 
 export interface Props {
   data: {
-    projectTitle: string;
-    projectImage: string;
-    projectDescription: string;
-    projectTechnologies: string;
-    projectDemoURL: string;
-    projectCodeURL: string;
+    title: string;
+    image: string;
+    description: string;
+    technologies: string;
+    demoURL: string;
+    codeURL: string;
   };
   delay: number;
 }
@@ -24,13 +24,13 @@ const { data, delay } = Astro.props;
 >
   <div class="card h-100 d-flex flex-column bg-light border-2">
     <div class="card-header overflow-hidden p-0 bg-light">
-      <a target="_blank" href={data.projectDemoURL} rel="noreferrer">
+      <a target="_blank" href={data.demoURL} rel="noreferrer">
         <picture>
-          <source type="image/webp" srcset={`${data.projectImage}.webp`} />
-          <source type="image/jpeg" srcset={`${data.projectImage}.jpg`} />
+          <source type="image/webp" srcset={`${data.image}.webp`} />
+          <source type="image/jpeg" srcset={`${data.image}.jpg`} />
           <img
-            src={data.projectImage}
-            alt={data.projectTitle}
+            src={data.image}
+            alt={data.title}
             class="card-img-top img-fluid rounded-0 card-header-img"
             width="450"
             height="250"
@@ -41,15 +41,15 @@ const { data, delay } = Astro.props;
       </a>
     </div>
     <div class="card-body d-flex flex-column bg-light">
-      <h3 class="card-title fw-bold fs-4" style="letter-spacing: 1px;">
-        {data.projectTitle}
+      <h3 class="card-title fw-bold fs-4 text-uppercase" style="letter-spacing: 1px;">
+        {data.title}
       </h3>
-      <p class="card-text flex-grow-1">{data.projectDescription}</p>
+      <p class="card-text flex-grow-1">{data.description}</p>
       <p class="card-text fw-bold text-uppercase mt-auto">
         Technologies Used
       </p>
       <div>
-        <Technologies technologies={data.projectTechnologies} width={40} />
+        <Technologies technologies={data.technologies} width={40} />
       </div>
     </div>
     <div class="card-footer border-0 bg-light">
@@ -57,7 +57,7 @@ const { data, delay } = Astro.props;
         <a
           target="_blank"
           class="d-flex align-items-center btn btn-outline-dark fw-bold card-btn"
-          href={data.projectDemoURL}
+          href={data.demoURL}
           rel="noreferrer"
         >
           <span class="text-uppercase" style="letter-spacing: 2px;">Demo</span>
@@ -79,7 +79,7 @@ const { data, delay } = Astro.props;
         <a
           target="_blank"
           class="d-flex align-items-center btn btn-outline-dark fw-bold card-btn"
-          href={data.projectCodeURL}
+          href={data.codeURL}
           rel="noreferrer"
         >
           <span class="text-uppercase" style="letter-spacing: 2px;">Code</span>

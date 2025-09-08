@@ -1,0 +1,9 @@
+{
+  "title": "Army Builder",
+  "image": "images/army-builder",
+  "description": "Total War: Warhammer 2 army builder/validator.",
+  "technologies": "HTML5 CSS3 JavaScript Material-UI React GraphQL",
+  "demoURL": "https://banner-army-builder.netlify.app",
+  "codeURL": "https://github.com/RaduAvramescu/banner-army-builder",
+  "order": 2
+}

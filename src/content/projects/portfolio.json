@@ -1,0 +1,9 @@
+{
+  "title": "Portfolio",
+  "image": "images/portfolio",
+  "description": "Personal website built to showcase my portfolio.",
+  "technologies": "HTML5 CSS3 JavaScript Bootstrap React",
+  "demoURL": "https://raduavramescu.github.io",
+  "codeURL": "https://github.com/RaduAvramescu/raduavramescu.github.io",
+  "order": 1
+}

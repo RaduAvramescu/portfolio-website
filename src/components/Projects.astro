@@ -1,6 +1,9 @@
 ---
 import ProjectItem from './ProjectItem.astro';
-import projectData from '../data/data.json';
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+const sortedProjects = projects.sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
 ---
 
 <section id="projects" class="section-padding text-center">
@@ -13,9 +16,9 @@ import projectData from '../data/data.json';
   </h2>
   <div class="container" id="projectsContent">
     <div class="row">
-      {projectData.map((item, i) => (
+      {sortedProjects.map((project, i) => (
         <ProjectItem
-          data={item}
+          data={project.data}
           delay={i * 0.1}
         />
       ))}
