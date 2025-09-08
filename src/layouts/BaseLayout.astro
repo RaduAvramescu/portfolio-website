@@ -1,6 +1,8 @@
 ---
-import { AstroFont } from "astro-font";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "@fontsource/open-sans/400.css";
+import "@fontsource/source-code-pro/400.css";
+import "@fontsource/source-code-pro/700.css";
 
 export interface Props {
   title: string;
@@ -21,34 +23,6 @@ const { title, description = "Frontend Developer - Portfolio showcasing modern w
     <title>{title}</title>
     
     
-    <!-- Optimized Fonts with astro-font -->
-    <AstroFont
-      config={[
-        {
-          name: "Source Code Pro",
-          src: [],
-          googleFontsURL: "https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap",
-          preload: true,
-          display: "swap",
-          selector: ".code-font",
-          fallback: "monospace"
-        },
-        {
-          name: "Open Sans",
-          src: [
-            {
-              weight: "400",
-              style: "normal", 
-              path: "/fonts/open-sans-v18-latin-regular.woff"
-            }
-          ],
-          preload: true,
-          display: "swap",
-          selector: "body",
-          fallback: "sans-serif"
-        }
-      ]}
-    />
     
     <!-- Global Styles -->
     <style>
@@ -71,6 +45,10 @@ const { title, description = "Frontend Developer - Portfolio showcasing modern w
         font-family: 'Open Sans', sans-serif;
         line-height: 1.6;
         color: #333;
+      }
+
+      :global(.code-font) {
+        font-family: 'Source Code Pro', monospace;
       }
 
       .img-social {
