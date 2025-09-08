@@ -1,4 +1,6 @@
 ---
+import { AstroFont } from "astro-font";
+
 export interface Props {
   title: string;
   description?: string;
@@ -20,25 +22,36 @@ const { title, description = "Frontend Developer - Portfolio showcasing modern w
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Custom Fonts -->
-    <link rel="preload" href="/fonts/open-sans-v18-latin-regular.woff" as="font" type="font/woff" crossorigin>
+    <!-- Optimized Fonts with astro-font -->
+    <AstroFont
+      config={[
+        {
+          name: "Source Code Pro",
+          googleFontsURL: "https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap",
+          preload: true,
+          display: "swap",
+          selector: ".code-font",
+          fallback: "monospace"
+        },
+        {
+          name: "Open Sans",
+          src: [
+            {
+              weight: "400",
+              style: "normal", 
+              path: "/fonts/open-sans-v18-latin-regular.woff"
+            }
+          ],
+          preload: true,
+          display: "swap",
+          selector: "body",
+          fallback: "sans-serif"
+        }
+      ]}
+    />
     
     <!-- Global Styles -->
     <style>
-      @font-face {
-        font-family: 'Open Sans';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: local('Open Sans Regular'), local('OpenSans-Regular'),
-             url('/fonts/open-sans-v18-latin-regular.woff') format('woff');
-      }
-
       :root {
         --bs-dark: #212529;
         --bs-secondary: #6c757d;
