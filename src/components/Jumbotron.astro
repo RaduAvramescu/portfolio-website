@@ -5,30 +5,31 @@ import { Icon } from "astro-icon/components";
 
 <section id="jumbotron">
   <div
-    class="jumbotron-container flex justify-center items-center min-h-screen mb-0"
+    class="flex justify-center items-center min-h-screen mb-0 bg-cover bg-center bg-fixed text-white md:bg-scroll"
+    style="background-image: url('/images/jumbotron.webp');"
   >
     <div class="container mx-auto text-center px-4">
       <div class="intro overflow-hidden">
         <h1
-          class="font-bold uppercase typewriter-effect text-gray-900 code-font text-5xl lg:text-7xl xl:text-8xl tracking-wider leading-normal"
+          class="font-bold uppercase mx-auto mb-4 xl:mb-2 text-gray-900 code-font text-5xl lg:text-7xl xl:text-8xl tracking-wider leading-normal xl:border-r-2 xl:border-red-500 xl:whitespace-nowrap xl:overflow-hidden xl:tracking-[0.15em] xl:animate-typewriter"
         >
           Radu Avramescu
         </h1>
         <h2
-          class="text-slide-up text-gray-900 text-3xl lg:text-5xl xl:text-6xl leading-normal"
+          class="text-gray-900 text-3xl lg:text-5xl xl:text-6xl leading-normal opacity-0 animate-slide-up-05"
         >
           Frontend Developer
         </h2>
         <div class="flex justify-center mb-2">
           <a
-            class="flex items-center whitespace-nowrap bg-gray-900 text-white text-lg mt-3 px-6 py-4 font-bold btn-slide-up no-underline rounded-lg hover:bg-gray-800 transition-colors duration-300 tracking-widest"
+            class="flex items-center whitespace-nowrap bg-gray-900 text-white text-lg mt-3 px-6 py-4 font-bold no-underline rounded-lg hover:bg-gray-800 transition-colors duration-300 tracking-widest opacity-0 animate-slide-up-08 group"
             href="#projects"
             id="view-projects-btn"
           >
             <span class="uppercase">View My Projects</span>
             <Icon
               name="mdi:arrow-right"
-              class="ml-3 arrow-right transition-transform duration-300"
+              class="ml-3 transition-transform duration-300 group-hover:rotate-90"
               width="24"
               height="24"
             />
@@ -36,9 +37,7 @@ import { Icon } from "astro-icon/components";
         </div>
       </div>
       <div
-        class="container py-3 text-center social-container social-fade-in gap-2"
-        data-observe="true"
-        data-trigger-once="true"
+        class="container py-3 text-center flex justify-center gap-2 opacity-0 translate-y-0 animate-slide-up-08"
       >
         <a
           target="_blank"
@@ -62,88 +61,3 @@ import { Icon } from "astro-icon/components";
     </div>
   </div>
 </section>
-
-<style>
-  .jumbotron-container {
-    background: url("/images/jumbotron.webp");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: white;
-  }
-
-  .typewriter-effect {
-    margin: 0 auto 1rem auto;
-  }
-
-  @media (min-width: 1200px) {
-    .typewriter-effect {
-      margin: 0 auto 0.5rem;
-      border-right: solid 0.1em red;
-      white-space: nowrap;
-      overflow: hidden;
-      letter-spacing: 0.15em;
-      animation:
-        text-animation 2s steps(29, end) 1s 1 normal both,
-        cursor-animation 600ms steps(29, end) infinite;
-    }
-  }
-
-  .text-slide-up {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideUp 1s ease 0.5s forwards;
-  }
-
-  .btn-slide-up {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideUp 1s ease 0.8s forwards;
-  }
-
-  .btn-slide-up:hover .arrow-right {
-    transform: rotate(90deg);
-  }
-
-  @keyframes text-animation {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-
-  @keyframes cursor-animation {
-    from {
-      border-right-color: red;
-    }
-    to {
-      border-right-color: transparent;
-    }
-  }
-
-  @keyframes slideUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .social-container {
-    display: flex;
-    justify-content: center;
-  }
-
-  .social-fade-in {
-    opacity: 0;
-    animation: slideUp 1s ease 1.2s forwards;
-  }
-
-  /* Fallback for browsers that don't support background-attachment: fixed */
-  @media (max-width: 768px) {
-    .jumbotron-container {
-      background-attachment: scroll;
-    }
-  }
-</style>
