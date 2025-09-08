@@ -49,7 +49,7 @@ const { data, delay } = Astro.props;
       </h3>
       <p class="text-gray-700 flex-grow mb-4">{data.description}</p>
       <p class="font-bold uppercase text-gray-900 mb-3">Technologies Used</p>
-      <div class="mb-4">
+      <div class="mb-4 flex flex-wrap justify-center gap-2">
         <Technologies technologies={data.technologies} width={40} />
       </div>
     </div>
