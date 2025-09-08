@@ -16,9 +16,7 @@ This is the repository for my personal website.
 - CSS3
 - Bootstrap
 - JavaScript
-- React
-- React Scroll
-- React Icons
+- Astro
 
 ## Link
 
