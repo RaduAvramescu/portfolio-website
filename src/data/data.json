@@ -1,0 +1,42 @@
+[
+  {
+    "projectTitle": "PORTFOLIO",
+    "projectImage": "images/portfolio",
+    "projectDescription": "Personal website built to showcase my portfolio.",
+    "projectTechnologies": "HTML5 CSS3 JavaScript Bootstrap React",
+    "projectDemoURL": "https://raduavramescu.github.io",
+    "projectCodeURL": "https://github.com/RaduAvramescu/raduavramescu.github.io"
+  },
+  {
+    "projectTitle": "ARMY BUILDER",
+    "projectImage": "images/army-builder",
+    "projectDescription": "Total War: Warhammer 2 army builder/validator.",
+    "projectTechnologies": "HTML5 CSS3 JavaScript Material-UI React GraphQL",
+    "projectDemoURL": "https://banner-army-builder.netlify.app",
+    "projectCodeURL": "https://github.com/RaduAvramescu/banner-army-builder"
+  },
+  {
+    "projectTitle": "WH2 JEOPARDY",
+    "projectImage": "images/wh2-jeopardy",
+    "projectDescription": "Jeopardy board based on Total War: Warhammer 2.",
+    "projectTechnologies": "HTML5 CSS3 JavaScript Bootstrap React",
+    "projectDemoURL": "wh2-jeopardy",
+    "projectCodeURL": "https://github.com/RaduAvramescu/wh2-jeopardy"
+  },
+  {
+    "projectTitle": "COVID-19 TRACKER",
+    "projectImage": "images/covid-19-tracker",
+    "projectDescription": "COVID-19 tracker using ChartJS and public APIs.",
+    "projectTechnologies": "HTML5 CSS3 JavaScript Material-UI React",
+    "projectDemoURL": "covid-19-tracker",
+    "projectCodeURL": "https://github.com/RaduAvramescu/covid-19-tracker"
+  },
+  {
+    "projectTitle": "WEATHER APP",
+    "projectImage": "images/weather-app",
+    "projectDescription": "Weather app showing data based on location.",
+    "projectTechnologies": "HTML5 CSS3 JavaScript Material-UI React",
+    "projectDemoURL": "weather-app",
+    "projectCodeURL": "https://github.com/RaduAvramescu/weather-app"
+  }
+]

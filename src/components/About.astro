@@ -1,0 +1,155 @@
+---
+import Technologies from './Technologies.astro';
+---
+
+<section id="about" class="section-alt-row section-padding text-center">
+  <h2 
+    class="section-title fw-bold text-uppercase"
+    data-observe="true"
+    data-trigger-once="true"
+  >
+    About
+  </h2>
+  <h3 
+    class="container section-description mb-5"
+    data-observe="true"
+    data-trigger-once="true"
+    style="text-wrap: balance;"
+  >
+    I'm a frontend developer interested in staying up to date with
+    technologies and constantly learning. Below is a collection of the
+    technologies I use.
+  </h3>
+  <div class="col-md-12">
+    <div 
+      data-observe="true"
+      data-trigger-once="true"
+    >
+      <div class="container d-flex justify-content-center align-items-center">
+        <div class="slider d-flex overflow-hidden">
+          <div class="slide d-flex align-items-center">
+            <Technologies
+              technologies="HTML5 CSS3 Bootstrap Material-UI JavaScript React GraphQL Git npm"
+              width={70}
+            />
+          </div>
+          <div class="slide d-flex align-items-center">
+            <Technologies
+              technologies="HTML5 CSS3 Bootstrap Material-UI JavaScript React GraphQL Git npm"
+              width={70}
+            />
+          </div>
+          <div class="slide d-flex align-items-center">
+            <Technologies
+              technologies="HTML5 CSS3 Bootstrap Material-UI JavaScript React GraphQL Git npm"
+              width={70}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-alt-row {
+    background-color: #f8f9fa;
+  }
+
+  .section-padding {
+    padding: 80px 20px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    border-radius: 2px;
+  }
+
+  .section-description {
+    font-size: 1.25rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+  }
+
+  /* Slider animations */
+  .slider {
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+  }
+
+  .slider:hover .slide {
+    animation-play-state: paused;
+  }
+
+  .slide {
+    animation: scroll-left 15s linear infinite;
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Animation styles for intersection observer */
+  [data-observe] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+
+  [data-observe].animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    .section-padding {
+      padding: 60px 15px;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .section-description {
+      font-size: 1.1rem;
+    }
+    
+    .slide {
+      animation-duration: 20s;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .slider {
+      max-width: 400px;
+    }
+    
+    .slide {
+      animation-duration: 25s;
+    }
+  }
+</style>

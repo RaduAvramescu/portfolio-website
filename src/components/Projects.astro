@@ -1,0 +1,71 @@
+---
+import ProjectItem from './ProjectItem.astro';
+import projectData from '../data/data.json';
+---
+
+<section id="projects" class="section-padding text-center">
+  <h2 
+    class="section-title fw-bold text-uppercase mb-5"
+    data-observe="true"
+    data-trigger-once="true"
+  >
+    Projects
+  </h2>
+  <div class="container" id="projectsContent">
+    <div class="row">
+      {projectData.map((item, i) => (
+        <ProjectItem
+          data={item}
+          delay={i * 0.1}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-padding {
+    padding: 80px 20px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    border-radius: 2px;
+  }
+
+  /* Animation styles */
+  [data-observe] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+
+  [data-observe].animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    .section-padding {
+      padding: 60px 15px;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+</style>

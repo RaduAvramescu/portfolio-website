@@ -1,0 +1,169 @@
+---
+// No props needed for static navbar
+---
+
+<header id="header" class="fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+    <a class="navbar-brand fw-bold text-uppercase" href="#top" id="navbar-brand">
+      Radu Avramescu
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link position-relative px-0 mx-3" href="#top">
+            <span class="text-uppercase">Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link position-relative px-0 mx-3" href="#projects">
+            <span class="text-uppercase">Projects</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link position-relative px-0 mx-3" href="#about">
+            <span class="text-uppercase">About</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link position-relative px-0 mx-3" href="#contact">
+            <span class="text-uppercase">Contact</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- Scroll to top button -->
+<div id="scroll-to-top" class="position-fixed fs-1 text-secondary" style="bottom: 20px; right: 20px; cursor: pointer; z-index: 1000; opacity: 0; transition: opacity 0.3s ease;">
+  <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1L13.5 2.5L16.17 5.17C15.24 5.06 14.32 5 13.38 5C10.38 5.07 7.59 6.24 5.5 8.26L4 6.76L2.24 8.5L6.26 12.5L12 18.24L17.74 12.5L21.76 8.5L20 6.76L18.5 8.26C20.41 6.24 21.62 3.45 21.69 0.45C21.93 0.31 22 0 22 0C22 0 21.93 0.31 21.69 0.45V9Z"/>
+  </svg>
+</div>
+
+<style>
+  .navbar-brand {
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-brand:hover {
+    color: #fff !important;
+  }
+  
+  .nav-link {
+    position: relative;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .nav-link:hover {
+    color: #fff !important;
+  }
+
+  #header {
+    transition: transform 0.3s ease;
+  }
+
+  #header.header-hide {
+    transform: translateY(-100%);
+  }
+
+  #scroll-to-top.visible {
+    opacity: 1 !important;
+  }
+</style>
+
+<script>
+  // Navbar hide/show on scroll and scroll-to-top functionality
+  let prevScrollPos = window.pageYOffset;
+  const header = document.getElementById('header');
+  const scrollToTopBtn = document.getElementById('scroll-to-top');
+  const navbar = document.querySelector('.navbar-collapse');
+
+  function handleScroll() {
+    const currentScrollPos = window.pageYOffset;
+    const isVisible = prevScrollPos > currentScrollPos || currentScrollPos < 10;
+    
+    if (isVisible) {
+      header.classList.remove('header-hide');
+    } else {
+      header.classList.add('header-hide');
+      // Close navbar if it's open
+      if (navbar.classList.contains('show')) {
+        navbar.classList.remove('show');
+      }
+    }
+    
+    // Show/hide scroll to top button
+    if (currentScrollPos > 100) {
+      scrollToTopBtn.classList.add('visible');
+    } else {
+      scrollToTopBtn.classList.remove('visible');
+    }
+    
+    prevScrollPos = currentScrollPos;
+  }
+
+  // Scroll to top functionality
+  scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Smooth scrolling for navbar links
+  document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId === 'top' ? 'jumbotron' : targetId);
+      
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      
+      // Close navbar on mobile
+      if (navbar.classList.contains('show')) {
+        navbar.classList.remove('show');
+      }
+    });
+  });
+
+  // Brand link scroll to top
+  document.getElementById('navbar-brand').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Listen for scroll events
+  window.addEventListener('scroll', handleScroll);
+</script>
