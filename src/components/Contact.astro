@@ -15,7 +15,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="relative mb-8">
           <input
-            class="form-control-custom w-full p-0 bg-transparent border-0 border-b-2 border-gray-900 focus:outline-none focus:border-green-500 h-10 peer"
+            class="w-full p-0 bg-transparent border-0 border-b-2 border-gray-900 focus:outline-none focus:border-green-700 valid:border-green-700 h-10 peer transition-colors duration-300 ease-in-out"
             type="text"
             name="name"
             id="name"
@@ -32,7 +32,7 @@
 
         <div class="relative mb-8">
           <input
-            class="form-control-custom w-full p-0 bg-transparent border-0 border-b-2 border-gray-900 focus:outline-none focus:border-green-500 h-10 peer"
+            class="w-full p-0 bg-transparent border-0 border-b-2 border-gray-900 focus:outline-none focus:border-green-700 valid:border-green-700 h-10 peer transition-colors duration-300 ease-in-out"
             type="email"
             name="_replyto"
             id="email"
@@ -49,7 +49,7 @@
 
         <div class="relative mb-8 md:col-span-2">
           <textarea
-            class="form-control-custom w-full pt-2 p-0 bg-transparent border-0 border-b-2 border-gray-900 focus:outline-none focus:border-green-500 h-10 resize-none peer"
+            class="w-full pt-2 p-0 bg-transparent border-0 border-b-2 border-gray-900 focus:outline-none focus:border-green-700 valid:border-green-700 h-10 resize-none peer transition-colors duration-300 ease-in-out"
             name="message"
             id="message"
             required
@@ -75,18 +75,6 @@
   </div>
 </section>
 
-<style>
-  .form-control-custom:focus,
-  .form-control-custom:valid,
-  .form-control-custom:not(:placeholder-shown) {
-    border-bottom: 2px solid #28a745 !important;
-    transition: border-bottom 0.3s ease;
-  }
-
-  .form-control-custom {
-    transition: border-bottom 0.3s ease;
-  }
-</style>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
