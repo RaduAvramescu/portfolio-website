@@ -6,27 +6,27 @@
   <div class="jumbotron-container d-flex justify-content-center vh-100 mb-0">
     <div class="container my-auto text-center">
       <div class="intro overflow-hidden">
-        <h1 class="fw-bold text-uppercase typewriter-effect" style="font-size: clamp(50px, 10vw, 100px);">
+        <h1 class="fw-bold text-uppercase typewriter-effect text-dark" style="font-size: clamp(50px, 10vw, 100px); letter-spacing: .15em; font-family: 'Source Code Pro', monospace;">
           Radu Avramescu
         </h1>
-        <h2 class="text-slide-up" style="font-size: clamp(30px, 6vw, 60px);">
+        <h2 class="text-slide-up text-dark" style="font-size: clamp(30px, 6vw, 60px);">
           Frontend Developer
         </h2>
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center mb-2">
           <a
             class="d-flex align-items-center text-nowrap btn btn-dark btn-lg mt-3 px-4 py-3 fw-bold btn-slide-up text-decoration-none"
             style="letter-spacing: 2px;"
             href="#projects"
           >
             <span class="text-uppercase">View My Projects</span>
-            <svg class="ms-3 arrow-right" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+            <svg class="ms-3 arrow-right" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/>
             </svg>
           </a>
         </div>
       </div>
       <div
-        class="container py-3 text-center"
+        class="container py-3 text-center social-container social-fade-in"
         data-observe="true"
         data-trigger-once="true"
       >
@@ -67,7 +67,7 @@
 
 <style>
   .jumbotron-container {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/jumbotron.webp');
+    background: url('/images/jumbotron.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -75,28 +75,26 @@
   }
 
   .typewriter-effect {
-    border-right: 0.15em solid #fff;
-    animation: typewriter 3s steps(15) 1s forwards, blink 1s infinite;
+    border-right: solid 0.1em red;
     white-space: nowrap;
     overflow: hidden;
     width: 0;
+    margin: 0 auto;
+    animation: text-animation 2s steps(15) 1s 1 normal both,
+      cursor-animation 600ms steps(15) infinite;
   }
 
   .text-slide-up {
     opacity: 0;
-    animation: slideUp 1s ease 2.5s forwards;
+    transform: translateY(20px);
+    animation: slideUp 1s ease 0.5s forwards;
   }
 
   .btn-slide-up {
     opacity: 0;
     transform: translateY(20px);
-    animation: slideUp 1s ease 3.5s forwards;
+    animation: slideUp 1s ease 0.8s forwards;
     transition: all 0.3s ease;
-  }
-
-  .btn-slide-up:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
   }
 
   .arrow-right {
@@ -104,18 +102,24 @@
   }
 
   .btn-slide-up:hover .arrow-right {
-    transform: translateX(5px);
+    transform: rotate(90deg);
   }
 
-  @keyframes typewriter {
+  @keyframes text-animation {
+    from {
+      width: 0;
+    }
     to {
       width: 100%;
     }
   }
 
-  @keyframes blink {
+  @keyframes cursor-animation {
+    from {
+      border-right-color: red;
+    }
     to {
-      border-color: transparent;
+      border-right-color: transparent;
     }
   }
 
@@ -124,6 +128,26 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  .social-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .social-fade-in {
+    opacity: 0;
+    animation: slideUp 1s ease 1.2s forwards;
+  }
+
+  .social-container a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .social-container a:hover {
+    transform: scale(1.1);
   }
 
   /* Fallback for browsers that don't support background-attachment: fixed */

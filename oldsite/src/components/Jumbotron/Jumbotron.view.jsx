@@ -25,7 +25,7 @@ const Jumbotron = () => {
                 smooth
               >
                 <span className="text-uppercase">View My Projects</span>
-                <FaArrowRight className={`ms-3 ${styles.arrowRight}`} />
+                <FaArrowRight className={`ms-2 ${styles.arrowRight}`} />
               </Link>
             </div>
           </div>
