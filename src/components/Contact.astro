@@ -182,7 +182,7 @@
 
     // Form submission feedback
     form.addEventListener("submit", () => {
-      const submitBtn = form.querySelector(".submit-btn");
+      const submitBtn = form.querySelector(".submit-btn") as HTMLButtonElement;
 
       if (submitBtn) {
         submitBtn.innerHTML = '<span class="text-uppercase">Sending...</span>';

@@ -118,9 +118,9 @@
   document.addEventListener("DOMContentLoaded", () => {
     // Navbar hide/show on scroll and scroll-to-top functionality
     let prevScrollPos = window.pageYOffset;
-    const header = document.getElementById("header");
-    const scrollToTopBtn = document.getElementById("scroll-to-top");
-    const navbar = document.querySelector(".navbar-collapse");
+    const header = document.getElementById("header") as HTMLElement | null;
+    const scrollToTopBtn = document.getElementById("scroll-to-top") as HTMLElement | null;
+    const navbar = document.querySelector(".navbar-collapse") as HTMLElement | null;
 
     if (!header || !scrollToTopBtn || !navbar) {
       return;
@@ -132,28 +132,28 @@
         prevScrollPos > currentScrollPos || currentScrollPos < 10;
 
       if (isVisible) {
-        header.classList.remove("header-hide");
+        header!.classList.remove("header-hide");
       } else {
-        header.classList.add("header-hide");
+        header!.classList.add("header-hide");
 
         // Close navbar if it's open
-        if (navbar.classList.contains("show")) {
-          navbar.classList.remove("show");
+        if (navbar!.classList.contains("show")) {
+          navbar!.classList.remove("show");
         }
       }
 
       // Show/hide scroll to top button
       if (currentScrollPos > 100) {
-        scrollToTopBtn.classList.add("visible");
+        scrollToTopBtn!.classList.add("visible");
       } else {
-        scrollToTopBtn.classList.remove("visible");
+        scrollToTopBtn!.classList.remove("visible");
       }
 
       prevScrollPos = currentScrollPos;
     }
 
     // Scroll to top functionality
-    scrollToTopBtn.addEventListener("click", () => {
+    scrollToTopBtn!.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
@@ -178,8 +178,8 @@
         }
 
         // Close navbar on mobile
-        if (navbar.classList.contains("show")) {
-          navbar.classList.remove("show");
+        if (navbar!.classList.contains("show")) {
+          navbar!.classList.remove("show");
         }
       });
     });
