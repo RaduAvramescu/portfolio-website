@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "include": [
+    "/*"
+  ],
+  "exclude": [
+    "/",
+    "/_astro/*",
+    "/.assetsignore",
+    "/favicon.ico",
+    "/index.html",
+    "/manifest.json",
+    "/robots.txt",
+    "/images/*"
+  ]
+}

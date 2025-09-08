@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://raduavramescu.github.io",
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.7",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
@@ -16,12 +17,9 @@
     "web-vitals": "^5.1.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +40,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "wrangler": "^4.34.0"
   }
 }
