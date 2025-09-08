@@ -2,15 +2,16 @@
 import ProjectItem from "./ProjectItem.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 
-type ProjectEntry = CollectionEntry<'projects'>;
+type ProjectEntry = CollectionEntry<"projects">;
 
 const projects = await getCollection("projects");
 const sortedProjects = projects.sort(
-  (a: ProjectEntry, b: ProjectEntry) => (a.data.order || 0) - (b.data.order || 0)
+  (a: ProjectEntry, b: ProjectEntry) =>
+    (a.data.order || 0) - (b.data.order || 0)
 );
 ---
 
-<section id="projects" class="py-20 px-5 md:py-[60px] md:px-[15px] text-center">
+<section id="projects" class="py-10 px-5 md:py-14 md:px-4 text-center">
   <h2
     class="text-4xl md:text-[2rem] font-bold uppercase mb-12 text-gray-800 relative"
     data-observe="true"
