@@ -1,0 +1,193 @@
+---
+// Contact component for Astro
+---
+
+<section id="contact" class="section-padding">
+  <h2
+    class="section-title fw-bold text-center text-uppercase"
+    data-observe="true"
+    data-trigger-once="true"
+  >
+    Contact
+  </h2>
+  <div class="container" data-observe="true" data-trigger-once="true">
+    <form action="https://formspree.io/xwkrdeyq" method="POST">
+      <div class="row justify-content-between">
+        <div class="col-md-5 position-relative mb-5">
+          <input
+            class="form-control form-control-custom p-0 rounded-0 shadow-none border-top-0 border-start-0 border-end-0 border-2 border-dark"
+            style="height: 40px;"
+            type="text"
+            name="name"
+            id="name"
+            required
+            placeholder=" "
+          />
+          <label
+            for="name"
+            class="label-custom text-uppercase fs-5 position-absolute top-0 text-dark"
+          >
+            Name
+          </label>
+        </div>
+
+        <div class="col-md-5 position-relative mb-5">
+          <input
+            class="form-control form-control-custom p-0 rounded-0 shadow-none border-top-0 border-start-0 border-end-0 border-2 border-dark"
+            style="height: 40px;"
+            type="email"
+            name="_replyto"
+            id="email"
+            required
+            placeholder=" "
+          />
+          <label
+            for="email"
+            class="label-custom text-uppercase fs-5 position-absolute top-0 text-dark"
+          >
+            Email
+          </label>
+        </div>
+
+        <div class="col-md-12 position-relative mb-5">
+          <textarea
+            class="form-control form-control-custom pt-2 p-0 rounded-0 shadow-none border-top-0 border-start-0 border-end-0 border-2 border-dark"
+            style="height: 40px; resize: none;"
+            name="message"
+            id="message"
+            required
+            placeholder=" "></textarea>
+          <label
+            for="message"
+            class="label-custom text-uppercase fs-5 position-absolute top-0 text-dark"
+          >
+            Message
+          </label>
+        </div>
+
+        <div class="col-md-12 text-center">
+          <button
+            type="submit"
+            class="btn btn-dark btn-lg submit-btn"
+            style="letter-spacing: 1px;"
+          >
+            <span class="text-uppercase">Submit</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<style>
+  .section-padding {
+    padding: 80px 20px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  /* Label animations */
+  .label-custom {
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .label-custom:hover {
+    opacity: 0.6;
+  }
+
+  .form-control-custom:focus + .label-custom,
+  .form-control-custom:valid + .label-custom,
+  .form-control-custom:not(:placeholder-shown) + .label-custom {
+    transform: translateY(-30px);
+  }
+
+  .form-control-custom:focus,
+  .form-control-custom:valid,
+  .form-control-custom:not(:placeholder-shown) {
+    border-bottom: 2px solid #28a745 !important;
+    transition: border-bottom 0.3s ease;
+  }
+
+  .form-control-custom {
+    background: transparent;
+    transition: border-bottom 0.3s ease;
+  }
+
+  .submit-btn {
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid #212529;
+  }
+
+  .submit-btn:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    background-color: #000;
+    border-color: #000;
+  }
+
+  /* Animation styles for intersection observer */
+  [data-observe] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
+
+  [data-observe].animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    .section-padding {
+      padding: 60px 15px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .col-md-5 {
+      margin-bottom: 2rem !important;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+
+    if (!form) {
+      return;
+    }
+
+    const inputs = form.querySelectorAll("input, textarea");
+
+    inputs.forEach((input) => {
+      // Add focus/blur events for enhanced label behavior
+      input.addEventListener("focus", () => {
+        input.classList.add("focused");
+      });
+
+      input.addEventListener("blur", () => {
+        input.classList.remove("focused");
+      });
+    });
+
+    // Form submission feedback
+    form.addEventListener("submit", () => {
+      const submitBtn = form.querySelector(".submit-btn") as HTMLButtonElement;
+
+      if (submitBtn) {
+        submitBtn.innerHTML = '<span class="text-uppercase">Sending...</span>';
+        submitBtn.disabled = true;
+      }
+    });
+  });
+</script>

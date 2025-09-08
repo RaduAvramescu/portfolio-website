@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavBar from '../components/NavBar.astro';
+import Jumbotron from '../components/Jumbotron.astro';
+import Projects from '../components/Projects.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Radu Avramescu - Frontend Developer" description="Frontend Developer passionate about modern web technologies. Showcasing React, JavaScript, and full-stack development projects.">
+  <NavBar />
+  <main>
+    <Jumbotron />
+    <Projects />
+    <About />
+    <Contact />
+  </main>
+  <Footer />
+  
+  <!-- Intersection Observer Script -->
+  <script src="../scripts/intersectionObserver.js"></script>
+</BaseLayout>

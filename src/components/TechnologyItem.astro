@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon/components";
+
+export interface Props {
+  techName: string;
+  width?: number;
+}
+
+const { techName, width = 40 } = Astro.props;
+const className = width > 50 ? "mx-4 my-2" : "m-1";
+
+const iconMap: Record<string, string> = {
+  HTML5: "devicon:html5",
+  CSS3: "devicon:css3",
+  JavaScript: "devicon:javascript",
+  Bootstrap: "devicon:bootstrap",
+  "Material-UI": "devicon:materialui",
+  React: "devicon:react",
+  GraphQL: "devicon:apollographql",
+  Git: "devicon:git",
+  npm: "devicon:npm",
+};
+
+const iconName = iconMap[techName];
+---
+
+<Icon
+  name={iconName}
+  class={className}
+  width={width}
+  height={width}
+  title={techName}
+/>
+
+<style>
+  svg {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  svg:hover {
+    transform: scale(1.2);
+  }
+</style>

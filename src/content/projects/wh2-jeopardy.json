@@ -1,0 +1,9 @@
+{
+  "title": "WH2 Jeopardy",
+  "image": "images/wh2-jeopardy",
+  "description": "Jeopardy board based on Total War: Warhammer 2.",
+  "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "React"],
+  "demoURL": "wh2-jeopardy",
+  "codeURL": "https://github.com/RaduAvramescu/wh2-jeopardy",
+  "order": 3
+}

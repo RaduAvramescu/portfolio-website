@@ -1,0 +1,9 @@
+{
+  "title": "COVID-19 Tracker",
+  "image": "images/covid-19-tracker",
+  "description": "COVID-19 tracker using ChartJS and public APIs.",
+  "technologies": ["HTML5", "CSS3", "JavaScript", "Material-UI", "React"],
+  "demoURL": "covid-19-tracker",
+  "codeURL": "https://github.com/RaduAvramescu/covid-19-tracker",
+  "order": 4
+}

@@ -1,0 +1,12 @@
+---
+import TechnologyItem from "./TechnologyItem.astro";
+
+export interface Props {
+  technologies: string[];
+  width?: number;
+}
+
+const { technologies, width = 40 } = Astro.props;
+---
+
+{technologies.map((tech) => <TechnologyItem techName={tech} width={width} />)}

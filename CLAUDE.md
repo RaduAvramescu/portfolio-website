@@ -4,51 +4,69 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Common Development Commands
 
-- `npm start` - Start development server
-- `npm run build` - Build production version
-- `npm test` - Run tests
-- `npm run deploy` - Deploy to GitHub Pages (runs predeploy build automatically)
+- `npm run dev` - Start Astro development server
+- `npm run build` - Build production version for deployment
+- `npm run preview` - Preview the built site locally
+- `npm run deploy` - Deploy to Cloudflare using Wrangler
 
 ## Project Architecture
 
-This is a personal portfolio website built with React and Create React App. The site is deployed to GitHub Pages and showcases projects, technologies, and contact information.
+This is a personal portfolio website built with Astro as a static site and deployed to Cloudflare. The site showcases projects, technologies, and contact information in a single-page application format.
 
-### Component Structure
+### Technology Stack
 
-The codebase follows a container/view pattern for React components:
+- **Astro** - Static site generator with component-based architecture
+- **Bootstrap 5** - CSS framework for responsive design and components
+- **Wrangler** - Cloudflare deployment tool
 
-- **Container components** (`*.container.js/jsx`) - Handle state and lifecycle methods
-- **View components** (`*.view.js/jsx`) - Handle presentation and rendering
-- **Index files** (`index.js`) - Export the main component for clean imports
+### Project Structure
+
+The codebase follows Astro's file-based routing and component structure:
+
+- **Pages** (`src/pages/`) - Route-based pages, currently only `index.astro`
+- **Components** (`src/components/`) - Reusable Astro components for sections
+- **Layouts** (`src/layouts/`) - Base layout template with common HTML structure
+- **Data** (`src/data/`) - JSON data files for dynamic content
+- **Scripts** (`src/scripts/`) - Client-side JavaScript utilities
 
 ### Key Components
 
-- `App` - Main application container with WOW.js animation initialization
-- `NavBar` - Navigation with smooth scrolling
-- `Jumbotron` - Hero section with main introduction
-- `Projects` - Portfolio projects grid
-- `About` - About section with technologies showcase
-- `Technologies` - Reusable tech stack component with individual `TechnologyItem` components
-- `Contact` - Contact form and information
-- `Footer` - Site footer
+- `BaseLayout.astro` - Main layout template with SEO meta tags, Bootstrap CSS/JS, and global styles
+- `NavBar.astro` - Navigation with smooth scrolling to sections
+- `Jumbotron.astro` - Hero section with main introduction
+- `Projects.astro` - Portfolio projects grid using data from `data.json`
+- `ProjectItem.astro` - Individual project card component
+- `About.astro` - About section with technologies showcase
+- `Technologies.astro` - Reusable tech stack component
+- `TechnologyItem.astro` - Individual technology item
+- `Contact.astro` - Contact form and information
+- `Footer.astro` - Site footer
 
 ### Data Management
 
 - `src/data/data.json` - Contains all project data including titles, descriptions, technologies, demo URLs, and code URLs
-- Project images are stored in `src/images/` with both `.jpg` and `.webp` formats for optimization
+- Project images are referenced in the data and stored in `public/images/` directory
 
-### Styling
+### Styling and Animations
 
-- Bootstrap 5 for layout and components
-- CSS Modules for component-specific styling (`*.module.css`)
-- Global styles in `src/index.css` and `src/components/App/App.css`
-- Animate.css and WOW.js for scroll animations
+- Bootstrap 5 loaded via CDN for layout and responsive components
+- Custom CSS embedded in individual Astro components using `<style>` tags
+- Global styles defined in `BaseLayout.astro`
+- Custom intersection observer implementation in `intersectionObserver.js` for scroll-triggered animations
+- Elements with `data-observe` attribute automatically get fade-in animations
+- Use `data-trigger-once="true"` for one-time animations that don't repeat
 
-### Technologies Used
+### Deployment Configuration
 
-- React with functional and class components
-- Bootstrap for responsive design
-- React Icons for iconography
-- React Scroll for smooth navigation
-- Animate.css + WOW.js for animations
-- Create React App build system
+- Configured as a static site in `astro.config.mjs`
+- Generates static files in the `dist/` directory after build
+- Deployment handled through `wrangler deploy` command
+
+### Animation System
+
+The site uses a custom intersection observer system that replaces traditional animation libraries:
+
+- Elements with `data-observe` attribute are automatically observed
+- Animations trigger when elements enter the viewport
+- Use `data-trigger-once="true"` to prevent re-animation on scroll
+- CSS classes `.animate-in` are added/removed based on visibility
