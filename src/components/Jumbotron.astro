@@ -180,22 +180,3 @@
     }
   }
 </style>
-
-<script>
-  // Smooth scrolling for the CTA button
-  document.addEventListener("DOMContentLoaded", () => {
-    const ctaButton = document.querySelector(".btn-slide-up");
-
-    if (ctaButton) {
-      ctaButton.addEventListener("click", (event) => {
-        event.preventDefault();
-
-        const targetElement = document.getElementById("projects");
-
-        if (targetElement) {
-          targetElement.scrollIntoView({ behavior: "smooth" });
-        }
-      });
-    }
-  });
-</script>
