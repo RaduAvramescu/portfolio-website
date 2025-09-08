@@ -16,34 +16,34 @@ import { Icon } from "astro-icon/components";
       
       <!-- Mobile menu button -->
       <button
-        class="lg:hidden flex flex-col space-y-1 p-2 rounded-lg"
+        class="lg:hidden flex flex-col space-y-1 p-2 rounded-lg group"
         id="mobile-menu-button"
         aria-label="Toggle navigation"
       >
-        <span class="w-6 h-0.5 bg-white transition-all duration-300" id="line1"></span>
-        <span class="w-6 h-0.5 bg-white transition-all duration-300" id="line2"></span>
-        <span class="w-6 h-0.5 bg-white transition-all duration-300" id="line3"></span>
+        <span class="w-6 h-0.5 bg-white transition-all duration-300 group-[.active]:rotate-45 group-[.active]:translate-y-1.5" id="line1"></span>
+        <span class="w-6 h-0.5 bg-white transition-all duration-300 group-[.active]:opacity-0" id="line2"></span>
+        <span class="w-6 h-0.5 bg-white transition-all duration-300 group-[.active]:-rotate-45 group-[.active]:-translate-y-1.5" id="line3"></span>
       </button>
 
       <!-- Desktop navigation -->
       <ul class="hidden lg:flex space-x-8">
         <li>
-          <a class="nav-link relative px-0 font-medium text-gray-400 uppercase hover:text-white transition-colors duration-300" href="#top">
+          <a class="nav-link relative px-0 font-medium text-gray-400 uppercase hover:text-white transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-white after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full" href="#top">
             Home
           </a>
         </li>
         <li>
-          <a class="nav-link relative px-0 font-medium text-gray-400 uppercase hover:text-white transition-colors duration-300" href="#projects">
+          <a class="nav-link relative px-0 font-medium text-gray-400 uppercase hover:text-white transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-white after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full" href="#projects">
             Projects
           </a>
         </li>
         <li>
-          <a class="nav-link relative px-0 font-medium text-gray-400 uppercase hover:text-white transition-colors duration-300" href="#about">
+          <a class="nav-link relative px-0 font-medium text-gray-400 uppercase hover:text-white transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-white after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full" href="#about">
             About
           </a>
         </li>
         <li>
-          <a class="nav-link relative px-0 font-medium text-gray-400 uppercase hover:text-white transition-colors duration-300" href="#contact">
+          <a class="nav-link relative px-0 font-medium text-gray-400 uppercase hover:text-white transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-white after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full" href="#contact">
             Contact
           </a>
         </li>
@@ -88,37 +88,6 @@ import { Icon } from "astro-icon/components";
   <Icon name="mdi:chevron-up-circle" width={48} height={48} />
 </a>
 
-<style>
-  .nav-link::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -6px;
-    left: 50%;
-    background-color: #fff;
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-  }
-
-  .nav-link:hover::after {
-    width: 100%;
-  }
-
-
-  /* Mobile menu animation */
-  #mobile-menu-button.active #line1 {
-    transform: rotate(45deg) translateY(6px);
-  }
-
-  #mobile-menu-button.active #line2 {
-    opacity: 0;
-  }
-
-  #mobile-menu-button.active #line3 {
-    transform: rotate(-45deg) translateY(-6px);
-  }
-</style>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
