@@ -16,7 +16,8 @@ This is a personal portfolio website built with Astro as a static site and deplo
 ### Technology Stack
 
 - **Astro** - Static site generator with component-based architecture
-- **Bootstrap 5** - CSS framework for responsive design and components
+- **Tailwind CSS** - Utility-first CSS framework for responsive design
+- **Astro Icon** - Icon component system with Iconify integration
 - **Wrangler** - Cloudflare deployment tool
 
 ### Project Structure
@@ -49,24 +50,20 @@ The codebase follows Astro's file-based routing and component structure:
 
 ### Styling and Animations
 
-- Bootstrap 5 loaded via CDN for layout and responsive components
-- Custom CSS embedded in individual Astro components using `<style>` tags
-- Global styles defined in `BaseLayout.astro`
-- Custom intersection observer implementation in `intersectionObserver.js` for scroll-triggered animations
-- Elements with `data-observe` attribute automatically get fade-in animations
-- Use `data-trigger-once="true"` for one-time animations that don't repeat
+- **Tailwind CSS** - Utility-first CSS framework configured via Vite plugin
+- **Custom CSS** - Global styles in `src/styles/globals.css` and component-specific styles
+- **Typography** - Open Sans for body text, Source Code Pro for code/monospace elements
+- **Icons** - Astro Icon integration with Iconify collections (@iconify-json/devicon, @iconify-json/mdi)
+- **Responsive Design** - Mobile-first approach using Tailwind's responsive utilities
 
 ### Deployment Configuration
 
-- Configured as a static site in `astro.config.mjs`
+- Configured as a static site in `astro.config.mjs` with Astro Icon and Tailwind integrations
 - Generates static files in the `dist/` directory after build
-- Deployment handled through `wrangler deploy` command
+- Deployment handled through `wrangler deploy` command to Cloudflare
 
-### Animation System
+### Configuration Files
 
-The site uses a custom intersection observer system that replaces traditional animation libraries:
-
-- Elements with `data-observe` attribute are automatically observed
-- Animations trigger when elements enter the viewport
-- Use `data-trigger-once="true"` to prevent re-animation on scroll
-- CSS classes `.animate-in` are added/removed based on visibility
+- `astro.config.mjs` - Astro configuration with icon and Tailwind integrations
+- `tailwind.config.js` - Tailwind CSS configuration
+- `package.json` - Dependencies and scripts for development and deployment
