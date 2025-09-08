@@ -7,6 +7,7 @@
     "@fontsource/open-sans": "^5.2.6",
     "@fontsource/source-code-pro": "^5.2.6",
     "astro": "^5.8.4",
+    "astro-icon": "^1.1.5",
     "bootstrap": "^5.3.8"
   },
   "scripts": {
@@ -16,6 +17,7 @@
     "deploy": "wrangler deploy"
   },
   "devDependencies": {
+    "@iconify-json/devicon": "^1.2.43",
     "wrangler": "^4.34.0"
   }
 }
