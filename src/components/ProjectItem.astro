@@ -14,13 +14,17 @@ export interface Props {
 }
 
 const { data, delay } = Astro.props;
+
+const getDelayClass = (index: number) => {
+  const delays = ['', 'delay-100', 'delay-200', 'delay-300', 'delay-500', 'delay-700'];
+  return delays[index] || 'delay-1000';
+};
 ---
 
 <div
-  class="mb-8"
+  class={`mb-8 ${getDelayClass(delay)}`}
   data-observe="true"
   data-trigger-once="true"
-  style={`animation-delay: ${delay}s`}
 >
   <div class="bg-gray-100 border-2 border-gray-200 rounded-lg h-full flex flex-col overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
     <div class="overflow-hidden p-0 bg-gray-100">
@@ -42,8 +46,7 @@ const { data, delay } = Astro.props;
     </div>
     <div class="p-6 flex flex-col flex-grow bg-gray-100">
       <h3
-        class="font-bold text-xl uppercase mb-4 text-gray-900"
-        style="letter-spacing: 1px;"
+        class="font-bold text-xl uppercase mb-4 text-gray-900 tracking-wide"
       >
         {data.title}
       </h3>
@@ -61,7 +64,7 @@ const { data, delay } = Astro.props;
           href={data.demoURL}
           rel="noreferrer"
         >
-          <span class="uppercase mr-2" style="letter-spacing: 2px;">Demo</span>
+          <span class="uppercase mr-2 tracking-widest">Demo</span>
           <svg viewBox="0 0 64 64" class="btn-icon card-footer-svg">
             <path data-name="layer2" d="M8.3 44.4l11.3 11.4 4.5-4-11.8-11.9z"
             ></path>
@@ -81,7 +84,7 @@ const { data, delay } = Astro.props;
           href={data.codeURL}
           rel="noreferrer"
         >
-          <span class="uppercase mr-2" style="letter-spacing: 2px;">Code</span>
+          <span class="uppercase mr-2 tracking-widest">Code</span>
           <svg viewBox="0 0 128 128" class="btn-icon card-footer-svg">
             <g>
               <path

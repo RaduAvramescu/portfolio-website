@@ -19,7 +19,7 @@ const sortedProjects = projects.sort((a, b) => (a.data.order || 0) - (b.data.ord
       {sortedProjects.map((project, i) => (
         <ProjectItem
           data={project.data}
-          delay={i * 0.1}
+          delay={i}
         />
       ))}
     </div>
