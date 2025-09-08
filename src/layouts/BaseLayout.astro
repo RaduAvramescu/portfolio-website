@@ -1,5 +1,5 @@
 ---
-import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/globals.css";
 import "@fontsource/open-sans/400.css";
 import "@fontsource/source-code-pro/400.css";
 import "@fontsource/source-code-pro/700.css";
@@ -24,64 +24,9 @@ const { title, description = "Frontend Developer - Portfolio showcasing modern w
     
     
     
-    <!-- Global Styles -->
-    <style>
-      :root {
-        --bs-dark: #212529;
-        --bs-secondary: #6c757d;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: 'Open Sans', sans-serif;
-        line-height: 1.6;
-        color: #333;
-      }
-
-      :global(.code-font) {
-        font-family: 'Source Code Pro', monospace;
-      }
-
-      .img-social {
-        margin: 0 15px;
-        transition: transform 0.3s ease;
-      }
-
-      .img-social:hover {
-        transform: scale(1.1);
-      }
-
-      /* Animation classes */
-      .animate-in {
-        animation: fadeInUp 1s ease forwards;
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
   </head>
   <body>
     <slot />
     
-    <script>
-      import('bootstrap/dist/js/bootstrap.bundle.min.js');
-    </script>
   </body>
 </html>

@@ -3,47 +3,74 @@ import { Icon } from "astro-icon/components";
 // No props needed for static navbar
 ---
 
-<header id="header" class="fixed-top">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-    <a
-      class="navbar-brand fw-bold text-uppercase"
-      href="#top"
-      id="navbar-brand"
-    >
-      Radu Avramescu
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<header id="header" class="fixed top-0 left-0 w-full z-50 transition-transform duration-300 ease-in-out">
+  <nav class="bg-gray-900 text-white px-4 py-3">
+    <div class="flex items-center justify-between">
+      <a
+        class="text-lg font-bold uppercase text-gray-400 hover:text-white transition-colors duration-300"
+        href="#top"
+        id="navbar-brand"
+      >
+        Radu Avramescu
+      </a>
+      
+      <!-- Mobile menu button -->
+      <button
+        class="lg:hidden flex flex-col space-y-1 p-2"
+        id="mobile-menu-button"
+        aria-label="Toggle navigation"
+      >
+        <span class="w-6 h-0.5 bg-white transition-all duration-300" id="line1"></span>
+        <span class="w-6 h-0.5 bg-white transition-all duration-300" id="line2"></span>
+        <span class="w-6 h-0.5 bg-white transition-all duration-300" id="line3"></span>
+      </button>
 
-    <div class="navbar-collapse collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link position-relative px-0 mx-3" href="#top">
-            <span class="text-uppercase">Home</span>
+      <!-- Desktop navigation -->
+      <ul class="hidden lg:flex space-x-8">
+        <li>
+          <a class="nav-link relative px-0 font-medium text-white uppercase hover:text-white transition-colors duration-300" href="#top">
+            Home
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link position-relative px-0 mx-3" href="#projects">
-            <span class="text-uppercase">Projects</span>
+        <li>
+          <a class="nav-link relative px-0 font-medium text-white uppercase hover:text-white transition-colors duration-300" href="#projects">
+            Projects
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link position-relative px-0 mx-3" href="#about">
-            <span class="text-uppercase">About</span>
+        <li>
+          <a class="nav-link relative px-0 font-medium text-white uppercase hover:text-white transition-colors duration-300" href="#about">
+            About
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link position-relative px-0 mx-3" href="#contact">
-            <span class="text-uppercase">Contact</span>
+        <li>
+          <a class="nav-link relative px-0 font-medium text-white uppercase hover:text-white transition-colors duration-300" href="#contact">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Mobile navigation -->
+    <div class="lg:hidden hidden mt-4" id="mobile-menu">
+      <ul class="flex flex-col space-y-2">
+        <li>
+          <a class="nav-link block py-2 font-medium text-white uppercase hover:text-white transition-colors duration-300" href="#top">
+            Home
+          </a>
+        </li>
+        <li>
+          <a class="nav-link block py-2 font-medium text-white uppercase hover:text-white transition-colors duration-300" href="#projects">
+            Projects
+          </a>
+        </li>
+        <li>
+          <a class="nav-link block py-2 font-medium text-white uppercase hover:text-white transition-colors duration-300" href="#about">
+            About
+          </a>
+        </li>
+        <li>
+          <a class="nav-link block py-2 font-medium text-white uppercase hover:text-white transition-colors duration-300" href="#contact">
+            Contact
           </a>
         </li>
       </ul>
@@ -55,29 +82,12 @@ import { Icon } from "astro-icon/components";
 <a
   href="#top"
   id="scroll-to-top"
-  class="position-fixed text-secondary text-decoration-none d-flex align-items-center justify-content-center"
+  class="fixed bottom-5 right-5 z-50 text-gray-500 no-underline flex items-center justify-center opacity-0 transition-all duration-300 hover:text-gray-700"
 >
   <Icon name="mdi:chevron-up-circle" width={48} height={48} />
 </a>
 
 <style>
-  .navbar-brand {
-    font-size: 1.25rem;
-    line-height: 1;
-    color: #6c757d;
-    transition: color 0.3s ease;
-  }
-
-  .navbar-brand:hover {
-    color: #fff !important;
-  }
-
-  .nav-link {
-    position: relative;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-
   .nav-link::after {
     content: "";
     position: absolute;
@@ -94,28 +104,25 @@ import { Icon } from "astro-icon/components";
     width: 100%;
   }
 
-  .nav-link:hover {
-    color: #fff !important;
-  }
-
-  #header {
-    transition: transform 0.3s ease;
-  }
-
   #header.header-hide {
     transform: translateY(-100%);
   }
 
-  #scroll-to-top {
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    opacity: 0;
-    transition: all 0.3s ease;
-  }
-
   #scroll-to-top.visible {
     opacity: 1 !important;
+  }
+
+  /* Mobile menu animation */
+  #mobile-menu-button.active #line1 {
+    transform: rotate(45deg) translateY(6px);
+  }
+
+  #mobile-menu-button.active #line2 {
+    opacity: 0;
+  }
+
+  #mobile-menu-button.active #line3 {
+    transform: rotate(-45deg) translateY(-6px);
   }
 </style>
 
@@ -127,12 +134,29 @@ import { Icon } from "astro-icon/components";
     const scrollToTopBtn = document.getElementById(
       "scroll-to-top"
     ) as HTMLElement | null;
-    const navbar = document.querySelector(
-      ".navbar-collapse"
+    const mobileMenu = document.getElementById(
+      "mobile-menu"
+    ) as HTMLElement | null;
+    const mobileMenuButton = document.getElementById(
+      "mobile-menu-button"
     ) as HTMLElement | null;
 
-    if (!header || !scrollToTopBtn || !navbar) {
+    if (!header || !scrollToTopBtn) {
       return;
+    }
+
+    // Mobile menu toggle
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener("click", () => {
+        const isHidden = mobileMenu.classList.contains("hidden");
+        if (isHidden) {
+          mobileMenu.classList.remove("hidden");
+          mobileMenuButton.classList.add("active");
+        } else {
+          mobileMenu.classList.add("hidden");
+          mobileMenuButton.classList.remove("active");
+        }
+      });
     }
 
     function handleScroll() {
@@ -145,9 +169,10 @@ import { Icon } from "astro-icon/components";
       } else {
         header!.classList.add("header-hide");
 
-        // Close navbar if it's open
-        if (navbar!.classList.contains("show")) {
-          navbar!.classList.remove("show");
+        // Close mobile menu if it's open
+        if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.add("hidden");
+          mobileMenuButton?.classList.remove("active");
         }
       }
 
@@ -181,9 +206,10 @@ import { Icon } from "astro-icon/components";
           window.scrollTo({ top: 0, behavior: "smooth" });
         }
 
-        // Close navbar on mobile
-        if (navbar!.classList.contains("show")) {
-          navbar!.classList.remove("show");
+        // Close mobile menu
+        if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+          mobileMenu.classList.add("hidden");
+          mobileMenuButton?.classList.remove("active");
         }
       });
     });

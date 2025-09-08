@@ -14,6 +14,7 @@ const iconMap: Record<string, string> = {
   CSS3: "devicon:css3",
   JavaScript: "devicon:javascript",
   Bootstrap: "devicon:bootstrap",
+  "Tailwind CSS": "devicon:tailwindcss",
   "Material-UI": "devicon:materialui",
   React: "devicon:react",
   GraphQL: "mdi:graphql",
@@ -26,19 +27,9 @@ const iconName = iconMap[techName];
 
 <Icon
   name={iconName}
-  class={className}
+  class={`${className} cursor-pointer transition-transform duration-300 hover:scale-120`}
   width={width}
   height={width}
   title={techName}
 />
 
-<style>
-  svg {
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-
-  svg:hover {
-    transform: scale(1.2);
-  }
-</style>

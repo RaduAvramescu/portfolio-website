@@ -3,30 +3,30 @@
 ---
 
 <section id="jumbotron">
-  <div class="jumbotron-container d-flex justify-content-center vh-100 mb-0">
-    <div class="container my-auto text-center">
+  <div class="jumbotron-container flex justify-center items-center min-h-screen mb-0">
+    <div class="container mx-auto text-center px-4">
       <div class="intro overflow-hidden">
         <h1
-          class="fw-bold text-uppercase typewriter-effect text-dark code-font"
+          class="font-bold uppercase typewriter-effect text-gray-900 code-font"
           style="font-size: clamp(50px, 10vw, 100px); letter-spacing: .15em;"
         >
           Radu Avramescu
         </h1>
         <h2
-          class="text-slide-up text-dark"
+          class="text-slide-up text-gray-900"
           style="font-size: clamp(30px, 6vw, 60px);"
         >
           Frontend Developer
         </h2>
-        <div class="d-flex justify-content-center mb-2">
+        <div class="flex justify-center mb-2">
           <a
-            class="d-flex align-items-center text-nowrap btn btn-dark btn-lg mt-3 px-4 py-3 fw-bold btn-slide-up text-decoration-none"
+            class="flex items-center whitespace-nowrap bg-gray-900 text-white text-lg mt-3 px-6 py-4 font-bold btn-slide-up no-underline rounded hover:bg-gray-800 transition-colors duration-300"
             style="letter-spacing: 2px;"
             href="#projects"
           >
-            <span class="text-uppercase">View My Projects</span>
+            <span class="uppercase">View My Projects</span>
             <svg
-              class="ms-3 arrow-right"
+              class="ml-3 arrow-right transition-transform duration-300"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -49,8 +49,9 @@
           href="https://github.com/RaduAvramescu"
           aria-label="GitHub"
           rel="noreferrer"
+          class="inline-block mx-4 transition-transform duration-300 hover:scale-110"
         >
-          <svg viewBox="0 0 128 128" class="img-social" width="40">
+          <svg viewBox="0 0 128 128" width="40">
             <path
               fill="#212529"
               fill-rule="evenodd"
@@ -67,8 +68,9 @@
           href="https://www.linkedin.com/in/radu-a-4863a486/"
           aria-label="LinkedIn"
           rel="noreferrer"
+          class="inline-block mx-4 transition-transform duration-300 hover:scale-110"
         >
-          <svg viewBox="0 0 128 128" class="img-social" width="40">
+          <svg viewBox="0 0 128 128" width="40">
             <path
               fill="#212529"
               id="plain"
@@ -119,10 +121,6 @@
     animation: slideUp 1s ease 0.8s forwards;
   }
 
-  .arrow-right {
-    transition: transform 0.3s ease;
-  }
-
   .btn-slide-up:hover .arrow-right {
     transform: rotate(90deg);
   }
@@ -161,15 +159,6 @@
   .social-fade-in {
     opacity: 0;
     animation: slideUp 1s ease 1.2s forwards;
-  }
-
-  .social-container a {
-    display: inline-block;
-    transition: transform 0.3s ease;
-  }
-
-  .social-container a:hover {
-    transform: scale(1.1);
   }
 
   /* Fallback for browsers that don't support background-attachment: fixed */

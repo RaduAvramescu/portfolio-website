@@ -2,16 +2,16 @@
 import Technologies from "./Technologies.astro";
 ---
 
-<section id="about" class="section-alt-row section-padding text-center">
+<section id="about" class="bg-gray-900 text-white py-20 px-5 text-center">
   <h2
-    class="section-title fw-bold text-uppercase"
+    class="text-4xl font-bold uppercase text-white mb-12"
     data-observe="true"
     data-trigger-once="true"
   >
     About
   </h2>
   <h3
-    class="container section-description mb-5"
+    class="max-w-4xl mx-auto text-xl text-gray-400 leading-relaxed mb-12"
     data-observe="true"
     data-trigger-once="true"
     style="text-wrap: balance;"
@@ -19,16 +19,16 @@ import Technologies from "./Technologies.astro";
     I'm a frontend developer interested in staying up to date with technologies
     and constantly learning. Below is a collection of the technologies I use.
   </h3>
-  <div class="col-md-12">
+  <div class="w-full">
     <div data-observe="true" data-trigger-once="true">
-      <div class="container d-flex justify-content-center align-items-center">
-        <div class="slider d-flex overflow-hidden">
-          <div class="slide d-flex align-items-center">
+      <div class="max-w-7xl mx-auto flex justify-center items-center">
+        <div class="slider flex overflow-hidden w-full max-w-4xl relative">
+          <div class="slide flex items-center flex-shrink-0 w-full">
             <Technologies
               technologies={[
                 "HTML5",
                 "CSS3",
-                "Bootstrap",
+                "Tailwind CSS",
                 "Material-UI",
                 "JavaScript",
                 "React",
@@ -39,12 +39,12 @@ import Technologies from "./Technologies.astro";
               width={70}
             />
           </div>
-          <div class="slide d-flex align-items-center">
+          <div class="slide flex items-center flex-shrink-0 w-full">
             <Technologies
               technologies={[
                 "HTML5",
                 "CSS3",
-                "Bootstrap",
+                "Tailwind CSS",
                 "Material-UI",
                 "JavaScript",
                 "React",
@@ -55,12 +55,12 @@ import Technologies from "./Technologies.astro";
               width={70}
             />
           </div>
-          <div class="slide d-flex align-items-center">
+          <div class="slide flex items-center flex-shrink-0 w-full">
             <Technologies
               technologies={[
                 "HTML5",
                 "CSS3",
-                "Bootstrap",
+                "Tailwind CSS",
                 "Material-UI",
                 "JavaScript",
                 "React",
@@ -78,44 +78,13 @@ import Technologies from "./Technologies.astro";
 </section>
 
 <style>
-  .section-alt-row {
-    background-color: #212529;
-    color: white;
-  }
-
-  .section-padding {
-    padding: 80px 20px;
-  }
-
-  .section-title {
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 3rem;
-  }
-
-  .section-description {
-    font-size: 1.25rem;
-    color: #adb5bd;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto 3rem auto;
-  }
-
   /* Slider animations */
-  .slider {
-    width: 100%;
-    max-width: 1000px;
-    position: relative;
-  }
-
   .slider:hover .slide {
     animation-play-state: paused;
   }
 
   .slide {
     animation: scroll-left 15s linear infinite;
-    flex-shrink: 0;
-    width: 100%;
   }
 
   @keyframes scroll-left {
@@ -140,15 +109,15 @@ import Technologies from "./Technologies.astro";
   }
 
   @media (max-width: 768px) {
-    .section-padding {
+    section {
       padding: 60px 15px;
     }
 
-    .section-title {
+    h2 {
       font-size: 2rem;
     }
 
-    .section-description {
+    h3 {
       font-size: 1.1rem;
     }
 
