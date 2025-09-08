@@ -16,8 +16,15 @@ export interface Props {
 const { data, delay } = Astro.props;
 
 const getDelayClass = (index: number) => {
-  const delays = ['', 'delay-100', 'delay-200', 'delay-300', 'delay-500', 'delay-700'];
-  return delays[index] || 'delay-1000';
+  const delays = [
+    "",
+    "delay-100",
+    "delay-200",
+    "delay-300",
+    "delay-500",
+    "delay-700",
+  ];
+  return delays[index] || "delay-1000";
 };
 ---
 
@@ -26,7 +33,9 @@ const getDelayClass = (index: number) => {
   data-observe="true"
   data-trigger-once="true"
 >
-  <div class="bg-gray-100 border-2 border-gray-200 rounded-lg h-full flex flex-col overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+  <div
+    class="bg-gray-100 border-2 border-gray-200 rounded-lg h-full flex flex-col overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+  >
     <div class="overflow-hidden p-0 bg-gray-100">
       <a target="_blank" href={data.demoURL} rel="noreferrer">
         <picture>
@@ -35,7 +44,7 @@ const getDelayClass = (index: number) => {
           <img
             src={data.image}
             alt={data.title}
-            class="w-full h-64 object-cover rounded-t-lg card-header-img transition-transform duration-300 hover:scale-130"
+            class="w-full h-64 object-cover rounded-t-lg transition-transform duration-300 hover:scale-[1.3]"
             width="450"
             height="250"
             loading="lazy"
@@ -45,9 +54,7 @@ const getDelayClass = (index: number) => {
       </a>
     </div>
     <div class="p-6 flex flex-col flex-grow bg-gray-100">
-      <h3
-        class="font-bold text-xl uppercase mb-4 text-gray-900 tracking-wide"
-      >
+      <h3 class="font-bold text-xl uppercase mb-4 text-gray-900 tracking-wide">
         {data.title}
       </h3>
       <p class="text-gray-700 flex-grow mb-4">{data.description}</p>
@@ -60,12 +67,15 @@ const getDelayClass = (index: number) => {
       <div class="flex justify-around space-x-4">
         <a
           target="_blank"
-          class="flex items-center border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-bold px-4 py-2 rounded transition-all duration-300 card-btn flex-1 justify-center"
+          class="group flex items-center border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white hover:shadow-lg hover:shadow-black/15 font-bold px-4 py-2 rounded transition-all duration-300 flex-1 justify-center"
           href={data.demoURL}
           rel="noreferrer"
         >
           <span class="uppercase mr-2 tracking-widest">Demo</span>
-          <svg viewBox="0 0 64 64" class="btn-icon card-footer-svg">
+          <svg
+            viewBox="0 0 64 64"
+            class="w-4 h-4 fill-current transition-transform duration-300 group-hover:scale-110"
+          >
             <path data-name="layer2" d="M8.3 44.4l11.3 11.4 4.5-4-11.8-11.9z"
             ></path>
             <path
@@ -80,12 +90,15 @@ const getDelayClass = (index: number) => {
         </a>
         <a
           target="_blank"
-          class="flex items-center border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-bold px-4 py-2 rounded transition-all duration-300 card-btn flex-1 justify-center"
+          class="group flex items-center border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white hover:shadow-lg hover:shadow-black/15 font-bold px-4 py-2 rounded transition-all duration-300 flex-1 justify-center"
           href={data.codeURL}
           rel="noreferrer"
         >
           <span class="uppercase mr-2 tracking-widest">Code</span>
-          <svg viewBox="0 0 128 128" class="btn-icon card-footer-svg">
+          <svg
+            viewBox="0 0 128 128"
+            class="w-4 h-4 fill-current transition-transform duration-300 group-hover:scale-110"
+          >
             <g>
               <path
                 fill-rule="evenodd"
@@ -102,43 +115,3 @@ const getDelayClass = (index: number) => {
     </div>
   </div>
 </div>
-
-<style>
-  .card-header-img:hover {
-    --tw-scale-x: 1.3;
-    --tw-scale-y: 1.3;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .card-btn:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  .card-footer-svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-    transition: transform 0.3s ease;
-  }
-
-  .card-btn:hover .card-footer-svg {
-    transform: scale(1.1);
-  }
-
-  .btn-icon {
-    width: 16px;
-    height: 16px;
-  }
-
-  /* Animation styles */
-  [data-observe] {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-  }
-
-  [data-observe].animate-in {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>

@@ -2,16 +2,19 @@
 import Technologies from "./Technologies.astro";
 ---
 
-<section id="about" class="bg-gray-900 text-white py-20 px-5 text-center">
+<section
+  id="about"
+  class="bg-gray-900 text-white py-20 px-5 md:py-[60px] md:px-[15px] text-center"
+>
   <h2
-    class="text-4xl font-bold uppercase text-white mb-12"
+    class="text-4xl md:text-[2rem] font-bold uppercase text-white mb-12"
     data-observe="true"
     data-trigger-once="true"
   >
     About
   </h2>
   <h3
-    class="max-w-4xl mx-auto text-xl text-gray-400 leading-relaxed mb-12 text-balance"
+    class="max-w-4xl mx-auto text-xl md:text-[1.1rem] text-gray-400 leading-relaxed mb-12 text-balance"
     data-observe="true"
     data-trigger-once="true"
   >
@@ -22,7 +25,9 @@ import Technologies from "./Technologies.astro";
     <div data-observe="true" data-trigger-once="true">
       <div class="max-w-7xl mx-auto flex justify-center items-center">
         <div class="slider flex overflow-hidden w-full max-w-4xl relative">
-          <div class="slide flex items-center flex-shrink-0 w-full">
+          <div
+            class="slide flex items-center flex-shrink-0 w-full animate-[scroll-left_15s_linear_infinite] md:animate-[scroll-left_20s_linear_infinite] sm:animate-[scroll-left_25s_linear_infinite]"
+          >
             <Technologies
               technologies={[
                 "HTML5",
@@ -38,7 +43,9 @@ import Technologies from "./Technologies.astro";
               width={70}
             />
           </div>
-          <div class="slide flex items-center flex-shrink-0 w-full">
+          <div
+            class="slide flex items-center flex-shrink-0 w-full animate-[scroll-left_15s_linear_infinite] md:animate-[scroll-left_20s_linear_infinite] sm:animate-[scroll-left_25s_linear_infinite]"
+          >
             <Technologies
               technologies={[
                 "HTML5",
@@ -54,7 +61,9 @@ import Technologies from "./Technologies.astro";
               width={70}
             />
           </div>
-          <div class="slide flex items-center flex-shrink-0 w-full">
+          <div
+            class="slide flex items-center flex-shrink-0 w-full animate-[scroll-left_15s_linear_infinite] md:animate-[scroll-left_20s_linear_infinite] sm:animate-[scroll-left_25s_linear_infinite]"
+          >
             <Technologies
               technologies={[
                 "HTML5",
@@ -82,56 +91,12 @@ import Technologies from "./Technologies.astro";
     animation-play-state: paused;
   }
 
-  .slide {
-    animation: scroll-left 15s linear infinite;
-  }
-
   @keyframes scroll-left {
     0% {
       transform: translateX(0);
     }
     100% {
       transform: translateX(-100%);
-    }
-  }
-
-  /* Animation styles for intersection observer */
-  [data-observe] {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-  }
-
-  [data-observe].animate-in {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @media (max-width: 768px) {
-    section {
-      padding: 60px 15px;
-    }
-
-    h2 {
-      font-size: 2rem;
-    }
-
-    h3 {
-      font-size: 1.1rem;
-    }
-
-    .slide {
-      animation-duration: 20s;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .slider {
-      max-width: 400px;
-    }
-
-    .slide {
-      animation-duration: 25s;
     }
   }
 </style>

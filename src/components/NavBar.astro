@@ -105,13 +105,6 @@ import { Icon } from "astro-icon/components";
     width: 100%;
   }
 
-  #header.header-hide {
-    transform: translateY(-100%);
-  }
-
-  #scroll-to-top.visible {
-    opacity: 1 !important;
-  }
 
   /* Mobile menu animation */
   #mobile-menu-button.active #line1 {
@@ -166,9 +159,9 @@ import { Icon } from "astro-icon/components";
         prevScrollPos > currentScrollPos || currentScrollPos < 10;
 
       if (isVisible) {
-        header!.classList.remove("header-hide");
+        header!.classList.remove("-translate-y-full");
       } else {
-        header!.classList.add("header-hide");
+        header!.classList.add("-translate-y-full");
 
         // Close mobile menu if it's open
         if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
@@ -179,9 +172,9 @@ import { Icon } from "astro-icon/components";
 
       // Show/hide scroll to top button
       if (currentScrollPos > 100) {
-        scrollToTopBtn!.classList.add("visible");
+        scrollToTopBtn!.classList.add("!opacity-100");
       } else {
-        scrollToTopBtn!.classList.remove("visible");
+        scrollToTopBtn!.classList.remove("!opacity-100");
       }
 
       prevScrollPos = currentScrollPos;

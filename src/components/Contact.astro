@@ -2,9 +2,9 @@
 // Contact component for Astro
 ---
 
-<section id="contact" class="py-20 px-5">
+<section id="contact" class="py-20 px-5 md:py-[60px] md:px-[15px]">
   <h2
-    class="text-4xl font-bold text-center uppercase text-gray-800 mb-12 relative"
+    class="text-4xl md:text-[2rem] font-bold text-center uppercase text-gray-800 mb-12 relative"
     data-observe="true"
     data-trigger-once="true"
   >
@@ -24,7 +24,7 @@
           />
           <label
             for="name"
-            class="label-custom uppercase text-lg absolute top-1 left-0 text-gray-900 transition-all duration-300 cursor-pointer peer-focus:-translate-y-7 peer-valid:-translate-y-7 peer-[&:not(:placeholder-shown)]:-translate-y-7"
+            class="label-custom uppercase text-lg absolute top-1 left-0 text-gray-900 transition-all duration-300 cursor-pointer hover:opacity-60 peer-focus:-translate-y-7 peer-valid:-translate-y-7 peer-[&:not(:placeholder-shown)]:-translate-y-7"
           >
             Name
           </label>
@@ -41,7 +41,7 @@
           />
           <label
             for="email"
-            class="label-custom uppercase text-lg absolute top-1 left-0 text-gray-900 transition-all duration-300 cursor-pointer peer-focus:-translate-y-7 peer-valid:-translate-y-7 peer-[&:not(:placeholder-shown)]:-translate-y-7"
+            class="label-custom uppercase text-lg absolute top-1 left-0 text-gray-900 transition-all duration-300 cursor-pointer hover:opacity-60 peer-focus:-translate-y-7 peer-valid:-translate-y-7 peer-[&:not(:placeholder-shown)]:-translate-y-7"
           >
             Email
           </label>
@@ -56,7 +56,7 @@
             placeholder=" "></textarea>
           <label
             for="message"
-            class="label-custom uppercase text-lg absolute top-1 left-0 text-gray-900 transition-all duration-300 cursor-pointer peer-focus:-translate-y-7 peer-valid:-translate-y-7 peer-[&:not(:placeholder-shown)]:-translate-y-7"
+            class="label-custom uppercase text-lg absolute top-1 left-0 text-gray-900 transition-all duration-300 cursor-pointer hover:opacity-60 peer-focus:-translate-y-7 peer-valid:-translate-y-7 peer-[&:not(:placeholder-shown)]:-translate-y-7"
           >
             Message
           </label>
@@ -76,11 +76,6 @@
 </section>
 
 <style>
-  /* Label animations */
-  .label-custom:hover {
-    opacity: 0.6;
-  }
-
   .form-control-custom:focus,
   .form-control-custom:valid,
   .form-control-custom:not(:placeholder-shown) {
@@ -90,28 +85,6 @@
 
   .form-control-custom {
     transition: border-bottom 0.3s ease;
-  }
-
-  /* Animation styles for intersection observer */
-  [data-observe] {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
-  }
-
-  [data-observe].animate-in {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @media (max-width: 768px) {
-    section {
-      padding: 60px 15px;
-    }
-
-    h2 {
-      font-size: 2rem;
-    }
   }
 </style>
 
