@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+@theme {
+  --animate-scroll-left: scroll-left 15s linear infinite;
+  --animate-scroll-left-md: scroll-left 20s linear infinite;
+  --animate-scroll-left-sm: scroll-left 25s linear infinite;
+  
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+}
+
 body {
   font-family: "Open Sans", sans-serif;
 }

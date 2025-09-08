@@ -24,9 +24,9 @@ import Technologies from "./Technologies.astro";
   <div class="w-full">
     <div data-observe="true" data-trigger-once="true">
       <div class="max-w-7xl mx-auto flex justify-center items-center">
-        <div class="slider flex overflow-hidden w-full max-w-4xl relative">
+        <div class="flex overflow-hidden w-full max-w-4xl relative group">
           <div
-            class="slide flex items-center flex-shrink-0 w-full animate-[scroll-left_15s_linear_infinite] md:animate-[scroll-left_20s_linear_infinite] sm:animate-[scroll-left_25s_linear_infinite] min-w-4xl"
+            class="flex items-center flex-shrink-0 w-full animate-scroll-left-sm sm:animate-scroll-left-md md:animate-scroll-left group-hover:[animation-play-state:paused] min-w-4xl"
           >
             <Technologies
               technologies={[
@@ -44,7 +44,7 @@ import Technologies from "./Technologies.astro";
             />
           </div>
           <div
-            class="slide flex items-center flex-shrink-0 w-full animate-[scroll-left_15s_linear_infinite] md:animate-[scroll-left_20s_linear_infinite] sm:animate-[scroll-left_25s_linear_infinite] min-w-4xl"
+            class="flex items-center flex-shrink-0 w-full animate-scroll-left-sm sm:animate-scroll-left-md md:animate-scroll-left group-hover:[animation-play-state:paused] min-w-4xl"
           >
             <Technologies
               technologies={[
@@ -62,7 +62,7 @@ import Technologies from "./Technologies.astro";
             />
           </div>
           <div
-            class="slide flex items-center flex-shrink-0 w-full animate-[scroll-left_15s_linear_infinite] md:animate-[scroll-left_20s_linear_infinite] sm:animate-[scroll-left_25s_linear_infinite] min-w-4xl"
+            class="flex items-center flex-shrink-0 w-full animate-scroll-left-sm sm:animate-scroll-left-md md:animate-scroll-left group-hover:[animation-play-state:paused] min-w-4xl"
           >
             <Technologies
               technologies={[
@@ -84,19 +84,3 @@ import Technologies from "./Technologies.astro";
     </div>
   </div>
 </section>
-
-<style>
-  /* Slider animations */
-  .slider:hover .slide {
-    animation-play-state: paused;
-  }
-
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-</style>
