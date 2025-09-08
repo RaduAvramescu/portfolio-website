@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 // No props needed for static navbar
 ---
 
@@ -51,17 +52,13 @@
 </header>
 
 <!-- Scroll to top button -->
-<div
+<a
+  href="#top"
   id="scroll-to-top"
-  class="position-fixed fs-1 text-secondary"
-  style="bottom: 20px; right: 20px; cursor: pointer; z-index: 1000; opacity: 0; transition: opacity 0.3s ease;"
+  class="position-fixed text-secondary text-decoration-none d-flex align-items-center justify-content-center"
 >
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-    <path
-      d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1L13.5 2.5L16.17 5.17C15.24 5.06 14.32 5 13.38 5C10.38 5.07 7.59 6.24 5.5 8.26L4 6.76L2.24 8.5L6.26 12.5L12 18.24L17.74 12.5L21.76 8.5L20 6.76L18.5 8.26C20.41 6.24 21.62 3.45 21.69 0.45C21.93 0.31 22 0 22 0C22 0 21.93 0.31 21.69 0.45V9Z"
-    ></path>
-  </svg>
-</div>
+  <Icon name="mdi:chevron-up-circle" width={48} height={48} />
+</a>
 
 <style>
   .navbar-brand {
@@ -109,6 +106,14 @@
     transform: translateY(-100%);
   }
 
+  #scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
   #scroll-to-top.visible {
     opacity: 1 !important;
   }
@@ -119,8 +124,12 @@
     // Navbar hide/show on scroll and scroll-to-top functionality
     let prevScrollPos = window.pageYOffset;
     const header = document.getElementById("header") as HTMLElement | null;
-    const scrollToTopBtn = document.getElementById("scroll-to-top") as HTMLElement | null;
-    const navbar = document.querySelector(".navbar-collapse") as HTMLElement | null;
+    const scrollToTopBtn = document.getElementById(
+      "scroll-to-top"
+    ) as HTMLElement | null;
+    const navbar = document.querySelector(
+      ".navbar-collapse"
+    ) as HTMLElement | null;
 
     if (!header || !scrollToTopBtn || !navbar) {
       return;
@@ -151,11 +160,6 @@
 
       prevScrollPos = currentScrollPos;
     }
-
-    // Scroll to top functionality
-    scrollToTopBtn!.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
 
     // Smooth scrolling for navbar links
     document.querySelectorAll('.nav-link[href^="#"]').forEach((link) => {
