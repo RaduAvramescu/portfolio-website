@@ -1,6 +1,5 @@
 /**
  * Initialize intersection observers for elements with data-observe attribute
- * This replaces the React useIntersectionObserver hook functionality
  */
 function initIntersectionObserver() {
   const observerOptions = {
