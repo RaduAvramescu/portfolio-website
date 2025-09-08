@@ -11,13 +11,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Architecture
 
-This is a personal portfolio website built with Astro and deployed to Cloudflare. The site showcases projects, technologies, and contact information in a single-page application format.
+This is a personal portfolio website built with Astro as a static site and deployed to Cloudflare. The site showcases projects, technologies, and contact information in a single-page application format.
 
 ### Technology Stack
 
 - **Astro** - Static site generator with component-based architecture
 - **Bootstrap 5** - CSS framework for responsive design and components
-- **Cloudflare** - Deployment platform via Astro's Cloudflare adapter
 - **Wrangler** - Cloudflare deployment tool
 
 ### Project Structure
@@ -59,8 +58,8 @@ The codebase follows Astro's file-based routing and component structure:
 
 ### Deployment Configuration
 
-- Configured for Cloudflare deployment via `astro.config.mjs`
-- Uses `@astrojs/cloudflare` adapter for server-side rendering capabilities
+- Configured as a static site in `astro.config.mjs`
+- Generates static files in the `dist/` directory after build
 - Deployment handled through `wrangler deploy` command
 
 ### Animation System
