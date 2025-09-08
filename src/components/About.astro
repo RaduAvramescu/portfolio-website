@@ -1,47 +1,73 @@
 ---
-import Technologies from './Technologies.astro';
+import Technologies from "./Technologies.astro";
 ---
 
 <section id="about" class="section-alt-row section-padding text-center">
-  <h2 
+  <h2
     class="section-title fw-bold text-uppercase"
     data-observe="true"
     data-trigger-once="true"
   >
     About
   </h2>
-  <h3 
+  <h3
     class="container section-description mb-5"
     data-observe="true"
     data-trigger-once="true"
     style="text-wrap: balance;"
   >
-    I'm a frontend developer interested in staying up to date with
-    technologies and constantly learning. Below is a collection of the
-    technologies I use.
+    I'm a frontend developer interested in staying up to date with technologies
+    and constantly learning. Below is a collection of the technologies I use.
   </h3>
   <div class="col-md-12">
-    <div 
-      data-observe="true"
-      data-trigger-once="true"
-    >
+    <div data-observe="true" data-trigger-once="true">
       <div class="container d-flex justify-content-center align-items-center">
         <div class="slider d-flex overflow-hidden">
           <div class="slide d-flex align-items-center">
             <Technologies
-              technologies="HTML5 CSS3 Bootstrap Material-UI JavaScript React GraphQL Git npm"
+              technologies={[
+                "HTML5",
+                "CSS3",
+                "Bootstrap",
+                "Material-UI",
+                "JavaScript",
+                "React",
+                "GraphQL",
+                "Git",
+                "npm",
+              ]}
               width={70}
             />
           </div>
           <div class="slide d-flex align-items-center">
             <Technologies
-              technologies="HTML5 CSS3 Bootstrap Material-UI JavaScript React GraphQL Git npm"
+              technologies={[
+                "HTML5",
+                "CSS3",
+                "Bootstrap",
+                "Material-UI",
+                "JavaScript",
+                "React",
+                "GraphQL",
+                "Git",
+                "npm",
+              ]}
               width={70}
             />
           </div>
           <div class="slide d-flex align-items-center">
             <Technologies
-              technologies="HTML5 CSS3 Bootstrap Material-UI JavaScript React GraphQL Git npm"
+              technologies={[
+                "HTML5",
+                "CSS3",
+                "Bootstrap",
+                "Material-UI",
+                "JavaScript",
+                "React",
+                "GraphQL",
+                "Git",
+                "npm",
+              ]}
               width={70}
             />
           </div>
@@ -66,7 +92,6 @@ import Technologies from './Technologies.astro';
     color: white;
     margin-bottom: 3rem;
   }
-
 
   .section-description {
     font-size: 1.25rem;
@@ -118,15 +143,15 @@ import Technologies from './Technologies.astro';
     .section-padding {
       padding: 60px 15px;
     }
-    
+
     .section-title {
       font-size: 2rem;
     }
-    
+
     .section-description {
       font-size: 1.1rem;
     }
-    
+
     .slide {
       animation-duration: 20s;
     }
@@ -136,7 +161,7 @@ import Technologies from './Technologies.astro';
     .slider {
       max-width: 400px;
     }
-    
+
     .slide {
       animation-duration: 25s;
     }

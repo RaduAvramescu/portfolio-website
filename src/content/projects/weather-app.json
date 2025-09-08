@@ -2,7 +2,7 @@
   "title": "Weather App",
   "image": "images/weather-app",
   "description": "Weather app showing data based on location.",
-  "technologies": "HTML5 CSS3 JavaScript Material-UI React",
+  "technologies": ["HTML5", "CSS3", "JavaScript", "Material-UI", "React"],
   "demoURL": "weather-app",
   "codeURL": "https://github.com/RaduAvramescu/weather-app",
   "order": 5
