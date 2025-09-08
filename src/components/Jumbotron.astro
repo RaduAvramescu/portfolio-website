@@ -75,13 +75,18 @@
   }
 
   .typewriter-effect {
-    border-right: solid 0.1em red;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    margin: 0 auto;
-    animation: text-animation 2s steps(15) 1s 1 normal both,
-      cursor-animation 600ms steps(15) infinite;
+    margin: 0 auto 1rem auto;
+  }
+
+  @media (min-width: 768px) {
+    .typewriter-effect {
+      border-right: solid 0.1em red;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: text-animation 2s steps(15) 1s 1 normal both,
+        cursor-animation 600ms steps(15) infinite;
+    }
   }
 
   .text-slide-up {
