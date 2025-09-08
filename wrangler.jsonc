@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "my-astro-app",
+  "name": "portfolio-website",
   // Update to today's date
   "compatibility_date": "2025-09-08",
   "assets": {

@@ -1,8 +1,8 @@
 {
-  "name": "raduavramescu.github.io",
+  "name": "portfolio-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://raduavramescu.github.io",
+  "homepage": "https://github.com/RaduAvramescu/raduavramescu.github.io",
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.7",
     "astro": "^5.8.4",
