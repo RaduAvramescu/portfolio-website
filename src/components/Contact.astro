@@ -3,18 +3,14 @@
 ---
 
 <section id="contact" class="section-padding">
-  <h2 
+  <h2
     class="section-title fw-bold text-center text-uppercase"
     data-observe="true"
     data-trigger-once="true"
   >
     Contact
   </h2>
-  <div 
-    class="container"
-    data-observe="true"
-    data-trigger-once="true"
-  >
+  <div class="container" data-observe="true" data-trigger-once="true">
     <form action="https://formspree.io/xwkrdeyq" method="POST">
       <div class="row justify-content-between">
         <div class="col-md-5 position-relative mb-5">
@@ -60,8 +56,7 @@
             name="message"
             id="message"
             required
-            placeholder=" "
-          ></textarea>
+            placeholder=" "></textarea>
           <label
             for="message"
             class="label-custom text-uppercase fs-5 position-absolute top-0 text-dark"
@@ -95,7 +90,6 @@
     margin-bottom: 3rem;
     position: relative;
   }
-
 
   /* Label animations */
   .label-custom {
@@ -133,7 +127,7 @@
   }
 
   .submit-btn:hover {
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     background-color: #000;
     border-color: #000;
   }
@@ -154,11 +148,11 @@
     .section-padding {
       padding: 60px 15px;
     }
-    
+
     .section-title {
       font-size: 2rem;
     }
-    
+
     .col-md-5 {
       margin-bottom: 2rem !important;
     }
@@ -166,27 +160,34 @@
 </style>
 
 <script>
-  // Enhance form interactivity
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('form');
-    const inputs = form.querySelectorAll('input, textarea');
-    
-    inputs.forEach(input => {
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+
+    if (!form) {
+      return;
+    }
+
+    const inputs = form.querySelectorAll("input, textarea");
+
+    inputs.forEach((input) => {
       // Add focus/blur events for enhanced label behavior
-      input.addEventListener('focus', () => {
-        input.classList.add('focused');
+      input.addEventListener("focus", () => {
+        input.classList.add("focused");
       });
-      
-      input.addEventListener('blur', () => {
-        input.classList.remove('focused');
+
+      input.addEventListener("blur", () => {
+        input.classList.remove("focused");
       });
     });
-    
+
     // Form submission feedback
-    form.addEventListener('submit', (e) => {
-      const submitBtn = form.querySelector('.submit-btn');
-      submitBtn.innerHTML = '<span class="text-uppercase">Sending...</span>';
-      submitBtn.disabled = true;
+    form.addEventListener("submit", () => {
+      const submitBtn = form.querySelector(".submit-btn");
+
+      if (submitBtn) {
+        submitBtn.innerHTML = '<span class="text-uppercase">Sending...</span>';
+        submitBtn.disabled = true;
+      }
     });
   });
 </script>
