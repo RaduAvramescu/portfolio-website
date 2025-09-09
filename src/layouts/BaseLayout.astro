@@ -1,15 +1,18 @@
 ---
-import "../styles/globals.css";
-import "@fontsource/open-sans/400.css";
-import "@fontsource/source-code-pro/400.css";
-import "@fontsource/source-code-pro/700.css";
+import '../styles/globals.css';
+import '@fontsource/open-sans/400.css';
+import '@fontsource/source-code-pro/400.css';
+import '@fontsource/source-code-pro/700.css';
 
 export interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description = "Frontend Developer - Portfolio showcasing modern web development projects" } = Astro.props;
+const {
+  title,
+  description = 'Frontend Developer - Portfolio showcasing modern web development projects',
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -21,12 +24,8 @@ const { title, description = "Frontend Developer - Portfolio showcasing modern w
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    
-    
-    
   </head>
   <body>
     <slot />
-    
   </body>
 </html>

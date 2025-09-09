@@ -1,6 +1,6 @@
 ---
-import Technologies from "./Technologies.astro";
-import { Icon } from "astro-icon/components";
+import Technologies from './Technologies.astro';
+import { Icon } from 'astro-icon/components';
 
 export interface Props {
   data: {
@@ -18,14 +18,14 @@ const { data, delay } = Astro.props;
 
 const getDelayClass = (index: number) => {
   const delays = [
-    "",
-    "delay-100",
-    "delay-200",
-    "delay-300",
-    "delay-500",
-    "delay-700",
+    '',
+    'delay-100',
+    'delay-200',
+    'delay-300',
+    'delay-500',
+    'delay-700',
   ];
-  return delays[index] || "delay-1000";
+  return delays[index] || 'delay-1000';
 };
 ---
 

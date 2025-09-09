@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --animate-fade-in: fade-in 1.2s forwards;
@@ -8,7 +8,8 @@
   --animate-slide-up-05: slideUp 1s ease 0.5s forwards;
   --animate-slide-up-08: slideUp 1s ease 0.8s forwards;
   --animate-slide-up-12: slideUp 1s ease 1.2s forwards;
-  --animate-typewriter: typing 2s steps(30, end) 1s 1 normal both,
+  --animate-typewriter:
+    typing 2s steps(30, end) 1s 1 normal both,
     blink-caret 600ms step-end infinite;
 
   @keyframes fade-in {
@@ -52,7 +53,8 @@
   }
 
   @keyframes blink-caret {
-    from, to {
+    from,
+    to {
       border-color: transparent;
     }
     50% {
@@ -62,11 +64,11 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .code-font {
-  font-family: "Source Code Pro", monospace;
+  font-family: 'Source Code Pro', monospace;
 }
 
 html {

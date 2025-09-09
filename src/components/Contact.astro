@@ -75,31 +75,30 @@
   </div>
 </section>
 
-
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector("form");
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form');
 
     if (!form) {
       return;
     }
 
-    const inputs = form.querySelectorAll("input, textarea");
+    const inputs = form.querySelectorAll('input, textarea');
 
-    inputs.forEach((input) => {
+    inputs.forEach(input => {
       // Add focus/blur events for enhanced label behavior
-      input.addEventListener("focus", () => {
-        input.classList.add("focused");
+      input.addEventListener('focus', () => {
+        input.classList.add('focused');
       });
 
-      input.addEventListener("blur", () => {
-        input.classList.remove("focused");
+      input.addEventListener('blur', () => {
+        input.classList.remove('focused');
       });
     });
 
     // Form submission feedback
-    form.addEventListener("submit", () => {
-      const submitBtn = form.querySelector(".submit-btn") as HTMLButtonElement;
+    form.addEventListener('submit', () => {
+      const submitBtn = form.querySelector('.submit-btn') as HTMLButtonElement;
 
       if (submitBtn) {
         submitBtn.innerHTML = '<span class="text-uppercase">Sending...</span>';

@@ -1,5 +1,5 @@
 ---
-import TechnologyItem from "./TechnologyItem.astro";
+import TechnologyItem from './TechnologyItem.astro';
 
 export interface Props {
   technologies: string[];
@@ -9,4 +9,4 @@ export interface Props {
 const { technologies, width = 40 } = Astro.props;
 ---
 
-{technologies.map((tech) => <TechnologyItem techName={tech} width={width} />)}
+{technologies.map(tech => <TechnologyItem techName={tech} width={width} />)}

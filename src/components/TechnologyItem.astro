@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components';
 
 export interface Props {
   techName: string;
@@ -7,20 +7,20 @@ export interface Props {
 }
 
 const { techName, width = 40 } = Astro.props;
-const className = width > 50 ? "mx-4 my-2" : "m-1";
+const className = width > 50 ? 'mx-4 my-2' : 'm-1';
 
 const iconMap: Record<string, string> = {
-  HTML5: "devicon:html5",
-  CSS3: "devicon:css3",
-  JavaScript: "devicon:javascript",
-  Bootstrap: "devicon:bootstrap",
-  "Tailwind CSS": "devicon:tailwindcss",
-  "Material-UI": "devicon:materialui",
-  React: "devicon:react",
-  Astro: "devicon:astro",
-  GraphQL: "mdi:graphql",
-  Git: "devicon:git",
-  npm: "devicon:npm",
+  HTML5: 'devicon:html5',
+  CSS3: 'devicon:css3',
+  JavaScript: 'devicon:javascript',
+  Bootstrap: 'devicon:bootstrap',
+  'Tailwind CSS': 'devicon:tailwindcss',
+  'Material-UI': 'devicon:materialui',
+  React: 'devicon:react',
+  Astro: 'devicon:astro',
+  GraphQL: 'mdi:graphql',
+  Git: 'devicon:git',
+  npm: 'devicon:npm',
 };
 
 const iconName = iconMap[techName];
