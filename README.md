@@ -14,8 +14,8 @@ This is the repository for my personal website.
 
 - HTML5
 - CSS3
-- Bootstrap
 - JavaScript
+- Tailwind CSS
 - Astro
 
 ## Link
