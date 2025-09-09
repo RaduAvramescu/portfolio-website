@@ -30,3 +30,13 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
+
+  automerge:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]' && github.event_name == 'pull_request'
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v3.10.2
