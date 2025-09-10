@@ -1,6 +1,7 @@
 ---
 import Technologies from './Technologies.astro';
 import { Icon } from 'astro-icon/components';
+import { getImageSources } from '../utils/imageImports';
 
 export interface Props {
   data: {
@@ -15,6 +16,7 @@ export interface Props {
 }
 
 const { data, delay } = Astro.props;
+const { webp, jpg } = getImageSources(data.image);
 
 const getDelayClass = (index: number) => {
   const delays = [
@@ -40,10 +42,9 @@ const getDelayClass = (index: number) => {
     <div class="overflow-hidden p-0 bg-gray-100">
       <a target="_blank" href={data.demoURL} rel="noreferrer">
         <picture>
-          <source type="image/webp" srcset={`${data.image}.webp`} />
-          <source type="image/jpeg" srcset={`${data.image}.jpg`} />
+          <source type="image/webp" srcset={webp} />
           <img
-            src={data.image}
+            src={jpg}
             alt={data.title}
             class="w-full h-64 object-cover rounded-t-lg transition-transform duration-300 hover:scale-[1.3]"
             width="450"

@@ -1,12 +1,13 @@
 ---
 // No props needed for static jumbotron
 import { Icon } from 'astro-icon/components';
+import jumbotronImage from '../assets/images/jumbotron.webp?url';
 ---
 
 <section id="jumbotron">
   <div
     class="flex justify-center items-center min-h-screen mb-0 bg-cover bg-center bg-fixed text-white md:bg-scroll"
-    style="background-image: url('/images/jumbotron.webp');"
+    style={`background-image: url('${jumbotronImage}');`}
   >
     <div class="container mx-auto text-center px-4">
       <div class="intro overflow-hidden">
