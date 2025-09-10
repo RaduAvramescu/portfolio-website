@@ -13,7 +13,7 @@ updates:
         patterns:
           - '*'
     commit-message:
-      prefix: 'chore'
+      prefix: 'ci'
       include: 'scope'
 
   # Enable version updates for GitHub Actions
