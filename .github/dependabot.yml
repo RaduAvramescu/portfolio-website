@@ -15,3 +15,14 @@ updates:
     commit-message:
       prefix: 'chore'
       include: 'scope'
+  
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      time: '08:00'
+      timezone: 'UTC'
+    commit-message:
+      prefix: 'ci'
+      include: 'scope'
