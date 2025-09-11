@@ -1,0 +1,73 @@
+{
+  "name": "Portfolio Website - Astro Development",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Astro support
+        "astro-build.astro-vscode",
+
+        // Tailwind CSS support
+        "bradlc.vscode-tailwindcss",
+
+        // Code formatting and linting
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+
+        // TypeScript support (enhanced)
+        "ms-vscode.vscode-typescript-next",
+
+        // HTML/CSS support
+        "ecmel.vscode-html-css",
+        "formulahendry.auto-rename-tag"
+      ],
+
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        },
+        "emmet.includeLanguages": {
+          "astro": "html"
+        },
+        "emmet.syntaxProfiles": {
+          "astro": "html"
+        },
+        "prettier.documentSelectors": ["**/*.astro"],
+        "[astro]": {
+          "editor.defaultFormatter": "astro-build.astro-vscode"
+        },
+        "tailwindCSS.includeLanguages": {
+          "astro": "html"
+        },
+        "tailwindCSS.experimental.configFile": "tailwind.config.js"
+      }
+    }
+  },
+
+  "forwardPorts": [4321, 4322],
+  "portsAttributes": {
+    "4321": {
+      "label": "Astro Dev Server",
+      "onAutoForward": "notify"
+    },
+    "4322": {
+      "label": "Astro Preview Server",
+      "onAutoForward": "notify"
+    }
+  },
+
+  "postCreateCommand": "npm install",
+
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  "mounts": [
+    "source=${localWorkspaceFolder}/.devcontainer,target=/workspaces/.devcontainer,type=bind",
+    "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached"
+  ]
+}
