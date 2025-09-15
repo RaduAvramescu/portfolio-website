@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@fontsource/open-sans": "^5.2.6",
-    "@fontsource/source-code-pro": "^5.2.6",
+    "@fontsource/source-code-pro": "^5.2.7",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.13.7",
     "astro-icon": "^1.1.5",
@@ -29,7 +29,7 @@
     "@eslint/js": "^9.35.0",
     "@iconify-json/devicon": "^1.2.43",
     "@iconify-json/mdi": "^1.2.3",
-    "@types/node": "^24.3.1",
+    "@types/node": "^24.4.0",
     "@typescript-eslint/eslint-plugin": "^8.43.0",
     "@typescript-eslint/parser": "^8.43.0",
     "astro-eslint-parser": "^1.2.2",
@@ -39,6 +39,6 @@
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.43.0",
-    "wrangler": "^4.35.0"
+    "wrangler": "^4.37.0"
   }
 }
