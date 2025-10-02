@@ -1,8 +1,7 @@
 {
   "name": "portfolio-website",
-  "version": "0.1.0",
+  "description": "A repo that hosts my portfolio website code.",
   "private": true,
-  "type": "module",
   "homepage": "https://github.com/RaduAvramescu/portfolio-website",
   "engines": {
     "node": ">=22"
