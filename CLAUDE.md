@@ -4,10 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Common Development Commands
 
-- `npm run dev` - Start Astro development server
-- `npm run build` - Build production version for deployment
-- `npm run preview` - Preview the built site locally
-- `npm run deploy` - Deploy to Cloudflare using Wrangler
+- `pnpm run dev` - Start Astro development server
+- `pnpm run build` - Build production version for deployment
+- `pnpm run preview` - Preview the built site locally
+- `pnpm run deploy` - Deploy to Cloudflare using Wrangler
 
 ## Project Architecture
 
