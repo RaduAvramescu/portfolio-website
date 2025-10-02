@@ -57,17 +57,5 @@
       "label": "Astro Preview Server",
       "onAutoForward": "notify"
     }
-  },
-
-  "postCreateCommand": "npm install",
-
-  "features": {
-    "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/github-cli:1": {}
-  },
-
-  "mounts": [
-    "source=${localWorkspaceFolder}/.devcontainer,target=/workspaces/.devcontainer,type=bind",
-    "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached"
-  ]
+  }
 }
