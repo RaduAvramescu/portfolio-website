@@ -3,6 +3,7 @@
   "name": "portfolio-website",
   "compatibility_date": "2025-12-05",
   "workers_dev": false,
+  "preview_urls": false,
   "routes": [
     {
       "pattern": "omniconvert.com",
