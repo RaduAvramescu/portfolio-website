@@ -8,10 +8,6 @@
     {
       "pattern": "omniconvert.com",
       "custom_domain": true
-    },
-    {
-      "pattern": "www.omniconvert.com",
-      "custom_domain": true
     }
   ],
   "assets": {
