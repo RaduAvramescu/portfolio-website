@@ -15,6 +15,7 @@
 /dist
 
 # misc
+/.wrangler
 .DS_Store
 .env.local
 .env.development.local
