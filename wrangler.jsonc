@@ -7,8 +7,8 @@
   "routes": [
     {
       "pattern": "raduavramescu.com",
-      "custom_domain": true
-    }
+      "custom_domain": true,
+    },
   ],
   "assets": {
     "directory": "./dist",
