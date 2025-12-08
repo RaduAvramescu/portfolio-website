@@ -2,16 +2,21 @@
   Cache-Control: public, max-age=604800, immutable
 
 /*.html
+  ! Cache-Control
   Cache-Control: public, max-age=604800, immutable
 
 /_astro/*
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 
 /*.css
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 
 /*.js  
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 
 /*.{png,jpg,svg,ico,woff2}
+  ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
