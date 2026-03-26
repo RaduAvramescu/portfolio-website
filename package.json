@@ -20,7 +20,7 @@
     "@fontsource/open-sans": "^5.2.7",
     "@fontsource/source-code-pro": "^5.2.7",
     "@tailwindcss/vite": "^4.2.1",
-    "astro": "^5.18.0",
+    "astro": "^5.18.1",
     "astro-icon": "^1.1.5",
     "tailwindcss": "^4.2.1"
   },
