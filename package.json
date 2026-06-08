@@ -20,7 +20,7 @@
     "@fontsource/open-sans": "^5.2.7",
     "@fontsource/source-code-pro": "^5.2.7",
     "@tailwindcss/vite": "^4.3.0",
-    "astro": "^6.4.2",
+    "astro": "^6.4.4",
     "astro-icon": "^1.1.5",
     "tailwindcss": "^4.3.0"
   },
@@ -28,7 +28,7 @@
     "@eslint/js": "^10.0.1",
     "@iconify-json/devicon": "^1.2.62",
     "@iconify-json/mdi": "^1.2.3",
-    "@types/node": "^25.9.1",
+    "@types/node": "^25.9.2",
     "@typescript-eslint/eslint-plugin": "^8.60.1",
     "@typescript-eslint/parser": "^8.60.1",
     "astro-eslint-parser": "^1.4.0",
@@ -38,7 +38,7 @@
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.60.1",
-    "wrangler": "^4.96.0"
+    "wrangler": "^4.98.0"
   },
   "packageManager": "pnpm@10.33.0"
 }
