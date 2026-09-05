@@ -64,11 +64,11 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-open-sans);
 }
 
 .code-font {
-  font-family: 'Source Code Pro', monospace;
+  font-family: var(--font-source-code-pro);
 }
 
 html {
