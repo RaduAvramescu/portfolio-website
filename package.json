@@ -40,5 +40,5 @@
     "typescript-eslint": "^8.68.0",
     "wrangler": "^4.127.0"
   },
-  "packageManager": "pnpm@10.34.5"
+  "packageManager": "pnpm@11.25.0"
 }
