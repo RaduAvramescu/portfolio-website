@@ -25,6 +25,7 @@ jobs:
 
       - uses: pnpm/update@v0
         with:
+          token: ${{ secrets.PNPM_UPDATE_TOKEN }}
           update-deps: 'false'
           refresh-lockfile: 'false'
           node: 'false'
