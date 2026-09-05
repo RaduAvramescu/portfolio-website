@@ -1,0 +1,39 @@
+name: Update pnpm
+
+on:
+  schedule:
+    - cron: '0 9 * * 1' # Mondays at 09:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-pnpm
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 'lts/*'
+
+      - uses: pnpm/update@v0
+        with:
+          update-deps: 'false'
+          refresh-lockfile: 'false'
+          node: 'false'
+          branch: chore/update-pnpm
+          commit-message: 'ci: update pnpm'
+          pr-title: 'ci: update pnpm'
+          pr-body: 'Update pnpm within its current major version.'
+          verify: |
+            pnpm install --frozen-lockfile
+            pnpm run lint
+            pnpm run format:check
+            pnpm run build
