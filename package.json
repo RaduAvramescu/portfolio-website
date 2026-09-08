@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.2.10",
+    "astro": "^7.3.1",
     "astro-icon": "^1.2.0",
     "tailwindcss": "^4.3.3"
   },
@@ -30,13 +30,13 @@
     "@typescript-eslint/eslint-plugin": "^8.69.0",
     "@typescript-eslint/parser": "^8.69.0",
     "astro-eslint-parser": "^3.1.0",
-    "eslint": "^10.9.1",
+    "eslint": "^10.10.0",
     "eslint-plugin-astro": "^3.1.0",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.69.0",
-    "wrangler": "^4.128.0"
+    "wrangler": "^4.129.0"
   },
   "packageManager": "pnpm@11.25.0"
 }
