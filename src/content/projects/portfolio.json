@@ -3,7 +3,7 @@
   "image": "images/portfolio",
   "description": "Personal website built to showcase my portfolio.",
   "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Astro"],
-  "demoURL": "https://raduavramescu.github.io",
-  "codeURL": "https://github.com/RaduAvramescu/raduavramescu.github.io",
+  "demoURL": "https://raduavramescu.com",
+  "codeURL": "https://github.com/RaduAvramescu/portfolio-website",
   "order": 1
 }
