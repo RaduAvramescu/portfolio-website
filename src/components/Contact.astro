@@ -83,19 +83,6 @@
       return;
     }
 
-    const inputs = form.querySelectorAll('input, textarea');
-
-    inputs.forEach(input => {
-      // Add focus/blur events for enhanced label behavior
-      input.addEventListener('focus', () => {
-        input.classList.add('focused');
-      });
-
-      input.addEventListener('blur', () => {
-        input.classList.remove('focused');
-      });
-    });
-
     // Form submission feedback
     form.addEventListener('submit', () => {
       const submitBtn = form.querySelector('.submit-btn') as HTMLButtonElement;
