@@ -1,8 +1,9 @@
 ---
 import TechnologyItem from './TechnologyItem.astro';
+import type { Technology } from '../utils/technologies';
 
 export interface Props {
-  technologies: string[];
+  technologies: Technology[];
   width?: number;
 }
 

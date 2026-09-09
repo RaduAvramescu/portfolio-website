@@ -2,16 +2,10 @@
 import Technologies from './Technologies.astro';
 import { Icon } from 'astro-icon/components';
 import { getImageSources } from '../utils/imageImports';
+import type { CollectionEntry } from 'astro:content';
 
 export interface Props {
-  data: {
-    title: string;
-    image: string;
-    description: string;
-    technologies: string[];
-    demoURL: string;
-    codeURL: string;
-  };
+  data: CollectionEntry<'projects'>['data'];
   delay: number;
 }
 
