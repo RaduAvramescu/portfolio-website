@@ -6,24 +6,24 @@ import jumbotronImage from '../assets/images/jumbotron.webp?url';
 
 <section id="jumbotron">
   <div
-    class="flex justify-center items-center min-h-screen mb-0 bg-cover bg-center bg-fixed text-white md:bg-scroll"
-    style={`background-image: url('${jumbotronImage}');`}
+    class="flex justify-center items-center min-h-screen mb-0 bg-cover bg-center bg-fixed text-action-ink md:bg-scroll"
+    style={`background-image: linear-gradient(var(--color-hero-overlay), var(--color-hero-overlay)), url('${jumbotronImage}');`}
   >
     <div class="container mx-auto text-center px-4">
       <div class="intro overflow-hidden">
         <h1
-          class="font-bold uppercase mb-4 xl:mb-2 text-gray-900 code-font text-5xl lg:text-7xl xl:text-8xl tracking-wider leading-normal xl:border-r-2 xl:border-red-500 xl:whitespace-nowrap xl:overflow-hidden xl:tracking-[0.15em] xl:animate-typewriter mx-auto flex max-w-max"
+          class="font-bold uppercase mb-4 xl:mb-2 text-ink code-font text-5xl lg:text-7xl xl:text-8xl tracking-wider leading-normal xl:border-r-2 xl:border-red-500 xl:whitespace-nowrap xl:overflow-hidden xl:tracking-[0.15em] xl:animate-typewriter mx-auto flex max-w-max"
         >
           Radu Avramescu
         </h1>
         <h2
-          class="text-gray-900 text-3xl lg:text-5xl xl:text-6xl leading-normal opacity-0 animate-slide-up-05"
+          class="text-ink text-3xl lg:text-5xl xl:text-6xl leading-normal opacity-0 animate-slide-up-05"
         >
           Frontend Developer
         </h2>
         <div class="flex justify-center mb-2">
           <a
-            class="flex items-center whitespace-nowrap bg-gray-900 text-white text-lg mt-3 px-6 py-4 font-bold no-underline rounded-lg hover:bg-gray-800 transition-colors duration-300 tracking-widest opacity-0 animate-slide-up-08 group"
+            class="flex items-center whitespace-nowrap bg-action text-action-ink text-lg mt-3 px-6 py-4 font-bold no-underline rounded-lg hover:bg-action-hover transition-colors duration-300 tracking-widest opacity-0 animate-slide-up-08 group"
             href="#projects"
             id="view-projects-btn"
           >
@@ -47,7 +47,7 @@ import jumbotronImage from '../assets/images/jumbotron.webp?url';
           rel="noreferrer"
           class="transition-transform duration-300 hover:scale-110"
         >
-          <Icon name="mdi:github" width="48" height="48" class="text-black" />
+          <Icon name="mdi:github" width="48" height="48" class="text-ink" />
         </a>
         <a
           target="_blank"
@@ -56,7 +56,7 @@ import jumbotronImage from '../assets/images/jumbotron.webp?url';
           rel="noreferrer"
           class="transition-transform duration-300 hover:scale-110"
         >
-          <Icon name="mdi:linkedin" width="48" height="48" class="text-black" />
+          <Icon name="mdi:linkedin" width="48" height="48" class="text-ink" />
         </a>
       </div>
     </div>

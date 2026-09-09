@@ -4,6 +4,7 @@
 
 - [About](#about)
 - [Technologies](#technologies)
+- [Color themes](#color-themes)
 - [Validation](#validation)
 - [Link](#link)
 
@@ -18,6 +19,11 @@ This is the repository for my personal website.
 - JavaScript
 - Tailwind CSS
 - Astro
+
+## Color themes
+
+The site follows the device theme and remembers changes made with the navbar
+toggle. Theme colors use `light-dark()` in `src/styles/globals.css`.
 
 ## Validation
 

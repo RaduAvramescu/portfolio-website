@@ -1,0 +1,55 @@
+<!-- Run before the body is painted so a saved preference never flashes. -->
+<script is:inline>
+  (() => {
+    const storageKey = 'portfolio-theme';
+    const root = document.documentElement;
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+    let preference = null;
+
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (saved === 'light' || saved === 'dark') preference = saved;
+    } catch {
+      // The toggle still works when browser storage is unavailable.
+    }
+
+    function applyTheme() {
+      const theme = preference || (systemTheme.matches ? 'dark' : 'light');
+      root.dataset.theme = theme;
+      const button = document.getElementById('theme-toggle');
+      if (button) {
+        const label = `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`;
+        button.setAttribute('aria-label', label);
+        button.setAttribute('title', label);
+      }
+    }
+
+    applyTheme();
+    systemTheme.addEventListener('change', applyTheme);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const button = document.getElementById('theme-toggle');
+      if (!button) return;
+      applyTheme();
+      button.hidden = false;
+      button.addEventListener('click', () => {
+        preference = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        applyTheme();
+        try {
+          localStorage.setItem(storageKey, preference);
+        } catch {
+          // Keep the selected theme for this visit even without persistence.
+        }
+      });
+    });
+
+    window.addEventListener('storage', event => {
+      if (event.key !== storageKey && event.key !== null) return;
+      preference =
+        event.newValue === 'light' || event.newValue === 'dark'
+          ? event.newValue
+          : null;
+      applyTheme();
+    });
+  })();
+</script>
