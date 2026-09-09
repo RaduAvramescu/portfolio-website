@@ -101,11 +101,6 @@ html[data-theme='dark'] {
   color-scheme: dark;
 }
 
-:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 4px;
-}
-
 /* Common intersection observer animation styles */
 [data-observe] {
   opacity: 0;
