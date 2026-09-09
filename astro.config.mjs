@@ -3,6 +3,7 @@ import icon from 'astro-icon';
 import tailwind from '@tailwindcss/vite';
 
 export default defineConfig({
+  trailingSlash: 'always',
   build: {
     assets: '_astro',
   },
