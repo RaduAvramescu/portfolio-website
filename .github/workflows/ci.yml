@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  lint:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -26,7 +26,7 @@ jobs:
       - run: pnpm run check
 
   dependabot:
-    needs: lint
+    needs: validate
     runs-on: ubuntu-latest
     if: github.event.pull_request.user.login == 'dependabot[bot]' && github.event_name == 'pull_request'
     permissions:
@@ -40,7 +40,7 @@ jobs:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   pnpm-automerge:
-    needs: lint
+    needs: validate
     runs-on: ubuntu-latest
     if: >-
       github.event_name == 'pull_request' &&
