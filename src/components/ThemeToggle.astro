@@ -18,6 +18,11 @@ import { Icon } from 'astro-icon/components';
 </button>
 
 <style>
+  .theme-toggle:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+
   .theme-toggle:not([hidden]) {
     display: flex;
   }
