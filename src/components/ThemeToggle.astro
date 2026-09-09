@@ -1,0 +1,33 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<button
+  id="theme-toggle"
+  type="button"
+  hidden
+  aria-label="Switch color theme"
+  class="theme-toggle shrink-0 items-center justify-center size-11 rounded-lg text-gray-200 hover:bg-gray-800 hover:text-white cursor-pointer transition-colors"
+>
+  <span class="theme-icon-light" aria-hidden="true">
+    <Icon name="mdi:weather-sunny" width={24} height={24} />
+  </span>
+  <span class="theme-icon-dark" aria-hidden="true">
+    <Icon name="mdi:weather-night" width={24} height={24} />
+  </span>
+</button>
+
+<style>
+  .theme-toggle:not([hidden]) {
+    display: flex;
+  }
+
+  .theme-icon-light,
+  :global([data-theme='dark']) .theme-icon-dark {
+    display: none;
+  }
+
+  :global([data-theme='dark']) .theme-icon-light {
+    display: block;
+  }
+</style>

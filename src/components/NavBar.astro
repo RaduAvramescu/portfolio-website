@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import ThemeToggle from './ThemeToggle.astro';
 // No props needed for static navbar
 ---
 
@@ -8,7 +9,7 @@ import { Icon } from 'astro-icon/components';
   class="fixed top-0 left-0 w-full z-50 transition-transform duration-300 ease-in-out"
 >
   <nav class="bg-gray-900 text-white px-4 py-3">
-    <div class="flex items-center justify-between">
+    <div class="flex items-center justify-between gap-2">
       <a
         class="text-lg font-bold uppercase text-gray-400 hover:text-white transition-colors duration-300"
         href="#top"
@@ -19,7 +20,7 @@ import { Icon } from 'astro-icon/components';
 
       <!-- Mobile menu button -->
       <button
-        class="lg:hidden flex flex-col space-y-1 p-2 rounded-lg group"
+        class="lg:hidden order-3 flex flex-col space-y-1 p-2 rounded-lg group"
         id="mobile-menu-button"
         aria-label="Toggle navigation"
       >
@@ -35,7 +36,7 @@ import { Icon } from 'astro-icon/components';
       </button>
 
       <!-- Desktop navigation -->
-      <ul class="hidden lg:flex space-x-8">
+      <ul class="hidden lg:flex space-x-8 ml-auto">
         <li>
           <a
             class="nav-link relative px-0 font-medium text-gray-400 uppercase hover:text-white transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-white after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
@@ -69,6 +70,9 @@ import { Icon } from 'astro-icon/components';
           </a>
         </li>
       </ul>
+      <div class="ml-auto lg:ml-4">
+        <ThemeToggle />
+      </div>
     </div>
 
     <!-- Mobile navigation -->
@@ -115,7 +119,7 @@ import { Icon } from 'astro-icon/components';
 <a
   href="#top"
   id="scroll-to-top"
-  class="fixed bottom-5 right-5 z-50 text-gray-400 no-underline flex items-center justify-center opacity-0 transition-all duration-300 hover:text-gray-700"
+  class="fixed bottom-5 right-5 z-50 text-gray-400 no-underline flex items-center justify-center opacity-0 transition-all duration-300 hover:text-muted"
   aria-label="Scroll to top"
 >
   <Icon name="mdi:chevron-up-circle" width={48} height={48} />
