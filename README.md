@@ -31,7 +31,7 @@ pnpm run build
 ```
 
 `pnpm run check` runs Astro diagnostics, including TypeScript checks inside
-`.astro` components. CI runs this check before the production build.
+`.astro` components.
 
 ## Link
 

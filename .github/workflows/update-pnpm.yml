@@ -33,9 +33,4 @@ jobs:
           commit-message: 'ci: update pnpm'
           pr-title: 'ci: update pnpm'
           pr-body: 'Update pnpm within its current major version.'
-          verify: |
-            pnpm install --frozen-lockfile
-            pnpm run lint
-            pnpm run format:check
-            pnpm run check
-            pnpm run build
+          # GitHub PR checks validate the update; Cloudflare builds it.
