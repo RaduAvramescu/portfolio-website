@@ -6,18 +6,18 @@ import jumbotronImage from '../assets/images/jumbotron.webp?url';
 
 <section id="jumbotron">
   <div
-    class="flex justify-center items-center min-h-screen mb-0 bg-cover bg-center bg-fixed text-action-ink md:bg-scroll"
+    class="flex justify-center items-center min-h-screen mb-0 bg-cover bg-center bg-fixed bg-page text-ink md:bg-scroll"
     style={`background-image: linear-gradient(var(--color-hero-overlay), var(--color-hero-overlay)), url('${jumbotronImage}');`}
   >
     <div class="container mx-auto text-center px-4">
       <div class="intro overflow-hidden">
         <h1
-          class="font-bold uppercase mb-4 xl:mb-2 text-ink code-font text-5xl lg:text-7xl xl:text-8xl tracking-wider leading-normal xl:border-r-2 xl:border-red-500 xl:whitespace-nowrap xl:overflow-hidden xl:tracking-[0.15em] xl:animate-typewriter mx-auto flex max-w-max"
+          class="font-bold uppercase mb-4 xl:mb-2 text-heading code-font text-5xl lg:text-7xl xl:text-8xl tracking-wider leading-normal xl:border-r-2 xl:border-action xl:whitespace-nowrap xl:overflow-hidden xl:tracking-[0.15em] xl:animate-typewriter mx-auto flex max-w-max"
         >
           Radu Avramescu
         </h1>
         <h2
-          class="text-ink text-3xl lg:text-5xl xl:text-6xl leading-normal opacity-0 animate-slide-up-05"
+          class="text-muted text-3xl lg:text-5xl xl:text-6xl leading-normal opacity-0 animate-slide-up-05"
         >
           Frontend Developer
         </h2>
@@ -45,18 +45,18 @@ import jumbotronImage from '../assets/images/jumbotron.webp?url';
           href="https://github.com/RaduAvramescu"
           aria-label="GitHub"
           rel="noreferrer"
-          class="transition-transform duration-300 hover:scale-110"
+          class="text-muted hover:text-action transition-all duration-300 hover:scale-110"
         >
-          <Icon name="mdi:github" width="48" height="48" class="text-ink" />
+          <Icon name="mdi:github" width="48" height="48" />
         </a>
         <a
           target="_blank"
           href="https://www.linkedin.com/in/radu-a-4863a486/"
           aria-label="LinkedIn"
           rel="noreferrer"
-          class="transition-transform duration-300 hover:scale-110"
+          class="text-muted hover:text-action transition-all duration-300 hover:scale-110"
         >
-          <Icon name="mdi:linkedin" width="48" height="48" class="text-ink" />
+          <Icon name="mdi:linkedin" width="48" height="48" />
         </a>
       </div>
     </div>

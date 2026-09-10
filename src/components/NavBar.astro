@@ -8,10 +8,10 @@ import ThemeToggle from './ThemeToggle.astro';
   id="header"
   class="fixed top-0 left-0 w-full z-50 transition-transform duration-300 ease-in-out"
 >
-  <nav class="bg-gray-900 text-white px-4 py-3">
+  <nav class="bg-surface text-ink border-b border-edge px-4 py-3">
     <div class="flex items-center justify-between gap-2">
       <a
-        class="text-lg font-bold uppercase text-gray-400 hover:text-white transition-colors duration-300"
+        class="text-lg font-bold uppercase text-heading hover:text-action transition-colors duration-300"
         href="#top"
         id="navbar-brand"
       >
@@ -20,18 +20,18 @@ import ThemeToggle from './ThemeToggle.astro';
 
       <!-- Mobile menu button -->
       <button
-        class="lg:hidden order-3 flex flex-col space-y-1 p-2 rounded-lg group"
+        class="lg:hidden order-3 flex flex-col space-y-1 p-2 rounded-lg hover:bg-section group"
         id="mobile-menu-button"
         aria-label="Toggle navigation"
       >
         <span
-          class="w-6 h-0.5 bg-white transition-all duration-300 group-[.active]:rotate-45 group-[.active]:translate-y-1.5"
+          class="w-6 h-0.5 bg-ink transition-all duration-300 group-[.active]:rotate-45 group-[.active]:translate-y-1.5"
           id="line1"></span>
         <span
-          class="w-6 h-0.5 bg-white transition-all duration-300 group-[.active]:opacity-0"
+          class="w-6 h-0.5 bg-ink transition-all duration-300 group-[.active]:opacity-0"
           id="line2"></span>
         <span
-          class="w-6 h-0.5 bg-white transition-all duration-300 group-[.active]:-rotate-45 group-[.active]:-translate-y-1.5"
+          class="w-6 h-0.5 bg-ink transition-all duration-300 group-[.active]:-rotate-45 group-[.active]:-translate-y-1.5"
           id="line3"></span>
       </button>
 
@@ -39,7 +39,7 @@ import ThemeToggle from './ThemeToggle.astro';
       <ul class="hidden lg:flex space-x-8 ml-auto">
         <li>
           <a
-            class="nav-link relative px-0 font-medium text-gray-400 uppercase hover:text-white transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-white after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
+            class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
             href="#top"
           >
             Home
@@ -47,7 +47,7 @@ import ThemeToggle from './ThemeToggle.astro';
         </li>
         <li>
           <a
-            class="nav-link relative px-0 font-medium text-gray-400 uppercase hover:text-white transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-white after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
+            class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
             href="#projects"
           >
             Projects
@@ -55,7 +55,7 @@ import ThemeToggle from './ThemeToggle.astro';
         </li>
         <li>
           <a
-            class="nav-link relative px-0 font-medium text-gray-400 uppercase hover:text-white transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-white after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
+            class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
             href="#about"
           >
             About
@@ -63,7 +63,7 @@ import ThemeToggle from './ThemeToggle.astro';
         </li>
         <li>
           <a
-            class="nav-link relative px-0 font-medium text-gray-400 uppercase hover:text-white transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-white after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
+            class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
             href="#contact"
           >
             Contact
@@ -80,7 +80,7 @@ import ThemeToggle from './ThemeToggle.astro';
       <ul class="flex flex-col space-y-2">
         <li>
           <a
-            class="nav-link block py-2 font-medium text-gray-400 uppercase hover:text-white transition-colors duration-300"
+            class="nav-link block py-2 font-medium text-muted uppercase hover:text-action transition-colors duration-300"
             href="#top"
           >
             Home
@@ -88,7 +88,7 @@ import ThemeToggle from './ThemeToggle.astro';
         </li>
         <li>
           <a
-            class="nav-link block py-2 font-medium text-gray-400 uppercase hover:text-white transition-colors duration-300"
+            class="nav-link block py-2 font-medium text-muted uppercase hover:text-action transition-colors duration-300"
             href="#projects"
           >
             Projects
@@ -96,7 +96,7 @@ import ThemeToggle from './ThemeToggle.astro';
         </li>
         <li>
           <a
-            class="nav-link block py-2 font-medium text-gray-400 uppercase hover:text-white transition-colors duration-300"
+            class="nav-link block py-2 font-medium text-muted uppercase hover:text-action transition-colors duration-300"
             href="#about"
           >
             About
@@ -104,7 +104,7 @@ import ThemeToggle from './ThemeToggle.astro';
         </li>
         <li>
           <a
-            class="nav-link block py-2 font-medium text-gray-400 uppercase hover:text-white transition-colors duration-300"
+            class="nav-link block py-2 font-medium text-muted uppercase hover:text-action transition-colors duration-300"
             href="#contact"
           >
             Contact
@@ -119,7 +119,7 @@ import ThemeToggle from './ThemeToggle.astro';
 <a
   href="#top"
   id="scroll-to-top"
-  class="fixed bottom-5 right-5 z-50 text-gray-400 no-underline flex items-center justify-center opacity-0 transition-all duration-300 hover:text-muted"
+  class="fixed bottom-5 right-5 z-50 bg-surface rounded-full text-action shadow-md no-underline flex items-center justify-center opacity-0 transition-all duration-300 hover:text-action-hover"
   aria-label="Scroll to top"
 >
   <Icon name="mdi:chevron-up-circle" width={48} height={48} />
