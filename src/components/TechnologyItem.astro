@@ -15,8 +15,15 @@ const iconName = technologyIconMap[techName];
 
 <Icon
   name={iconName}
-  class={`${className} ${techName === 'Astro' ? 'rounded bg-gray-100 p-1' : ''} cursor-pointer transition-transform duration-300 hover:scale-120`}
+  class={`${className} ${techName === 'Astro' ? 'technology-astro' : ''} text-ink cursor-pointer transition-transform duration-300 hover:scale-120`}
   width={width}
   height={width}
   title={techName}
 />
+
+<style>
+  /* Let Astro's letter follow the theme while preserving its colored flame. */
+  :global(.technology-astro path:first-of-type) {
+    fill: currentColor;
+  }
+</style>

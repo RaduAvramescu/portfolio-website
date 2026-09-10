@@ -22,8 +22,8 @@ This is the repository for my personal website.
 
 ## Color themes
 
-The site follows the device theme and remembers changes made with the navbar
-toggle. Theme colors use `light-dark()` in `src/styles/globals.css`.
+Light and dark themes follow the device preference and remember navbar toggle
+changes. The neutral palette is defined in `src/styles/globals.css`.
 
 ## Validation
 
