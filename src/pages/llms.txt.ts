@@ -34,7 +34,5 @@ export const GET: APIRoute = async () => {
     '',
   ].join('\n');
 
-  return new Response(body, {
-    headers: { 'Content-Type': 'text/plain; charset=utf-8' },
-  });
+  return new Response(body);
 };
