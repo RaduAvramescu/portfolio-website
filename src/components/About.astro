@@ -18,7 +18,7 @@ const technologies: Technology[] = [
 
 <section
   id="about"
-  class="bg-section text-ink border-y border-edge py-10 px-5 md:py-14 md:px-4 text-center"
+  class="scroll-mt-[calc(var(--header-height)+1rem)] bg-section text-ink border-y border-edge py-10 px-5 md:py-14 md:px-4 text-center"
 >
   <h2
     class="text-4xl font-bold uppercase text-heading mb-12"
@@ -38,14 +38,16 @@ const technologies: Technology[] = [
   <div data-observe="true" data-trigger-once="true">
     <div
       id="technology-strip"
-      class="technology-strip mx-auto flex overflow-hidden w-full max-w-4xl group"
+      class="mx-auto flex overflow-hidden w-full max-w-4xl group motion-reduce:overflow-visible"
     >
       {
         [false, true].map(duplicate => (
           <div
-            class="technology-track flex items-center shrink-0 w-max animate-scroll-left-sm sm:animate-scroll-left-md md:animate-scroll-left group-hover:[animation-play-state:paused]"
+            class:list={[
+              'flex items-center shrink-0 w-max motion-safe:animate-scroll-left-sm motion-safe:sm:animate-scroll-left-md motion-safe:md:animate-scroll-left group-hover:[animation-play-state:paused] motion-reduce:w-full motion-reduce:flex-wrap motion-reduce:justify-center',
+              { 'motion-reduce:hidden': duplicate },
+            ]}
             aria-hidden={duplicate ? 'true' : undefined}
-            data-duplicate={duplicate ? 'true' : undefined}
           >
             <Technologies technologies={technologies} width={70} />
           </div>
@@ -54,21 +56,3 @@ const technologies: Technology[] = [
     </div>
   </div>
 </section>
-
-<style>
-  @media (prefers-reduced-motion: reduce) {
-    .technology-strip {
-      overflow: visible;
-    }
-
-    .technology-track {
-      width: 100%;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .technology-track[data-duplicate] {
-      display: none;
-    }
-  }
-</style>

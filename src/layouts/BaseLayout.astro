@@ -15,7 +15,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="motion-safe:scroll-smooth [--header-height:4.25rem]">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -32,7 +32,7 @@ const {
     />
     <title>{title}</title>
   </head>
-  <body>
+  <body id="top">
     <slot />
   </body>
 </html>

@@ -6,31 +6,31 @@ import jumbotronImage from '../assets/images/jumbotron.webp?url';
 
 <section id="jumbotron">
   <div
-    class="flex justify-center items-center min-h-screen mb-0 bg-cover bg-center bg-fixed bg-page text-ink md:bg-scroll"
+    class="flex justify-center items-center min-h-screen mb-0 bg-cover bg-center motion-safe:max-md:bg-fixed bg-page text-ink"
     style={`background-image: linear-gradient(var(--color-hero-overlay), var(--color-hero-overlay)), url('${jumbotronImage}');`}
   >
     <div class="container mx-auto text-center px-4">
       <div class="intro overflow-hidden">
         <h1
-          class="font-bold uppercase mb-4 xl:mb-2 text-heading code-font text-5xl lg:text-7xl xl:text-8xl tracking-wider leading-normal xl:border-r-2 xl:border-action xl:whitespace-nowrap xl:overflow-hidden xl:tracking-[0.15em] xl:animate-typewriter mx-auto flex max-w-max"
+          class="font-bold uppercase mb-4 xl:mb-2 text-heading code-font text-5xl lg:text-7xl xl:text-8xl tracking-wider leading-normal motion-safe:xl:border-r-2 xl:border-action xl:whitespace-nowrap xl:overflow-hidden xl:tracking-[0.15em] motion-safe:xl:animate-typewriter mx-auto flex max-w-max"
         >
           Radu Avramescu
         </h1>
         <h2
-          class="text-muted text-3xl lg:text-5xl xl:text-6xl leading-normal opacity-0 animate-slide-up-05"
+          class="text-muted text-3xl lg:text-5xl xl:text-6xl leading-normal motion-safe:opacity-0 motion-safe:animate-slide-up-05"
         >
           Frontend Developer
         </h2>
         <div class="flex justify-center mb-2">
           <a
-            class="flex items-center whitespace-nowrap bg-action text-action-ink text-lg mt-3 px-6 py-4 font-bold no-underline rounded-lg hover:bg-action-hover transition-colors duration-300 tracking-widest opacity-0 animate-slide-up-08 group"
+            class="flex items-center whitespace-nowrap bg-action text-action-ink text-lg mt-3 px-6 py-4 font-bold no-underline rounded-lg hover:bg-action-hover motion-safe:transition-colors motion-safe:duration-300 tracking-widest motion-safe:opacity-0 motion-safe:animate-slide-up-08 group"
             href="#projects"
             id="view-projects-btn"
           >
             <span class="uppercase">View My Projects</span>
             <Icon
               name="mdi:arrow-right"
-              class="ml-3 transition-transform duration-300 group-hover:rotate-90"
+              class="ml-3 motion-safe:transition-transform motion-safe:duration-300 motion-safe:group-hover:rotate-90"
               width="24"
               height="24"
             />
@@ -38,14 +38,14 @@ import jumbotronImage from '../assets/images/jumbotron.webp?url';
         </div>
       </div>
       <div
-        class="container py-3 text-center flex justify-center gap-2 opacity-0 translate-y-0 animate-slide-up-08"
+        class="container py-3 text-center flex justify-center gap-2 motion-safe:opacity-0 translate-y-0 motion-safe:animate-slide-up-08"
       >
         <a
           target="_blank"
           href="https://github.com/RaduAvramescu"
           aria-label="GitHub"
           rel="noreferrer"
-          class="text-muted hover:text-action transition-all duration-300 hover:scale-110"
+          class="text-muted hover:text-action motion-safe:transition-all motion-safe:duration-300 motion-safe:hover:scale-110"
         >
           <Icon name="mdi:github" width="48" height="48" />
         </a>
@@ -54,7 +54,7 @@ import jumbotronImage from '../assets/images/jumbotron.webp?url';
           href="https://www.linkedin.com/in/radu-a-4863a486/"
           aria-label="LinkedIn"
           rel="noreferrer"
-          class="text-muted hover:text-action transition-all duration-300 hover:scale-110"
+          class="text-muted hover:text-action motion-safe:transition-all motion-safe:duration-300 motion-safe:hover:scale-110"
         >
           <Icon name="mdi:linkedin" width="48" height="48" />
         </a>

@@ -15,13 +15,13 @@ const { webp, jpg } = getImageSources(data.image);
 const getDelayClass = (index: number) => {
   const delays = [
     '',
-    'delay-100',
-    'delay-200',
-    'delay-300',
-    'delay-500',
-    'delay-700',
+    'motion-safe:delay-100',
+    'motion-safe:delay-200',
+    'motion-safe:delay-300',
+    'motion-safe:delay-500',
+    'motion-safe:delay-700',
   ];
-  return delays[index] || 'delay-1000';
+  return delays[index] || 'motion-safe:delay-1000';
 };
 ---
 
@@ -31,7 +31,7 @@ const getDelayClass = (index: number) => {
   data-trigger-once="true"
 >
   <div
-    class="bg-surface border border-edge rounded-lg h-full flex flex-col overflow-hidden text-left shadow-sm hover:shadow-md transition-shadow duration-300"
+    class="bg-surface border border-edge rounded-lg h-full flex flex-col overflow-hidden text-left shadow-sm hover:shadow-md motion-safe:transition-shadow motion-safe:duration-300"
   >
     <div class="overflow-hidden p-0 bg-surface">
       <a target="_blank" href={data.demoURL} rel="noreferrer">
@@ -40,7 +40,7 @@ const getDelayClass = (index: number) => {
           <img
             src={jpg}
             alt={data.title}
-            class="w-full h-auto aspect-[9/5] object-cover rounded-t-lg transition-transform duration-300 hover:scale-[1.3]"
+            class="w-full h-auto aspect-[9/5] object-cover rounded-t-lg motion-safe:transition-transform motion-safe:duration-300 motion-safe:hover:scale-[1.3]"
             width="450"
             height="250"
             loading="lazy"
@@ -63,26 +63,26 @@ const getDelayClass = (index: number) => {
       <div class="flex flex-wrap gap-3">
         <a
           target="_blank"
-          class="group flex items-center gap-2 border-2 border-action bg-action text-action-ink hover:bg-action-hover hover:border-action-hover hover:shadow-md font-bold px-3 py-2 rounded-lg transition-all duration-300 flex-1 justify-center whitespace-nowrap text-sm"
+          class="group flex items-center gap-2 border-2 border-action bg-action text-action-ink hover:bg-action-hover hover:border-action-hover hover:shadow-md font-bold px-3 py-2 rounded-lg motion-safe:transition-all motion-safe:duration-300 flex-1 justify-center whitespace-nowrap text-sm"
           href={data.demoURL}
           rel="noreferrer"
         >
           <span class="uppercase tracking-widest">Demo</span>
           <Icon
             name="mdi:rocket-launch"
-            class="w-5 h-5 shrink-0 transition-transform duration-300"
+            class="w-5 h-5 shrink-0 motion-safe:transition-transform motion-safe:duration-300"
           />
         </a>
         <a
           target="_blank"
-          class="group flex items-center gap-2 border-2 border-action text-action hover:bg-action hover:text-action-ink hover:shadow-md font-bold px-3 py-2 rounded-lg transition-all duration-300 flex-1 justify-center whitespace-nowrap text-sm"
+          class="group flex items-center gap-2 border-2 border-action text-action hover:bg-action hover:text-action-ink hover:shadow-md font-bold px-3 py-2 rounded-lg motion-safe:transition-all motion-safe:duration-300 flex-1 justify-center whitespace-nowrap text-sm"
           href={data.codeURL}
           rel="noreferrer"
         >
           <span class="uppercase tracking-widest">Code</span>
           <Icon
             name="mdi:github"
-            class="w-5 h-5 shrink-0 transition-transform duration-300"
+            class="w-5 h-5 shrink-0 motion-safe:transition-transform motion-safe:duration-300"
           />
         </a>
       </div>

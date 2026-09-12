@@ -6,12 +6,12 @@ import ThemeToggle from './ThemeToggle.astro';
 
 <header
   id="header"
-  class="fixed top-0 left-0 w-full z-50 transition-transform duration-300 ease-in-out"
+  class="fixed top-0 left-0 w-full z-50 motion-safe:transition-transform motion-safe:duration-300 ease-in-out"
 >
-  <nav class="bg-surface text-ink border-b border-edge px-4 py-3">
+  <nav class="group/nav bg-surface text-ink border-b border-edge px-4 py-3">
     <div class="flex items-center justify-between gap-2">
       <a
-        class="text-lg font-bold uppercase text-heading hover:text-action transition-colors duration-300"
+        class="text-lg font-bold uppercase text-heading hover:text-action motion-safe:transition-colors motion-safe:duration-300"
         href="#top"
         id="navbar-brand"
       >
@@ -28,13 +28,13 @@ import ThemeToggle from './ThemeToggle.astro';
         aria-controls="mobile-menu"
       >
         <span
-          class="w-6 h-0.5 bg-ink transition-all duration-300 group-[.active]:rotate-45 group-[.active]:translate-y-1.5"
+          class="w-6 h-0.5 bg-ink motion-safe:transition-all motion-safe:duration-300 group-aria-expanded:rotate-45 group-aria-expanded:translate-y-1.5"
           id="line1"></span>
         <span
-          class="w-6 h-0.5 bg-ink transition-all duration-300 group-[.active]:opacity-0"
+          class="w-6 h-0.5 bg-ink motion-safe:transition-all motion-safe:duration-300 group-aria-expanded:opacity-0"
           id="line2"></span>
         <span
-          class="w-6 h-0.5 bg-ink transition-all duration-300 group-[.active]:-rotate-45 group-[.active]:-translate-y-1.5"
+          class="w-6 h-0.5 bg-ink motion-safe:transition-all motion-safe:duration-300 group-aria-expanded:-rotate-45 group-aria-expanded:-translate-y-1.5"
           id="line3"></span>
       </button>
 
@@ -42,7 +42,7 @@ import ThemeToggle from './ThemeToggle.astro';
       <ul class="hidden lg:flex space-x-8 ml-auto">
         <li>
           <a
-            class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
+            class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action motion-safe:after:transition-all motion-safe:after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
             href="#top"
           >
             Home
@@ -50,7 +50,7 @@ import ThemeToggle from './ThemeToggle.astro';
         </li>
         <li>
           <a
-            class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
+            class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action motion-safe:after:transition-all motion-safe:after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
             href="#projects"
           >
             Projects
@@ -58,7 +58,7 @@ import ThemeToggle from './ThemeToggle.astro';
         </li>
         <li>
           <a
-            class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
+            class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action motion-safe:after:transition-all motion-safe:after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
             href="#about"
           >
             About
@@ -66,7 +66,7 @@ import ThemeToggle from './ThemeToggle.astro';
         </li>
         <li>
           <a
-            class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action after:transition-all after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
+            class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action motion-safe:after:transition-all motion-safe:after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
             href="#contact"
           >
             Contact
@@ -79,11 +79,14 @@ import ThemeToggle from './ThemeToggle.astro';
     </div>
 
     <!-- Mobile navigation -->
-    <div class="lg:hidden hidden mt-4" id="mobile-menu">
+    <div
+      class="hidden mt-4 max-lg:group-has-[[aria-expanded=true]]/nav:block"
+      id="mobile-menu"
+    >
       <ul class="flex flex-col space-y-2">
         <li>
           <a
-            class="nav-link block py-2 font-medium text-muted uppercase hover:text-action transition-colors duration-300"
+            class="nav-link block py-2 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300"
             href="#top"
           >
             Home
@@ -91,7 +94,7 @@ import ThemeToggle from './ThemeToggle.astro';
         </li>
         <li>
           <a
-            class="nav-link block py-2 font-medium text-muted uppercase hover:text-action transition-colors duration-300"
+            class="nav-link block py-2 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300"
             href="#projects"
           >
             Projects
@@ -99,7 +102,7 @@ import ThemeToggle from './ThemeToggle.astro';
         </li>
         <li>
           <a
-            class="nav-link block py-2 font-medium text-muted uppercase hover:text-action transition-colors duration-300"
+            class="nav-link block py-2 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300"
             href="#about"
           >
             About
@@ -107,7 +110,7 @@ import ThemeToggle from './ThemeToggle.astro';
         </li>
         <li>
           <a
-            class="nav-link block py-2 font-medium text-muted uppercase hover:text-action transition-colors duration-300"
+            class="nav-link block py-2 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300"
             href="#contact"
           >
             Contact
@@ -122,7 +125,7 @@ import ThemeToggle from './ThemeToggle.astro';
 <a
   href="#top"
   id="scroll-to-top"
-  class="fixed bottom-5 right-5 z-50 bg-surface rounded-full text-action shadow-md no-underline flex items-center justify-center opacity-0 transition-all duration-300 hover:text-action-hover"
+  class="fixed bottom-5 right-5 z-50 bg-surface rounded-full text-action shadow-md no-underline flex items-center justify-center opacity-0 motion-safe:transition-all motion-safe:duration-300 hover:text-action-hover"
   aria-label="Scroll to top"
 >
   <Icon name="mdi:chevron-up-circle" width={48} height={48} />
@@ -135,15 +138,12 @@ import ThemeToggle from './ThemeToggle.astro';
     const scrollToTopBtn = document.getElementById('scroll-to-top');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     if (!header || !scrollToTopBtn) {
       return;
     }
 
     function setMenuOpen(open: boolean) {
-      mobileMenu?.classList.toggle('hidden', !open);
-      mobileMenuButton?.classList.toggle('active', open);
       mobileMenuButton?.setAttribute('aria-expanded', String(open));
     }
 
@@ -202,28 +202,10 @@ import ThemeToggle from './ThemeToggle.astro';
       prevScrollPos = currentScrollPos;
     }
 
-    // Apply the same motion preference and section offset to every anchor action.
-    document
-      .querySelectorAll<HTMLAnchorElement>('a[href^="#"]')
-      .forEach(link => {
-        link.addEventListener('click', event => {
-          if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)
-            return;
-          const targetId = link.getAttribute('href')?.substring(1);
-          if (!targetId) return;
-          const targetElement = document.getElementById(
-            targetId === 'top' ? 'jumbotron' : targetId
-          );
-          if (!targetElement) return;
-
-          event.preventDefault();
-          setMenuOpen(false);
-          targetElement.scrollIntoView({
-            behavior: reducedMotion.matches ? 'instant' : 'smooth',
-            block: 'start',
-          });
-        });
-      });
+    // Close the menu before the browser follows the anchor and applies the CSS offset.
+    mobileMenu?.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => setMenuOpen(false));
+    });
 
     window.addEventListener('scroll', handleScroll, { passive: true });
   });
