@@ -89,8 +89,13 @@ body {
 }
 
 html {
+  --header-height: 4.25rem;
   scroll-behavior: smooth;
   color-scheme: light dark;
+}
+
+main > section[id]:not(#jumbotron) {
+  scroll-margin-top: calc(var(--header-height) + 1rem);
 }
 
 html[data-theme='light'] {
@@ -121,4 +126,39 @@ html[data-theme='dark'] {
 [data-observe].animate-in {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  #jumbotron [class*='animate-'],
+  [data-observe] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  #jumbotron h1 {
+    width: auto;
+    border-right: 0;
+  }
+
+  #jumbotron > div {
+    background-attachment: scroll;
+  }
+
+  /* Decorative hover movement; preserve functional menu/header transforms. */
+  a,
+  img,
+  svg {
+    transform: none !important;
+    scale: none !important;
+    rotate: none !important;
+    translate: none !important;
+  }
 }

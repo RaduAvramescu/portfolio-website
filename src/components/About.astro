@@ -1,5 +1,19 @@
 ---
 import Technologies from './Technologies.astro';
+import type { Technology } from '../utils/technologies';
+
+const technologies: Technology[] = [
+  'HTML5',
+  'CSS3',
+  'Tailwind CSS',
+  'Material-UI',
+  'JavaScript',
+  'React',
+  'Astro',
+  'GraphQL',
+  'Git',
+  'npm',
+];
 ---
 
 <section
@@ -7,83 +21,54 @@ import Technologies from './Technologies.astro';
   class="bg-section text-ink border-y border-edge py-10 px-5 md:py-14 md:px-4 text-center"
 >
   <h2
-    class="text-4xl md:text-[2rem] font-bold uppercase text-heading mb-12"
+    class="text-4xl font-bold uppercase text-heading mb-12"
     data-observe="true"
     data-trigger-once="true"
   >
     About
   </h2>
   <h3
-    class="max-w-4xl mx-auto text-xl md:text-[1.1rem] text-muted leading-relaxed mb-12 text-balance"
+    class="max-w-4xl mx-auto text-xl text-muted leading-relaxed mb-12 text-balance"
     data-observe="true"
     data-trigger-once="true"
   >
     I'm a frontend developer interested in staying up to date with technologies
     and constantly learning. Below is a collection of the technologies I use.
   </h3>
-  <div class="w-full">
-    <div data-observe="true" data-trigger-once="true">
-      <div class="max-w-7xl mx-auto flex justify-center items-center">
-        <div class="flex overflow-hidden w-full max-w-4xl relative group">
+  <div data-observe="true" data-trigger-once="true">
+    <div
+      id="technology-strip"
+      class="technology-strip mx-auto flex overflow-hidden w-full max-w-4xl group"
+    >
+      {
+        [false, true].map(duplicate => (
           <div
-            class="flex items-center flex-shrink-0 w-full animate-scroll-left-sm sm:animate-scroll-left-md md:animate-scroll-left group-hover:[animation-play-state:paused] min-w-4xl"
+            class="technology-track flex items-center shrink-0 w-max animate-scroll-left-sm sm:animate-scroll-left-md md:animate-scroll-left group-hover:[animation-play-state:paused]"
+            aria-hidden={duplicate ? 'true' : undefined}
+            data-duplicate={duplicate ? 'true' : undefined}
           >
-            <Technologies
-              technologies={[
-                'HTML5',
-                'CSS3',
-                'Tailwind CSS',
-                'Material-UI',
-                'JavaScript',
-                'React',
-                'Astro',
-                'GraphQL',
-                'Git',
-                'npm',
-              ]}
-              width={70}
-            />
+            <Technologies technologies={technologies} width={70} />
           </div>
-          <div
-            class="flex items-center flex-shrink-0 w-full animate-scroll-left-sm sm:animate-scroll-left-md md:animate-scroll-left group-hover:[animation-play-state:paused] min-w-4xl"
-          >
-            <Technologies
-              technologies={[
-                'HTML5',
-                'CSS3',
-                'Tailwind CSS',
-                'Material-UI',
-                'JavaScript',
-                'React',
-                'Astro',
-                'GraphQL',
-                'Git',
-                'npm',
-              ]}
-              width={70}
-            />
-          </div>
-          <div
-            class="flex items-center flex-shrink-0 w-full animate-scroll-left-sm sm:animate-scroll-left-md md:animate-scroll-left group-hover:[animation-play-state:paused] min-w-4xl"
-          >
-            <Technologies
-              technologies={[
-                'HTML5',
-                'CSS3',
-                'Tailwind CSS',
-                'Material-UI',
-                'JavaScript',
-                'React',
-                'Astro',
-                'GraphQL',
-                'Git',
-                'npm',
-              ]}
-              width={70}
-            />
-          </div>
-        </div>
-      </div>
+        ))
+      }
     </div>
   </div>
 </section>
+
+<style>
+  @media (prefers-reduced-motion: reduce) {
+    .technology-strip {
+      overflow: visible;
+    }
+
+    .technology-track {
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .technology-track[data-duplicate] {
+      display: none;
+    }
+  }
+</style>

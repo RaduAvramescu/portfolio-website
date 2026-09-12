@@ -2,6 +2,17 @@
  * Initialize intersection observers for elements with data-observe attribute
  */
 function initIntersectionObserver(): void {
+  const elements = document.querySelectorAll('[data-observe]');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const revealAll = () => {
+    elements.forEach(el => el.classList.add('animate-in'));
+  };
+
+  if (reducedMotion.matches || !('IntersectionObserver' in window)) {
+    revealAll();
+    return;
+  }
+
   const observerOptions: IntersectionObserverInit = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px',
@@ -29,8 +40,15 @@ function initIntersectionObserver(): void {
   );
 
   // Observe all elements with data-observe attribute
-  document.querySelectorAll('[data-observe]').forEach((el: Element) => {
+  elements.forEach((el: Element) => {
     observer.observe(el);
+  });
+
+  reducedMotion.addEventListener('change', event => {
+    if (event.matches) {
+      observer.disconnect();
+      revealAll();
+    }
   });
 }
 
