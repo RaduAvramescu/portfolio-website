@@ -136,7 +136,6 @@ import ThemeToggle from './ThemeToggle.astro';
     let prevScrollPos = window.scrollY;
     const header = document.getElementById('header');
     const scrollToTopBtn = document.getElementById('scroll-to-top');
-    const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuButton = document.getElementById('mobile-menu-button');
 
     if (!header || !scrollToTopBtn) {
@@ -202,10 +201,22 @@ import ThemeToggle from './ThemeToggle.astro';
       prevScrollPos = currentScrollPos;
     }
 
-    // Close the menu before the browser follows the anchor and applies the CSS offset.
-    mobileMenu?.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', () => setMenuOpen(false));
-    });
+    // Include the brand and other page anchors, while preserving modified clicks.
+    document
+      .querySelectorAll<HTMLAnchorElement>('a[href^="#"]')
+      .forEach(link => {
+        link.addEventListener('click', event => {
+          if (
+            event.button !== 0 ||
+            event.ctrlKey ||
+            event.metaKey ||
+            event.shiftKey ||
+            event.altKey
+          )
+            return;
+          setMenuOpen(false);
+        });
+      });
 
     window.addEventListener('scroll', handleScroll, { passive: true });
   });
