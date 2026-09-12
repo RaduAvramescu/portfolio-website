@@ -22,7 +22,10 @@ import ThemeToggle from './ThemeToggle.astro';
       <button
         class="lg:hidden order-3 flex flex-col space-y-1 p-2 rounded-lg hover:bg-section group"
         id="mobile-menu-button"
+        type="button"
         aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
       >
         <span
           class="w-6 h-0.5 bg-ink transition-all duration-300 group-[.active]:rotate-45 group-[.active]:translate-y-1.5"
@@ -127,103 +130,101 @@ import ThemeToggle from './ThemeToggle.astro';
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Navbar hide/show on scroll and scroll-to-top functionality
-    let prevScrollPos = window.pageYOffset;
-    const header = document.getElementById('header') as HTMLElement | null;
-    const scrollToTopBtn = document.getElementById(
-      'scroll-to-top'
-    ) as HTMLElement | null;
-    const mobileMenu = document.getElementById(
-      'mobile-menu'
-    ) as HTMLElement | null;
-    const mobileMenuButton = document.getElementById(
-      'mobile-menu-button'
-    ) as HTMLElement | null;
+    let prevScrollPos = window.scrollY;
+    const header = document.getElementById('header');
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     if (!header || !scrollToTopBtn) {
       return;
     }
 
-    // Mobile menu toggle
-    if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener('click', () => {
-        const isHidden = mobileMenu.classList.contains('hidden');
-        if (isHidden) {
-          mobileMenu.classList.remove('hidden');
-          mobileMenuButton.classList.add('active');
-        } else {
-          mobileMenu.classList.add('hidden');
-          mobileMenuButton.classList.remove('active');
-        }
-      });
+    function setMenuOpen(open: boolean) {
+      mobileMenu?.classList.toggle('hidden', !open);
+      mobileMenuButton?.classList.toggle('active', open);
+      mobileMenuButton?.setAttribute('aria-expanded', String(open));
     }
 
+    mobileMenuButton?.addEventListener('click', () => {
+      setMenuOpen(mobileMenuButton.getAttribute('aria-expanded') !== 'true');
+    });
+
+    header.addEventListener('keydown', event => {
+      if (
+        event.key === 'Escape' &&
+        mobileMenuButton?.getAttribute('aria-expanded') === 'true'
+      ) {
+        setMenuOpen(false);
+        mobileMenuButton.focus();
+      }
+    });
+    header.addEventListener('focusin', () => {
+      header.classList.remove('-translate-y-full');
+    });
+
+    // Measure the closed header, even while the mobile menu is expanded.
+    const nav = header.querySelector('nav');
+    const navRow = nav?.firstElementChild;
+    if (nav && navRow) {
+      const updateHeaderOffset = () => {
+        const style = getComputedStyle(nav);
+        const height =
+          navRow.getBoundingClientRect().height +
+          parseFloat(style.paddingTop) +
+          parseFloat(style.paddingBottom) +
+          parseFloat(style.borderTopWidth) +
+          parseFloat(style.borderBottomWidth);
+        document.documentElement.style.setProperty(
+          '--header-height',
+          `${height}px`
+        );
+      };
+      updateHeaderOffset();
+      new ResizeObserver(updateHeaderOffset).observe(navRow);
+    }
+
+    // Reset both visual and announced state when switching to desktop navigation.
+    window
+      .matchMedia('(min-width: 64rem)')
+      .addEventListener('change', event => {
+        if (event.matches) setMenuOpen(false);
+      });
+
     function handleScroll() {
-      const currentScrollPos = window.pageYOffset;
+      const currentScrollPos = window.scrollY;
       const isVisible =
         prevScrollPos > currentScrollPos || currentScrollPos < 10;
-
-      if (isVisible) {
-        header!.classList.remove('-translate-y-full');
-      } else {
-        header!.classList.add('-translate-y-full');
-
-        // Close mobile menu if it's open
-        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.add('hidden');
-          mobileMenuButton?.classList.remove('active');
-        }
-      }
-
-      // Show/hide scroll to top button
-      if (currentScrollPos > 100) {
-        scrollToTopBtn!.classList.add('!opacity-100');
-      } else {
-        scrollToTopBtn!.classList.remove('!opacity-100');
-      }
-
+      header!.classList.toggle('-translate-y-full', !isVisible);
+      if (!isVisible) setMenuOpen(false);
+      scrollToTopBtn!.classList.toggle('!opacity-100', currentScrollPos > 100);
       prevScrollPos = currentScrollPos;
     }
 
-    // Smooth scrolling for navbar links
-    document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
-      link.addEventListener('click', event => {
-        event.preventDefault();
-        const targetId = link.getAttribute('href')?.substring(1);
+    // Apply the same motion preference and section offset to every anchor action.
+    document
+      .querySelectorAll<HTMLAnchorElement>('a[href^="#"]')
+      .forEach(link => {
+        link.addEventListener('click', event => {
+          if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)
+            return;
+          const targetId = link.getAttribute('href')?.substring(1);
+          if (!targetId) return;
+          const targetElement = document.getElementById(
+            targetId === 'top' ? 'jumbotron' : targetId
+          );
+          if (!targetElement) return;
 
-        if (!targetId) {
-          return;
-        }
-
-        const targetElement = document.getElementById(
-          targetId === 'top' ? 'jumbotron' : targetId
-        );
-
-        if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Close mobile menu
-        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.add('hidden');
-          mobileMenuButton?.classList.remove('active');
-        }
+          event.preventDefault();
+          setMenuOpen(false);
+          targetElement.scrollIntoView({
+            behavior: reducedMotion.matches ? 'instant' : 'smooth',
+            block: 'start',
+          });
+        });
       });
-    });
 
-    // Brand link scroll to top
-    const navbarBrand = document.getElementById('navbar-brand');
-
-    if (navbarBrand) {
-      navbarBrand.addEventListener('click', event => {
-        event.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
-
-    // Listen for scroll events
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
   });
 </script>
