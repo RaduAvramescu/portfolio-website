@@ -6,6 +6,7 @@
 - [Technologies](#technologies)
 - [Styling](#styling)
 - [Color themes](#color-themes)
+- [Images](#images)
 - [Validation](#validation)
 - [Link](#link)
 
@@ -34,6 +35,13 @@ Sans and Source Code Pro. Font loading is configured in `astro.config.mjs` and
 
 Light and dark themes follow the device preference and remember navbar toggle
 changes. The neutral palette is defined in `src/styles/globals.css`.
+
+## Images
+
+The hero background uses `image-set()` to prefer WebP with a JPEG fallback.
+Browsers without support for format selection in `image-set()` use JPEG. Project
+cards use `<picture>` with WebP sources and JPEG fallbacks. Keep both image formats
+for the hero and displayed projects.
 
 ## Validation
 
