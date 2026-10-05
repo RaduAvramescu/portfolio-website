@@ -1,6 +1,6 @@
 {
   "name": "Portfolio Website - Astro Development",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22-bookworm",
 
   "customizations": {
     "vscode": {
