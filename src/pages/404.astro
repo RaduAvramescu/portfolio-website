@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Page not found - Radu Avramescu"
+  description="This page could not be found. Return to Radu Avramescu's frontend development portfolio."
+  noIndex
+>
+  <div class="flex min-h-svh flex-col">
+    <header class="bg-surface border-b border-edge">
+      <div
+        class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3"
+      >
+        <a
+          href="/"
+          class="text-base sm:text-lg font-bold uppercase text-heading hover:text-action motion-safe:transition-colors"
+        >
+          Radu Avramescu
+        </a>
+        <ThemeToggle />
+      </div>
+    </header>
+
+    <main class="flex flex-1 items-center justify-center px-4 py-16 sm:py-24">
+      <div class="max-w-xl text-center">
+        <p class="code-font mb-4 text-7xl sm:text-9xl font-bold text-muted">
+          404
+        </p>
+        <h1 class="mb-4 text-3xl sm:text-4xl font-bold text-heading">
+          Page not found
+        </h1>
+        <p class="mb-8 text-lg text-muted">
+          The page you're looking for doesn't exist or may have moved.
+        </p>
+        <a
+          href="/"
+          class="inline-flex rounded-lg bg-action px-6 py-4 font-bold text-action-ink hover:bg-action-hover motion-safe:transition-colors"
+        >
+          Back to home
+        </a>
+      </div>
+    </main>
+
+    <Footer />
+  </div>
+</BaseLayout>

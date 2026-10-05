@@ -1,0 +1,42 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title description"
+>
+  <title id="title">Radu Avramescu — Frontend Developer</title>
+  <desc id="description">Portfolio at raduavramescu.com</desc>
+  <rect width="1200" height="630" fill="#171717" />
+  <rect
+    x="32"
+    y="32"
+    width="1136"
+    height="566"
+    rx="16"
+    fill="#202020"
+    stroke="#404040"
+    stroke-width="2"
+  />
+  <g font-family="Open Sans, sans-serif">
+    <text x="96" y="139" fill="#d4d4d4" font-size="24" letter-spacing="5">
+      PORTFOLIO
+    </text>
+    <text
+      x="96"
+      y="283"
+      fill="#fafafa"
+      font-family="Source Code Pro, monospace"
+      font-size="64"
+      font-weight="700"
+    >Radu Avramescu</text>
+    <text x="96" y="353" fill="#d4d4d4" font-size="36">
+      Frontend Developer
+    </text>
+    <path d="M96 431H1104" stroke="#404040" stroke-width="2" />
+    <text x="96" y="514" fill="#fafafa" font-size="26">
+      raduavramescu.com
+    </text>
+  </g>
+</svg>
