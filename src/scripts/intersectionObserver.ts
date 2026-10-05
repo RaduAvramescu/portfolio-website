@@ -5,7 +5,7 @@ function initIntersectionObserver(): void {
   const elements = document.querySelectorAll('[data-observe]');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const revealAll = () => {
-    elements.forEach(el => el.classList.add('animate-in'));
+    elements.forEach(el => el.classList.remove('reveal-ready'));
   };
 
   if (reducedMotion.matches || !('IntersectionObserver' in window)) {
@@ -18,38 +18,45 @@ function initIntersectionObserver(): void {
     rootMargin: '0px 0px -100px 0px',
   };
 
-  const observer = new IntersectionObserver(
-    (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry: IntersectionObserverEntry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
+  let observer: IntersectionObserver | undefined;
 
-          // If element has data-trigger-once="true", stop observing after animation
-          if ((entry.target as HTMLElement).dataset.triggerOnce === 'true') {
-            observer.unobserve(entry.target);
+  try {
+    observer = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry: IntersectionObserverEntry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+
+            // If element has data-trigger-once="true", stop observing after animation
+            if ((entry.target as HTMLElement).dataset.triggerOnce === 'true') {
+              observer?.unobserve(entry.target);
+            }
+          } else {
+            // Only remove class if trigger-once is not set
+            if ((entry.target as HTMLElement).dataset.triggerOnce !== 'true') {
+              entry.target.classList.remove('animate-in');
+            }
           }
-        } else {
-          // Only remove class if trigger-once is not set
-          if ((entry.target as HTMLElement).dataset.triggerOnce !== 'true') {
-            entry.target.classList.remove('animate-in');
-          }
-        }
-      });
-    },
-    observerOptions
-  );
+        });
+      },
+      observerOptions
+    );
 
-  // Observe all elements with data-observe attribute
-  elements.forEach((el: Element) => {
-    observer.observe(el);
-  });
+    elements.forEach(el => observer?.observe(el));
 
-  reducedMotion.addEventListener('change', event => {
-    if (event.matches) {
-      observer.disconnect();
-      revealAll();
-    }
-  });
+    reducedMotion.addEventListener('change', event => {
+      if (event.matches) {
+        observer?.disconnect();
+        revealAll();
+      }
+    });
+
+    // Enable hidden states only after every element is being observed.
+    elements.forEach(el => el.classList.add('reveal-ready'));
+  } catch {
+    observer?.disconnect();
+    revealAll();
+  }
 }
 
 // Initialize when DOM is loaded

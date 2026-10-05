@@ -4,11 +4,12 @@ import ThemeToggle from './ThemeToggle.astro';
 // No props needed for static navbar
 ---
 
+<!-- Keep mobile fragment destinations clear until scripted menu closing is ready. -->
 <header
   id="header"
-  class="fixed top-0 left-0 w-full z-50 motion-safe:transition-transform motion-safe:duration-300 ease-in-out"
+  class="relative lg:fixed data-[navigation-enhanced]:fixed top-0 left-0 w-full z-50 motion-safe:transition-transform motion-safe:duration-300 ease-in-out"
 >
-  <nav class="group/nav bg-surface text-ink border-b border-edge px-4 py-3">
+  <nav class="bg-surface text-ink border-b border-edge px-4 py-3">
     <div class="flex items-center justify-between gap-2">
       <a
         class="text-lg font-bold uppercase text-heading hover:text-action motion-safe:transition-colors motion-safe:duration-300"
@@ -18,25 +19,65 @@ import ThemeToggle from './ThemeToggle.astro';
         Radu Avramescu
       </a>
 
-      <!-- Mobile menu button -->
-      <button
-        class="lg:hidden order-3 flex flex-col space-y-1 p-2 rounded-lg hover:bg-section group"
-        id="mobile-menu-button"
-        type="button"
-        aria-label="Toggle navigation"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      >
-        <span
-          class="w-6 h-0.5 bg-ink motion-safe:transition-all motion-safe:duration-300 group-aria-expanded:rotate-45 group-aria-expanded:translate-y-1.5"
-          id="line1"></span>
-        <span
-          class="w-6 h-0.5 bg-ink motion-safe:transition-all motion-safe:duration-300 group-aria-expanded:opacity-0"
-          id="line2"></span>
-        <span
-          class="w-6 h-0.5 bg-ink motion-safe:transition-all motion-safe:duration-300 group-aria-expanded:-rotate-45 group-aria-expanded:-translate-y-1.5"
-          id="line3"></span>
-      </button>
+      <!-- Native disclosure keeps mobile navigation usable without scripts. -->
+      <details class="lg:hidden order-3 group/menu" id="mobile-navigation">
+        <summary
+          class="flex flex-col space-y-1 p-2 rounded-lg hover:bg-section cursor-pointer list-none [&::-webkit-details-marker]:hidden"
+          id="mobile-menu-button"
+          aria-label="Toggle navigation"
+          aria-controls="mobile-menu"
+        >
+          <span
+            class="w-6 h-0.5 bg-ink motion-safe:transition-all motion-safe:duration-300 group-open/menu:rotate-45 group-open/menu:translate-y-1.5"
+            aria-hidden="true"></span>
+          <span
+            class="w-6 h-0.5 bg-ink motion-safe:transition-all motion-safe:duration-300 group-open/menu:opacity-0"
+            aria-hidden="true"></span>
+          <span
+            class="w-6 h-0.5 bg-ink motion-safe:transition-all motion-safe:duration-300 group-open/menu:-rotate-45 group-open/menu:-translate-y-1.5"
+            aria-hidden="true"></span>
+        </summary>
+
+        <div
+          class="absolute top-full inset-x-0 bg-surface border-b border-edge px-4 pt-4 pb-3"
+          id="mobile-menu"
+        >
+          <ul class="flex flex-col space-y-2">
+            <li>
+              <a
+                class="nav-link block py-2 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300"
+                href="#top"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                class="nav-link block py-2 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300"
+                href="#projects"
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                class="nav-link block py-2 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300"
+                href="#about"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                class="nav-link block py-2 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300"
+                href="#contact"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </details>
 
       <!-- Desktop navigation -->
       <ul class="hidden lg:flex space-x-8 ml-auto">
@@ -77,47 +118,6 @@ import ThemeToggle from './ThemeToggle.astro';
         <ThemeToggle />
       </div>
     </div>
-
-    <!-- Mobile navigation -->
-    <div
-      class="hidden mt-4 max-lg:group-has-[[aria-expanded=true]]/nav:block"
-      id="mobile-menu"
-    >
-      <ul class="flex flex-col space-y-2">
-        <li>
-          <a
-            class="nav-link block py-2 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300"
-            href="#top"
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            class="nav-link block py-2 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300"
-            href="#projects"
-          >
-            Projects
-          </a>
-        </li>
-        <li>
-          <a
-            class="nav-link block py-2 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300"
-            href="#about"
-          >
-            About
-          </a>
-        </li>
-        <li>
-          <a
-            class="nav-link block py-2 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300"
-            href="#contact"
-          >
-            Contact
-          </a>
-        </li>
-      </ul>
-    </div>
   </nav>
 </header>
 
@@ -136,27 +136,22 @@ import ThemeToggle from './ThemeToggle.astro';
     let prevScrollPos = window.scrollY;
     const header = document.getElementById('header');
     const scrollToTopBtn = document.getElementById('scroll-to-top');
+    const mobileNavigation =
+      document.querySelector<HTMLDetailsElement>('#mobile-navigation');
     const mobileMenuButton = document.getElementById('mobile-menu-button');
 
     if (!header || !scrollToTopBtn) {
       return;
     }
 
-    function setMenuOpen(open: boolean) {
-      mobileMenuButton?.setAttribute('aria-expanded', String(open));
+    function closeMenu() {
+      if (mobileNavigation) mobileNavigation.open = false;
     }
 
-    mobileMenuButton?.addEventListener('click', () => {
-      setMenuOpen(mobileMenuButton.getAttribute('aria-expanded') !== 'true');
-    });
-
     header.addEventListener('keydown', event => {
-      if (
-        event.key === 'Escape' &&
-        mobileMenuButton?.getAttribute('aria-expanded') === 'true'
-      ) {
-        setMenuOpen(false);
-        mobileMenuButton.focus();
+      if (event.key === 'Escape' && mobileNavigation?.open) {
+        closeMenu();
+        mobileMenuButton?.focus();
       }
     });
     header.addEventListener('focusin', () => {
@@ -188,7 +183,7 @@ import ThemeToggle from './ThemeToggle.astro';
     window
       .matchMedia('(min-width: 64rem)')
       .addEventListener('change', event => {
-        if (event.matches) setMenuOpen(false);
+        if (event.matches) closeMenu();
       });
 
     function handleScroll() {
@@ -196,7 +191,7 @@ import ThemeToggle from './ThemeToggle.astro';
       const isVisible =
         prevScrollPos > currentScrollPos || currentScrollPos < 10;
       header!.classList.toggle('-translate-y-full', !isVisible);
-      if (!isVisible) setMenuOpen(false);
+      if (!isVisible) closeMenu();
       scrollToTopBtn!.classList.toggle('!opacity-100', currentScrollPos > 100);
       prevScrollPos = currentScrollPos;
     }
@@ -214,10 +209,13 @@ import ThemeToggle from './ThemeToggle.astro';
             event.altKey
           )
             return;
-          setMenuOpen(false);
+          closeMenu();
         });
       });
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+
+    closeMenu();
+    header.dataset.navigationEnhanced = '';
   });
 </script>
