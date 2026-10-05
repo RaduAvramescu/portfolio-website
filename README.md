@@ -4,6 +4,7 @@
 
 - [About](#about)
 - [Technologies](#technologies)
+- [Styling](#styling)
 - [Color themes](#color-themes)
 - [Validation](#validation)
 - [Link](#link)
@@ -19,6 +20,15 @@ This is the repository for my personal website.
 - JavaScript
 - Tailwind CSS
 - Astro
+
+## Styling
+
+Tailwind CSS v4 is configured in `src/styles/globals.css` through `@theme`
+directives. Define fonts, colors, and animations there.
+
+The `--font-sans` and `--font-mono` tokens map to Astro's font variables for Open
+Sans and Source Code Pro. Font loading is configured in `astro.config.mjs` and
+`src/layouts/BaseLayout.astro`.
 
 ## Color themes
 

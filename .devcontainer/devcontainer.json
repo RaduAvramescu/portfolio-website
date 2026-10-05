@@ -42,7 +42,7 @@
         "tailwindCSS.includeLanguages": {
           "astro": "html"
         },
-        "tailwindCSS.experimental.configFile": "tailwind.config.js"
+        "tailwindCSS.experimental.configFile": "src/styles/globals.css"
       }
     }
   },
