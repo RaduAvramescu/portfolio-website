@@ -1,5 +1,6 @@
 {
   "name": "portfolio-website",
+  "type": "module",
   "description": "A repo that hosts my portfolio website code.",
   "private": true,
   "homepage": "https://github.com/RaduAvramescu/portfolio-website",
