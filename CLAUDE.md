@@ -50,7 +50,7 @@ The codebase follows Astro's file-based routing and component structure:
 
 ### Styling and Animations
 
-- **Tailwind CSS** - Utility-first CSS framework configured via Vite plugin
+- **Tailwind CSS** - Utility-first CSS framework integrated via Vite plugin, with v4 theme configuration in `src/styles/globals.css`
 - **Custom CSS** - Global styles in `src/styles/globals.css` and component-specific styles
 - **Typography** - Open Sans for body text, Source Code Pro for code/monospace elements
 - **Icons** - Astro Icon integration with Iconify collections (@iconify-json/devicon, @iconify-json/mdi)
@@ -65,5 +65,5 @@ The codebase follows Astro's file-based routing and component structure:
 ### Configuration Files
 
 - `astro.config.mjs` - Astro configuration with icon and Tailwind integrations
-- `tailwind.config.js` - Tailwind CSS configuration
+- `src/styles/globals.css` - Tailwind CSS v4 theme configuration and global styles
 - `package.json` - Dependencies and scripts for development and deployment
