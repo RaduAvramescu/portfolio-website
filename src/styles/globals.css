@@ -111,23 +111,33 @@ html[data-theme='dark'] {
   color: var(--color-action-ink);
 }
 
-:where(a, button):focus-visible {
+:where(a, button, summary):focus-visible {
   outline: 2px solid var(--color-action);
   outline-offset: 4px;
 }
 
-/* Shared reveal styles use the same Tailwind motion variant as the components. */
+/* Content stays visible until the observer successfully enables reveals. */
 [data-observe] {
   @variant motion-safe {
-    opacity: 0;
-    transform: translateY(30px);
     transition:
       opacity 0.8s ease,
       transform 0.8s ease;
   }
 }
 
-[data-observe].animate-in {
+[data-observe].reveal-ready {
+  @variant motion-safe {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+[data-observe].animate-in,
+[data-observe]:focus-within {
   opacity: 1;
   transform: translateY(0);
+}
+
+[data-observe]:focus-within {
+  transition: none;
 }
