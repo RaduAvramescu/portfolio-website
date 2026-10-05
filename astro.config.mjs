@@ -12,7 +12,7 @@ export default defineConfig({
       provider: fontProviders.fontsource(),
       name: 'Open Sans',
       cssVariable: '--font-open-sans',
-      weights: [400],
+      weights: [400, 500, 600, 700],
       styles: ['normal'],
       subsets: [
         'cyrillic-ext',
