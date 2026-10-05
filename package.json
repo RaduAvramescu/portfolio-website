@@ -26,18 +26,18 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@eslint/js": "^10.0.1",
-    "@iconify-json/devicon": "^1.2.67",
+    "@iconify-json/devicon": "^1.2.68",
     "@iconify-json/mdi": "^1.2.3",
-    "@types/node": "^26.6.3",
-    "@typescript-eslint/parser": "^8.70.1",
+    "@types/node": "^26.6.4",
+    "@typescript-eslint/parser": "^8.71.0",
     "astro-eslint-parser": "^3.2.0",
     "eslint": "^10.11.0",
     "eslint-plugin-astro": "^3.2.1",
     "prettier": "^3.9.9",
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.70.1",
-    "wrangler": "^4.141.0"
+    "typescript-eslint": "^8.71.0",
+    "wrangler": "^4.146.0"
   },
   "packageManager": "pnpm@12.6.0"
 }
