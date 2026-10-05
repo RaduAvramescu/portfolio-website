@@ -1,13 +1,11 @@
 ---
 // No props needed for static jumbotron
 import { Icon } from 'astro-icon/components';
-import jumbotronImage from '../assets/images/jumbotron.webp?url';
 ---
 
 <section id="jumbotron">
   <div
-    class="flex justify-center items-center min-h-screen mb-0 bg-cover bg-center motion-safe:max-md:bg-fixed bg-page text-ink"
-    style={`background-image: linear-gradient(var(--color-hero-overlay), var(--color-hero-overlay)), url('${jumbotronImage}');`}
+    class="hero-background flex justify-center items-center min-h-screen mb-0 bg-cover bg-center motion-safe:max-md:bg-fixed bg-page text-ink"
   >
     <div class="container mx-auto text-center px-4">
       <div class="intro overflow-hidden">
@@ -62,3 +60,24 @@ import jumbotronImage from '../assets/images/jumbotron.webp?url';
     </div>
   </div>
 </section>
+
+<style>
+  .hero-background {
+    background-image: url('../assets/images/jumbotron.jpg');
+    background-image:
+      linear-gradient(var(--color-hero-overlay), var(--color-hero-overlay)),
+      url('../assets/images/jumbotron.jpg');
+  }
+
+  /* Keep JPEG when the browser cannot select an image by its format. */
+  @supports (background-image: image-set(url('') type('image/webp'))) {
+    .hero-background {
+      background-image:
+        linear-gradient(var(--color-hero-overlay), var(--color-hero-overlay)),
+        image-set(
+          url('../assets/images/jumbotron.webp') type('image/webp'),
+          url('../assets/images/jumbotron.jpg') type('image/jpeg')
+        );
+    }
+  }
+</style>
