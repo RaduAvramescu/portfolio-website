@@ -2,7 +2,7 @@ name: Update pnpm
 
 on:
   schedule:
-    - cron: '0 9 * * 1' # Mondays at 09:00 UTC
+    - cron: '30 10 * * 1' # Mondays at 10:30 UTC
   workflow_dispatch:
 
 permissions:
