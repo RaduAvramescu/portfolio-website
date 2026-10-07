@@ -1,6 +1,7 @@
 ---
 import '../styles/globals.css';
 import { Font } from 'astro:assets';
+import { ClientRouter } from 'astro:transitions';
 import ThemeScript from '../components/ThemeScript.astro';
 
 export interface Props {
@@ -51,6 +52,7 @@ const socialImageAlt = 'Radu Avramescu, Frontend Developer — raduavramescu.com
     }
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
+    <ClientRouter />
     <ThemeScript />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
