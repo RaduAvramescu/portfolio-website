@@ -1,8 +1,17 @@
+let disposeIntersectionObserver: (() => void) | undefined;
+
+function cleanupIntersectionObserver(): void {
+  disposeIntersectionObserver?.();
+  disposeIntersectionObserver = undefined;
+}
+
 /**
  * Initialize intersection observers for elements with data-observe attribute
  */
 function initIntersectionObserver(): void {
+  cleanupIntersectionObserver();
   const elements = document.querySelectorAll('[data-observe]');
+  if (elements.length === 0) return;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const revealAll = () => {
     elements.forEach(el => el.classList.remove('reveal-ready'));
@@ -19,6 +28,12 @@ function initIntersectionObserver(): void {
   };
 
   let observer: IntersectionObserver | undefined;
+  const listeners = new AbortController();
+  disposeIntersectionObserver = () => {
+    listeners.abort();
+    observer?.disconnect();
+    revealAll();
+  };
 
   try {
     observer = new IntersectionObserver(
@@ -44,24 +59,20 @@ function initIntersectionObserver(): void {
 
     elements.forEach(el => observer?.observe(el));
 
-    reducedMotion.addEventListener('change', event => {
-      if (event.matches) {
-        observer?.disconnect();
-        revealAll();
-      }
-    });
+    reducedMotion.addEventListener(
+      'change',
+      event => {
+        if (event.matches) cleanupIntersectionObserver();
+      },
+      { signal: listeners.signal }
+    );
 
     // Enable hidden states only after every element is being observed.
     elements.forEach(el => el.classList.add('reveal-ready'));
   } catch {
-    observer?.disconnect();
-    revealAll();
+    cleanupIntersectionObserver();
   }
 }
 
-// Initialize when DOM is loaded
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initIntersectionObserver);
-} else {
-  initIntersectionObserver();
-}
+document.addEventListener('astro:before-swap', cleanupIntersectionObserver);
+document.addEventListener('astro:page-load', initIntersectionObserver);
