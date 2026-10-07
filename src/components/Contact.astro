@@ -14,14 +14,20 @@
     Contact
   </h2>
   <div class="max-w-4xl mx-auto" data-observe="true" data-trigger-once="true">
-    <form action="https://formspree.io/xwkrdeyq" method="POST">
+    <form
+      id="contact-form"
+      action="https://formspree.io/xwkrdeyq"
+      method="POST"
+      aria-busy="false"
+    >
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="relative mb-8">
           <input
-            class="w-full p-0 bg-transparent border-0 border-b-2 border-control focus:outline-none focus:border-action h-10 peer motion-safe:transition-colors motion-safe:duration-300 ease-in-out"
+            class="w-full p-0 bg-transparent border-0 border-b-2 border-control focus:outline-none focus:border-action valid:border-success focus:valid:border-success h-10 peer motion-safe:transition-colors motion-safe:duration-300 ease-in-out"
             type="text"
             name="name"
             id="name"
+            autocomplete="name"
             required
             placeholder=" "
           />
@@ -35,10 +41,11 @@
 
         <div class="relative mb-8">
           <input
-            class="w-full p-0 bg-transparent border-0 border-b-2 border-control focus:outline-none focus:border-action h-10 peer motion-safe:transition-colors motion-safe:duration-300 ease-in-out"
+            class="w-full p-0 bg-transparent border-0 border-b-2 border-control focus:outline-none focus:border-action valid:border-success focus:valid:border-success h-10 peer motion-safe:transition-colors motion-safe:duration-300 ease-in-out"
             type="email"
             name="_replyto"
             id="email"
+            autocomplete="email"
             required
             placeholder=" "
           />
@@ -52,7 +59,7 @@
 
         <div class="relative mb-8 md:col-span-2">
           <textarea
-            class="w-full pt-2 p-0 bg-transparent border-0 border-b-2 border-control focus:outline-none focus:border-action h-10 resize-none peer motion-safe:transition-colors motion-safe:duration-300 ease-in-out"
+            class="w-full pt-2 p-0 bg-transparent border-0 border-b-2 border-control focus:outline-none focus:border-action valid:border-success focus:valid:border-success h-10 min-h-10 resize-y peer motion-safe:transition-colors motion-safe:duration-300 ease-in-out"
             name="message"
             id="message"
             required
@@ -68,9 +75,9 @@
         <div class="md:col-span-2">
           <button
             type="submit"
-            class="bg-action text-action-ink px-8 py-3 text-lg font-semibold border-2 border-action motion-safe:transition-all motion-safe:duration-300 hover:shadow-lg hover:bg-action-hover hover:border-action-hover submit-btn cursor-pointer tracking-wide rounded-lg"
+            class="bg-action text-action-ink px-8 py-3 text-lg font-semibold border-2 border-action motion-safe:transition-all motion-safe:duration-300 enabled:hover:shadow-lg enabled:hover:bg-action-hover enabled:hover:border-action-hover disabled:cursor-wait disabled:opacity-70 submit-btn cursor-pointer tracking-wide rounded-lg"
           >
-            <span class="uppercase">Submit</span>
+            <span class="uppercase" data-submit-label>Submit</span>
           </button>
         </div>
       </div>
