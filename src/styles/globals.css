@@ -14,6 +14,7 @@
   --color-edge: light-dark(#d4d4d4, #404040);
   /* Controls need stronger boundaries than decorative card borders. */
   --color-control: light-dark(#737373, #a3a3a3);
+  --color-success: light-dark(var(--color-green-700), var(--color-green-400));
   --color-ink: light-dark(#262626, #e5e5e5);
   --color-heading: light-dark(#171717, #fafafa);
   --color-muted: light-dark(#525252, #d4d4d4);
