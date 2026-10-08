@@ -121,6 +121,15 @@ main:focus-visible {
   outline-offset: -2px;
 }
 
+/* Match the sections' py-10 / md:py-14 padding when navigation hides the header. */
+#header[data-navigation-enhanced] ~ main > :is(#projects, #about, #contact) {
+  scroll-margin-top: calc(1rem - var(--spacing) * 10);
+
+  @variant md {
+    scroll-margin-top: calc(1rem - var(--spacing) * 14);
+  }
+}
+
 /* Focus reveals introductory links immediately and keeps them visible. */
 [data-intro-reveal]:focus-within,
 [data-intro-reveal][data-focus-revealed] {

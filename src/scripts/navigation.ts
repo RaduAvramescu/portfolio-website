@@ -1,6 +1,10 @@
 import { navigate } from 'astro:transitions/client';
 
 let disposeNavigation: (() => void) | undefined;
+let preserveScrollPosition = ['back_forward', 'reload'].includes(
+  (performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming)
+    ?.type
+);
 
 function cleanupNavigation(): void {
   disposeNavigation?.();
@@ -9,6 +13,7 @@ function cleanupNavigation(): void {
 
 function initNavigation(): void {
   cleanupNavigation();
+  const pageUrl = window.location.href.split('#')[0];
   let prevScrollPos = window.scrollY;
   let scrollingUp = true;
   let hideHeaderAfterNavigation = Boolean(window.location.hash);
@@ -30,6 +35,23 @@ function initNavigation(): void {
 
   function closeMenu(): void {
     if (mobileNavigation) mobileNavigation.open = false;
+  }
+
+  function focusDestination(destination: HTMLElement): void {
+    const focusTarget =
+      destination.id === 'top'
+        ? (document.getElementById('main-content') ?? destination)
+        : destination.matches('section')
+          ? (destination.querySelector<HTMLElement>('h1, h2') ?? destination)
+          : destination;
+    if (
+      !focusTarget.matches(
+        'a[href], button, input, select, textarea, summary, [tabindex]'
+      )
+    ) {
+      focusTarget.tabIndex = -1;
+    }
+    focusTarget.focus({ preventScroll: true });
   }
 
   const updateNavigation = () => {
@@ -166,40 +188,18 @@ function initNavigation(): void {
           (link.target && link.target !== '_self')
         )
           return;
-        const targetId = link.hash.slice(1);
-        const destination = document.getElementById(targetId);
+        const destination = document.getElementById(link.hash.slice(1));
         if (!destination) return;
-        const focusTarget =
-          targetId === 'top'
-            ? (document.getElementById('main-content') ?? destination)
-            : destination.matches('section')
-              ? (destination.querySelector<HTMLElement>('h1, h2') ??
-                destination)
-              : destination;
-        if (
-          !focusTarget.matches(
-            'a[href], button, input, select, textarea, summary, [tabindex]'
-          )
-        ) {
-          focusTarget.tabIndex = -1;
-        }
 
         event.preventDefault();
         closeMenu();
-        if (destination.matches('section')) {
-          const gap = parseFloat(
-            getComputedStyle(document.documentElement).fontSize
-          );
-          const padding = parseFloat(getComputedStyle(destination).paddingTop);
-          destination.style.scrollMarginTop = `${gap - padding}px`;
-        }
         hideHeaderAfterNavigation = true;
         await navigate(link.href, {
           history: link.dataset.astroHistory === 'replace' ? 'replace' : 'auto',
           sourceElement: link,
         });
-        if (signal.aborted || !focusTarget.isConnected) return;
-        focusTarget.focus({ preventScroll: true });
+        if (signal.aborted || !destination.isConnected) return;
+        focusDestination(destination);
         updateNavigation();
       },
       { signal }
@@ -214,15 +214,30 @@ function initNavigation(): void {
   window.addEventListener(
     'popstate',
     () => {
+      if (window.location.href.split('#')[0] !== pageUrl) return;
+      closeMenu();
       hideHeaderAfterNavigation = Boolean(window.location.hash);
+      const destination = document.getElementById(
+        window.location.hash.slice(1) || 'main-content'
+      );
+      if (destination) focusDestination(destination);
       updateNavigation();
     },
     { signal }
   );
   closeMenu();
   if (header) header.dataset.navigationEnhanced = '';
+  // The browser may align the fragment before the mobile header becomes fixed.
+  if (!preserveScrollPosition && window.location.hash) {
+    const destination = document.getElementById(window.location.hash.slice(1));
+    destination?.scrollIntoView({ behavior: 'instant' });
+    if (destination) focusDestination(destination);
+  }
   updateNavigation();
 }
 
-document.addEventListener('astro:before-swap', cleanupNavigation);
+document.addEventListener('astro:before-swap', event => {
+  cleanupNavigation();
+  preserveScrollPosition = event.navigationType === 'traverse';
+});
 document.addEventListener('astro:page-load', initNavigation);
