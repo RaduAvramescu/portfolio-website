@@ -1,14 +1,12 @@
 ---
 import ProjectItem from './ProjectItem.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { sortProjects } from '../utils/sortProjects';
 
 type ProjectEntry = CollectionEntry<'projects'>;
 
 const projects = await getCollection('projects');
-const sortedProjects = projects.sort(
-  (a: ProjectEntry, b: ProjectEntry) =>
-    (a.data.order || 0) - (b.data.order || 0)
-);
+const sortedProjects = sortProjects(projects);
 ---
 
 <section
