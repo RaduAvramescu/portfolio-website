@@ -66,6 +66,13 @@ const socialImageAlt = 'Radu Avramescu, Frontend Developer — raduavramescu.com
     <title>{title}</title>
   </head>
   <body id="top">
+    <a
+      href="#main-content"
+      class="fixed top-3 left-3 z-[60] -translate-y-[200%] rounded-lg bg-action px-4 py-3 font-semibold text-action-ink focus:translate-y-0"
+    >
+      Skip to main content
+    </a>
     <slot />
+    <script src="../scripts/navigation.ts"></script>
   </body>
 </html>

@@ -13,7 +13,11 @@ import Footer from '../components/Footer.astro';
   description="Frontend Developer passionate about modern web technologies. Showcasing React, JavaScript, and full-stack development projects."
 >
   <NavBar />
-  <main>
+  <main
+    id="main-content"
+    tabindex="-1"
+    class="scroll-mt-[calc(var(--header-height)+1rem)]"
+  >
     <Jumbotron />
     <Projects />
     <About />
