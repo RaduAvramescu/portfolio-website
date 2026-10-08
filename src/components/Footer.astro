@@ -1,12 +1,14 @@
 ---
 // Footer component for Astro
 import { Icon } from 'astro-icon/components';
+
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="bg-section text-ink border-t border-edge" id="footer">
   <div class="max-w-7xl mx-auto py-12 px-4 sm:px-4 text-center">
     <p class="mb-6 text-muted text-sm">
-      &copy; 2026 Radu Avramescu. All rights reserved.
+      &copy; {currentYear} Radu Avramescu. All rights reserved.
     </p>
     <div class="flex justify-center gap-2">
       <a
