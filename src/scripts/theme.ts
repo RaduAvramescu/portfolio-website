@@ -37,7 +37,7 @@ function initThemeToggle(): void {
   button.hidden = false;
   button.addEventListener(
     'click',
-    () => {
+    event => {
       preference = getTheme() === 'dark' ? 'light' : 'dark';
       applyTheme();
       try {
@@ -45,6 +45,8 @@ function initThemeToggle(): void {
       } catch {
         // Keep the selected theme for this visit even without persistence.
       }
+      // Retain keyboard focus; pointer focus should not prevent header hiding.
+      if (event.detail > 0) button.blur();
     },
     { signal: buttonListeners.signal }
   );
