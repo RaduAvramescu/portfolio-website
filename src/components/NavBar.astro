@@ -7,7 +7,7 @@ import ThemeToggle from './ThemeToggle.astro';
 <!-- Keep mobile fragment destinations clear until scripted menu closing is ready. -->
 <header
   id="header"
-  class="relative lg:fixed data-[navigation-enhanced]:fixed top-0 left-0 w-full z-50 motion-safe:transition-transform motion-safe:duration-300 ease-in-out"
+  class="relative lg:fixed data-[navigation-enhanced]:fixed top-0 left-0 w-full z-50 motion-safe:transition-transform motion-safe:duration-300 ease-in-out focus-within:translate-y-0 focus-within:transition-none"
 >
   <nav class="bg-surface text-ink border-b border-edge px-4 py-3">
     <div class="flex items-center justify-between gap-2">
@@ -80,7 +80,7 @@ import ThemeToggle from './ThemeToggle.astro';
       </details>
 
       <!-- Desktop navigation -->
-      <ul class="hidden lg:flex space-x-8 ml-auto">
+      <ul id="desktop-navigation" class="hidden lg:flex space-x-8 ml-auto">
         <li>
           <a
             class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action motion-safe:after:transition-all motion-safe:after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
@@ -125,10 +125,14 @@ import ThemeToggle from './ThemeToggle.astro';
 <a
   href="#top"
   id="scroll-to-top"
-  class="fixed bottom-5 right-5 z-50 bg-surface rounded-full text-action shadow-md no-underline flex items-center justify-center opacity-0 motion-safe:transition-all motion-safe:duration-300 hover:text-action-hover"
+  class="scroll-to-top fixed bottom-5 right-5 z-50 bg-surface rounded-full text-action shadow-md no-underline items-center justify-center motion-safe:transition-colors motion-safe:duration-300 hover:text-action-hover"
   aria-label="Scroll to top"
 >
   <Icon name="mdi:chevron-up-circle" width={48} height={48} />
 </a>
 
-<script src="../scripts/navigation.ts"></script>
+<style>
+  .scroll-to-top:not([hidden]) {
+    display: flex;
+  }
+</style>

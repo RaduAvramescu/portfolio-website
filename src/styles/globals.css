@@ -32,7 +32,7 @@
   --animate-slide-up-12: slideUp 1s ease 1.2s forwards;
   --animate-typewriter:
     typing 2s steps(30, end) 1s 1 normal both,
-    blink-caret 600ms step-end infinite;
+    blink-caret 600ms step-end 5 forwards;
 
   @keyframes fade-in {
     0% {
@@ -112,9 +112,21 @@ html[data-theme='dark'] {
   color: var(--color-action-ink);
 }
 
-:where(a, button, summary):focus-visible {
+:where(a, button, summary, [tabindex='-1']):focus-visible {
   outline: 2px solid var(--color-action);
   outline-offset: 4px;
+}
+
+main:focus-visible {
+  outline-offset: -2px;
+}
+
+/* Focus reveals introductory links immediately and keeps them visible. */
+[data-intro-reveal]:focus-within,
+[data-intro-reveal][data-focus-revealed] {
+  animation: none;
+  opacity: 1;
+  transform: none;
 }
 
 /* Content stays visible until the observer successfully enables reveals. */
