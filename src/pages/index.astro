@@ -6,12 +6,34 @@ import Projects from '../components/Projects.astro';
 import About from '../components/About.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
+
+const portfolioUrl = new URL('/', Astro.site);
+const personStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': new URL('#person', portfolioUrl).href,
+  name: 'Radu Avramescu',
+  jobTitle: 'Frontend Developer',
+  description:
+    'Frontend developer interested in staying up to date with technologies and constantly learning.',
+  url: portfolioUrl.href,
+  sameAs: [
+    'https://github.com/RaduAvramescu',
+    'https://www.linkedin.com/in/radu-a-4863a486/',
+  ],
+};
 ---
 
 <BaseLayout
   title="Radu Avramescu - Frontend Developer"
   description="Frontend Developer passionate about modern web technologies. Showcasing React, JavaScript, and full-stack development projects."
 >
+  <script
+    slot="head"
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify(personStructuredData).replace(/</g, '\\u003c')}
+  />
   <NavBar />
   <main
     id="main-content"
