@@ -1,9 +1,9 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
+import { sortProjects } from '../utils/sortProjects';
 
 export const GET: APIRoute = async () => {
-  const projects = await getCollection('projects');
-  projects.sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+  const projects = sortProjects(await getCollection('projects'));
 
   const projectLinks = projects.map(
     ({ data }) =>
