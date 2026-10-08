@@ -12,7 +12,6 @@ function initNavigation(): void {
   let prevScrollPos = window.scrollY;
   let scrollingUp = true;
   let hideHeaderAfterNavigation = Boolean(window.location.hash);
-  let anchorScrollTarget: number | undefined;
   const header = document.getElementById('header');
   const scrollToTopBtn = document.getElementById('scroll-to-top');
   const brand = document.getElementById('navbar-brand');
@@ -24,11 +23,9 @@ function initNavigation(): void {
   const listeners = new AbortController();
   const { signal } = listeners;
   let focusUpdateFrame: number | undefined;
-  let scrollEndTimeout: number | undefined;
   disposeNavigation = () => {
     listeners.abort();
     if (focusUpdateFrame !== undefined) cancelAnimationFrame(focusUpdateFrame);
-    if (scrollEndTimeout !== undefined) clearTimeout(scrollEndTimeout);
   };
 
   function closeMenu(): void {
@@ -38,9 +35,6 @@ function initNavigation(): void {
   const updateNavigation = () => {
     const currentScrollPos = window.scrollY;
     if (currentScrollPos !== prevScrollPos) {
-      if (anchorScrollTarget === undefined) {
-        hideHeaderAfterNavigation = false;
-      }
       scrollingUp = currentScrollPos < prevScrollPos;
     }
     const isVisible =
@@ -80,7 +74,6 @@ function initNavigation(): void {
     'focusin',
     () => {
       hideHeaderAfterNavigation = false;
-      anchorScrollTarget = undefined;
       updateNavigation();
     },
     { signal }
@@ -114,14 +107,13 @@ function initNavigation(): void {
     { signal }
   );
 
-  // User input or resizing can interrupt a browser's smooth anchor scroll.
-  ['pointerdown', 'wheel', 'touchmove', 'keydown', 'resize'].forEach(type => {
+  // Resume normal header behavior when the user interacts after navigation.
+  ['pointerdown', 'wheel', 'touchmove', 'keydown'].forEach(type => {
     window.addEventListener(
       type,
       () => {
-        anchorScrollTarget = undefined;
+        hideHeaderAfterNavigation = false;
         if ((type === 'wheel' || type === 'touchmove') && window.scrollY < 10) {
-          hideHeaderAfterNavigation = false;
           updateNavigation();
         }
       },
@@ -203,22 +195,6 @@ function initNavigation(): void {
           const padding = parseFloat(getComputedStyle(destination).paddingTop);
           destination.style.scrollMarginTop = `${gap - padding}px`;
         }
-        // Ignore the automatic scroll direction until the fragment is reached.
-        const scrollMargin =
-          parseFloat(getComputedStyle(destination).scrollMarginTop) || 0;
-        const targetScrollPos = Math.max(
-          0,
-          Math.min(
-            destination.getBoundingClientRect().top +
-              window.scrollY -
-              scrollMargin,
-            document.documentElement.scrollHeight - window.innerHeight
-          )
-        );
-        anchorScrollTarget =
-          Math.abs(targetScrollPos - window.scrollY) > 1
-            ? targetScrollPos
-            : undefined;
         hideHeaderAfterNavigation = true;
         await navigate(link.href, {
           history: link.dataset.astroHistory === 'replace' ? 'replace' : 'auto',
@@ -232,41 +208,16 @@ function initNavigation(): void {
     );
   });
 
-  const finishAnchorScroll = () => {
-    if (
-      anchorScrollTarget !== undefined &&
-      Math.abs(window.scrollY - anchorScrollTarget) <= 1
-    ) {
-      anchorScrollTarget = undefined;
-    }
-  };
-  const hasScrollEnd = 'onscrollend' in window;
-  window.addEventListener(
-    'scroll',
-    () => {
-      updateNavigation();
-      if (!hasScrollEnd && anchorScrollTarget !== undefined) {
-        if (scrollEndTimeout !== undefined) clearTimeout(scrollEndTimeout);
-        scrollEndTimeout = window.setTimeout(finishAnchorScroll, 120);
-      }
-    },
-    { passive: true, signal }
-  );
-  if (hasScrollEnd) {
-    window.addEventListener('scrollend', finishAnchorScroll, { signal });
-  }
+  window.addEventListener('scroll', updateNavigation, {
+    passive: true,
+    signal,
+  });
   window.addEventListener('pageshow', updateNavigation, { signal });
   window.addEventListener(
     'popstate',
-    event => {
-      if (!window.location.hash) return;
-      const restoredScrollPos = event.state?.scrollY;
-      if (typeof restoredScrollPos !== 'number') return;
-      hideHeaderAfterNavigation = true;
-      anchorScrollTarget =
-        Math.abs(restoredScrollPos - window.scrollY) > 1
-          ? restoredScrollPos
-          : undefined;
+    () => {
+      hideHeaderAfterNavigation = Boolean(window.location.hash);
+      updateNavigation();
     },
     { signal }
   );
