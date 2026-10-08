@@ -1,7 +1,13 @@
 ---
 import { Icon } from 'astro-icon/components';
 import ThemeToggle from './ThemeToggle.astro';
-// No props needed for static navbar
+
+const navigationEntries = [
+  { href: '#top', label: 'Home' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#about', label: 'About' },
+  { href: '#contact', label: 'Contact' },
+];
 ---
 
 <!-- Keep mobile fragment destinations clear until scripted menu closing is ready. -->
@@ -43,76 +49,36 @@ import ThemeToggle from './ThemeToggle.astro';
           id="mobile-menu"
         >
           <ul class="flex flex-col space-y-2">
-            <li>
-              <a
-                class="nav-link block py-2 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300"
-                href="#top"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                class="nav-link block py-2 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300"
-                href="#projects"
-              >
-                Projects
-              </a>
-            </li>
-            <li>
-              <a
-                class="nav-link block py-2 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300"
-                href="#about"
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                class="nav-link block py-2 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300"
-                href="#contact"
-              >
-                Contact
-              </a>
-            </li>
+            {
+              navigationEntries.map(({ href, label }) => (
+                <li>
+                  <a
+                    class="nav-link block py-2 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300"
+                    href={href}
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))
+            }
           </ul>
         </div>
       </details>
 
       <!-- Desktop navigation -->
       <ul id="desktop-navigation" class="hidden lg:flex space-x-8 ml-auto">
-        <li>
-          <a
-            class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action motion-safe:after:transition-all motion-safe:after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
-            href="#top"
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action motion-safe:after:transition-all motion-safe:after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
-            href="#projects"
-          >
-            Projects
-          </a>
-        </li>
-        <li>
-          <a
-            class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action motion-safe:after:transition-all motion-safe:after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
-            href="#about"
-          >
-            About
-          </a>
-        </li>
-        <li>
-          <a
-            class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action motion-safe:after:transition-all motion-safe:after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
-            href="#contact"
-          >
-            Contact
-          </a>
-        </li>
+        {
+          navigationEntries.map(({ href, label }) => (
+            <li>
+              <a
+                class="nav-link relative px-0 font-medium text-muted uppercase hover:text-action motion-safe:transition-colors motion-safe:duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:-bottom-1.5 after:left-1/2 after:bg-action motion-safe:after:transition-all motion-safe:after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-full"
+                href={href}
+              >
+                {label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
       <div class="ml-auto lg:ml-4">
         <ThemeToggle />
