@@ -41,8 +41,6 @@ function initNavigation(): void {
       header?.contains(document.activeElement) ||
       mobileNavigation?.open ||
       (!hideHeaderAfterNavigation && (currentScrollPos < 10 || scrollingUp));
-    // Anchor destinations must not be covered while the header slides away.
-    header?.classList.toggle('transition-none!', hideHeaderAfterNavigation);
     header?.classList.toggle('-translate-y-full', !isVisible);
     if (scrollToTopBtn) {
       scrollToTopBtn.hidden =
