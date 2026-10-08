@@ -112,6 +112,14 @@ function initNavigation(): void {
     },
     { signal }
   );
+  mobileMenuButton?.addEventListener(
+    'click',
+    event => {
+      // Click precedes the native toggle; retain focus for keyboard activation.
+      if (event.detail > 0 && mobileNavigation?.open) mobileMenuButton?.blur();
+    },
+    { signal }
+  );
   mobileNavigation?.addEventListener('toggle', updateNavigation, { signal });
   scrollToTopBtn?.addEventListener('focusout', updateAfterFocus, { signal });
 
