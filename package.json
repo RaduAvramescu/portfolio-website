@@ -20,25 +20,25 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.4.0",
+    "astro": "^7.4.2",
     "astro-icon": "^1.2.0",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
+    "@astrojs/check": "^0.9.12",
     "@eslint/js": "^10.0.1",
     "@iconify-json/devicon": "^1.2.71",
     "@iconify-json/mdi": "^1.2.3",
     "@types/node": "^26.6.5",
-    "@typescript-eslint/parser": "^8.71.2",
+    "@typescript-eslint/parser": "^8.72.0",
     "astro-eslint-parser": "^3.2.0",
     "eslint": "^10.13.0",
     "eslint-plugin-astro": "^3.2.1",
     "prettier": "^3.9.10",
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.71.2",
-    "wrangler": "^4.151.1"
+    "typescript-eslint": "^8.72.0",
+    "wrangler": "^4.152.0"
   },
   "packageManager": "pnpm@12.15.0"
 }
